@@ -1,1 +1,2 @@
-# Landing page for car dealership
+By Tiago Sebastião
+React/Next.js
