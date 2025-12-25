@@ -23,7 +23,7 @@ export function Header() {
     <header className="sticky top-0 z-50 w-full border-b border-border bg-background/95 shadow-sm backdrop-blur-sm supports-[backdrop-filter]:bg-background/90">
       <div className="container mx-auto flex h-24 items-center justify-between px-4 md:px-6">
         <div className="flex items-center">
-          <Image src="/logo.png" alt="OTEN MOTORS" width={520} height={156} className="h-32 w-auto md:h-36" priority />
+          <Image src="/logo.png" alt="OTEN MOTORS" width={550} height={160} className="h-32 w-auto md:h-36" priority />
         </div>
 
         {/* Desktop Navigation - Centered - Changed text color to white */}

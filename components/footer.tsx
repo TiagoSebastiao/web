@@ -1,7 +1,7 @@
 "use client"
 
-import { Facebook, Instagram, Linkedin, Youtube } from "lucide-react"
 import { useLanguage } from "@/hooks/use-language"
+import { Facebook, Instagram, Linkedin, Youtube } from "lucide-react"
 import Image from "next/image"
 
 const TikTokIcon = () => (
