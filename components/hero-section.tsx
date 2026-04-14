@@ -17,7 +17,7 @@ export function HeroSection() {
   }
 
   return (
-    <section ref={ref} className="relative min-h-[85vh] overflow-hidden bg-background pt-20">
+    <section ref={ref} className="relative min-h-screen overflow-hidden bg-background pt-16">
       <div className="container relative mx-auto px-4 py-12 md:py-16">
         <div
           className={`mx-auto max-w-6xl text-center transition-all duration-1000 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}

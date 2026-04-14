@@ -19,7 +19,7 @@ export function Footer() {
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
           <div>
             <div className="mb-4">
-              <Image src="/logo.png" alt="OTEN MOTORS" width={360} height={120} className="h-24 w-auto" />
+              <Image src="/logo.png" alt="OTEN MOTORS" width={360} height={120} className="h-12 w-auto md:h-14 opacity-80"/>
             </div>
             <p className="text-sm font-light text-muted-foreground leading-relaxed">
               Excelência em veículos premium desde 2010.
