@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button"
 import { MessageCircle } from "lucide-react"
 import { useLanguage } from "@/hooks/use-language"
 import { useScrollAnimation } from "@/hooks/use-scroll-animation"
-import { useState, useEffect } from "react"
+import { useEffect, useRef } from "react"
 
 const carouselImages = [
   "/cars/1/luxury-mercedes-benz-c-class-amg-black.jpg",
@@ -15,11 +15,24 @@ const carouselImages = [
 export function HeroSection() {
   const { t } = useLanguage()
   const { ref, isVisible } = useScrollAnimation()
-  const [currentImage, setCurrentImage] = useState(0)
+  const currentImageRef = useRef(0)
+  const containerRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentImage((prev) => (prev + 1) % carouselImages.length)
+      currentImageRef.current = (currentImageRef.current + 1) % carouselImages.length
+      if (containerRef.current) {
+        const images = containerRef.current.querySelectorAll('.carousel-image')
+        images.forEach((img, index) => {
+          if (index === currentImageRef.current) {
+            img.classList.remove('opacity-0')
+            img.classList.add('opacity-100')
+          } else {
+            img.classList.remove('opacity-100')
+            img.classList.add('opacity-0')
+          }
+        })
+      }
     }, 5000)
     return () => clearInterval(interval)
   }, [])
@@ -32,14 +45,14 @@ export function HeroSection() {
   }
 
   return (
-    <section ref={ref} className="relative min-h-screen overflow-hidden bg-background pt-16">
+    <section ref={ref} className="relative min-h-screen overflow-hidden bg-background">
       {/* Background Image Carousel */}
-      <div className="absolute inset-0">
+      <div ref={containerRef} className="absolute inset-0">
         {carouselImages.map((image, index) => (
           <div
             key={image}
-            className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
-              index === currentImage ? "opacity-100" : "opacity-0"
+            className={`carousel-image absolute inset-0 transition-opacity duration-1000 ease-in-out ${
+              index === 0 ? "opacity-100" : "opacity-0"
             }`}
           >
             <img
@@ -55,7 +68,7 @@ export function HeroSection() {
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent" />
       </div>
 
-      <div className="container relative z-10 mx-auto px-4 py-12 md:py-16">
+      <div className="container relative z-10 mx-auto flex min-h-screen items-center justify-center px-4 py-12 md:py-16">
         <div
           className={`mx-auto max-w-6xl text-center transition-all duration-1000 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}
         >
@@ -82,22 +95,6 @@ export function HeroSection() {
               <MessageCircle className="h-5 w-5 transition-transform group-hover:rotate-12" />
               {t.hero.cta2}
             </Button>
-          </div>
-          
-          {/* Carousel indicators */}
-          <div className="mt-10 flex justify-center gap-2">
-            {carouselImages.map((_, index) => (
-              <button
-                key={index}
-                onClick={() => setCurrentImage(index)}
-                className={`h-2 rounded-full transition-all duration-300 ${
-                  index === currentImage 
-                    ? "w-8 bg-primary" 
-                    : "w-2 bg-white/40 hover:bg-white/60"
-                }`}
-                aria-label={`Go to slide ${index + 1}`}
-              />
-            ))}
           </div>
         </div>
       </div>
