@@ -48,11 +48,12 @@ export function FeaturedCars() {
           {featuredCars.map((car, index) => (
             <Card
               key={car.id}
-              className={`group overflow-hidden rounded-lg border-2 border-border bg-card shadow-lg transition-all duration-1000 hover:border-primary hover:shadow-2xl hover:shadow-primary/20 ${
+              className={`group flex flex-col overflow-hidden rounded-lg border border-border bg-card shadow-lg transition-all duration-1000 hover:border-primary hover:shadow-2xl hover:shadow-primary/20 ${
                 isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
               }`}
               style={{ transitionDelay: `${index * 100}ms` }}
             >
+              {/* Car Image - No padding, fills top */}
               <div className="relative aspect-[4/3] overflow-hidden bg-muted">
                 <img
                   src={car.image || "/placeholder.svg?height=400&width=600"}
@@ -61,37 +62,44 @@ export function FeaturedCars() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
               </div>
-              <CardContent className="p-6">
+
+              {/* Car Details */}
+              <CardContent className="flex flex-col gap-4 p-6">
+                {/* Name and Price */}
                 <div className="flex items-start justify-between gap-4">
-                  <h3 className="text-xl font-bold uppercase tracking-tight text-foreground leading-tight">
+                  <h3 className="text-lg font-bold uppercase tracking-tight text-foreground leading-tight flex-1">
                     {car.name}
                   </h3>
-                  <span className="shrink-0 rounded-lg bg-primary px-4 py-2 text-lg font-bold text-primary-foreground shadow-md">
+                  <span className="shrink-0 rounded-md bg-primary px-3 py-2 text-sm font-bold text-primary-foreground shadow-md">
                     {car.price}
                   </span>
                 </div>
-                <div className="mt-6 grid grid-cols-2 gap-4 text-sm">
-                  <div className="flex items-center gap-2 text-white">
-                    <Calendar className="h-4 w-4 text-primary" />
-                    <span className="font-semibold">{car.year}</span>
+
+                {/* Specs Grid */}
+                <div className="grid grid-cols-2 gap-3 text-sm">
+                  <div className="flex items-center gap-2">
+                    <Calendar className="h-5 w-5 text-primary" />
+                    <span className="font-semibold text-foreground">{car.year}</span>
                   </div>
-                  <div className="flex items-center gap-2 text-white">
-                    <Gauge className="h-4 w-4 text-primary" />
-                    <span className="font-semibold">{car.km}</span>
+                  <div className="flex items-center gap-2">
+                    <Gauge className="h-5 w-5 text-primary" />
+                    <span className="font-semibold text-foreground">{car.km}</span>
                   </div>
-                  <div className="flex items-center gap-2 text-white">
-                    <Fuel className="h-4 w-4 text-primary" />
-                    <span className="font-semibold">{translateFuel(car.fuel)}</span>
+                  <div className="flex items-center gap-2">
+                    <Fuel className="h-5 w-5 text-primary" />
+                    <span className="font-semibold text-foreground">{translateFuel(car.fuel)}</span>
                   </div>
-                  <div className="flex items-center gap-2 text-white">
-                    <Settings className="h-4 w-4 text-primary" />
-                    <span className="font-semibold">{translateTransmission(car.transmission)}</span>
+                  <div className="flex items-center gap-2">
+                    <Settings className="h-5 w-5 text-primary" />
+                    <span className="font-semibold text-foreground">{translateTransmission(car.transmission)}</span>
                   </div>
                 </div>
               </CardContent>
-              <CardFooter className="p-6 pt-0">
+
+              {/* Button */}
+              <CardFooter className="px-6 pb-6">
                 <Link href={`/veiculo/${car.id}`} className="w-full">
-                  <Button className="w-full rounded-lg bg-primary py-6 text-base font-bold uppercase tracking-wide text-primary-foreground transition-all duration-300 hover:scale-[1.02] hover:bg-primary/90 hover:shadow-lg">
+                  <Button className="w-full rounded-md bg-primary py-5 text-base font-bold uppercase tracking-wide text-primary-foreground transition-all duration-300 hover:bg-primary/90 hover:shadow-lg">
                     {t.featured.viewDetails}
                   </Button>
                 </Link>
