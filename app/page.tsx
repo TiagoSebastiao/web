@@ -26,60 +26,23 @@ export default function Page() {
     <LanguageProvider>
       {isLoading && <LoadingScreen onLoadingComplete={handleLoadingComplete} />}
       
-      <div 
+      {/* Header is always rendered so the fixed navbar is visible immediately after loading */}
+      <Header />
+
+      <div
         className={`min-h-screen transition-all duration-700 ${
-          showContent ? "opacity-100" : "opacity-0"
+          showContent ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
         }`}
       >
-        <div className={`transition-all duration-700 delay-100 ${
-          showContent ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"
-        }`}>
-          <Header />
-        </div>
-        
-        <main>
-          <div className={`transition-all duration-700 delay-200 ${
-            showContent ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
-          }`}>
-            <HeroSection />
-          </div>
-          
-          <div className={`transition-all duration-700 delay-300 ${
-            showContent ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
-          }`}>
-            <FeaturedCars />
-          </div>
-          
-          <div className={`transition-all duration-700 delay-400 ${
-            showContent ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
-          }`}>
-            <MissionSection />
-          </div>
-          
-          <div className={`transition-all duration-700 delay-500 ${
-            showContent ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
-          }`}>
-            <AboutSection />
-          </div>
-          
-          <div className={`transition-all duration-700 delay-500 ${
-            showContent ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
-          }`}>
-            <ServicesSection />
-          </div>
-          
-          <div className={`transition-all duration-700 delay-500 ${
-            showContent ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
-          }`}>
-            <ContactSection />
-          </div>
+        <main className="pt-24">
+          <HeroSection />
+          <FeaturedCars />
+          <MissionSection />
+          <AboutSection />
+          <ServicesSection />
+          <ContactSection />
         </main>
-        
-        <div className={`transition-all duration-700 delay-500 ${
-          showContent ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
-        }`}>
-          <Footer />
-        </div>
+        <Footer />
       </div>
     </LanguageProvider>
   )
