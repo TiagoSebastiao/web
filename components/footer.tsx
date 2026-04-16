@@ -1,7 +1,7 @@
 "use client"
 
 import { useLanguage } from "@/hooks/use-language"
-import { Facebook, Instagram, Linkedin, Youtube } from "lucide-react"
+import { Facebook, Instagram, Youtube } from "lucide-react"
 import Image from "next/image"
 
 const TikTokIcon = () => (
@@ -63,9 +63,6 @@ export function Footer() {
               </button>
               <button className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 text-primary ring-2 ring-primary/20 transition-all hover:scale-110 hover:bg-primary hover:text-primary-foreground hover:ring-primary">
                 <TikTokIcon />
-              </button>
-              <button className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 text-primary ring-2 ring-primary/20 transition-all hover:scale-110 hover:bg-primary hover:text-primary-foreground hover:ring-primary">
-                <Linkedin className="h-5 w-5" />
               </button>
             </div>
           </div>

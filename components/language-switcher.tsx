@@ -27,13 +27,17 @@ export function LanguageSwitcher() {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="ghost" size="icon" className="h-10 w-10 rounded-lg">
+        <Button 
+          variant="ghost" 
+          size="icon" 
+          className="group h-10 w-10 rounded-lg transition-all duration-300 hover:bg-white/10 hover:scale-110"
+        >
           <Image
             src={flags[language] || "/placeholder.svg"}
             alt={languages[language]}
             width={24}
             height={16}
-            className="rounded"
+            className="rounded transition-transform duration-300 group-hover:scale-110"
           />
         </Button>
       </DropdownMenuTrigger>
@@ -42,7 +46,7 @@ export function LanguageSwitcher() {
           <DropdownMenuItem
             key={code}
             onClick={() => setLanguage(code as keyof typeof flags)}
-            className="gap-3 cursor-pointer"
+            className="gap-3 cursor-pointer transition-all duration-200 hover:scale-[1.02]"
           >
             <Image
               src={flags[code as keyof typeof flags] || "/placeholder.svg"}
