@@ -4,6 +4,7 @@ import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Menu, X } from "lucide-react"
 import { LanguageSwitcher } from "./language-switcher"
+import { ThemeToggle } from "./theme-toggle"
 import { useLanguage } from "@/hooks/use-language"
 import Image from "next/image"
 
@@ -33,7 +34,7 @@ export function Header() {
         <nav className="absolute left-1/2 hidden -translate-x-1/2 items-center gap-1 md:flex">
           <button
             onClick={() => scrollToSection("anuncios")}
-            className="group relative px-5 py-2 text-sm font-bold uppercase tracking-wider text-white transition-all duration-300 hover:scale-110 hover:text-white/90"
+            className="group relative px-5 py-2 text-sm font-bold uppercase tracking-wider text-foreground transition-all duration-300 hover:scale-110 hover:text-foreground/90"
           >
             <span className="relative z-10">{t.nav.vehicles}</span>
             <span className="absolute inset-0 scale-75 rounded-md bg-primary/10 opacity-0 transition-all duration-300 group-hover:scale-100 group-hover:opacity-100" />
@@ -41,7 +42,7 @@ export function Header() {
           </button>
           <button
             onClick={() => scrollToSection("servicos")}
-            className="group relative px-5 py-2 text-sm font-bold uppercase tracking-wider text-white transition-all duration-300 hover:scale-110 hover:text-white/90"
+            className="group relative px-5 py-2 text-sm font-bold uppercase tracking-wider text-foreground transition-all duration-300 hover:scale-110 hover:text-foreground/90"
           >
             <span className="relative z-10">{t.nav.services}</span>
             <span className="absolute inset-0 scale-75 rounded-md bg-primary/10 opacity-0 transition-all duration-300 group-hover:scale-100 group-hover:opacity-100" />
@@ -49,7 +50,7 @@ export function Header() {
           </button>
           <button
             onClick={() => scrollToSection("contactos")}
-            className="group relative px-5 py-2 text-sm font-bold uppercase tracking-wider text-white transition-all duration-300 hover:scale-110 hover:text-white/90"
+            className="group relative px-5 py-2 text-sm font-bold uppercase tracking-wider text-foreground transition-all duration-300 hover:scale-110 hover:text-foreground/90"
           >
             <span className="relative z-10">{t.nav.contacts}</span>
             <span className="absolute inset-0 scale-75 rounded-md bg-primary/10 opacity-0 transition-all duration-300 group-hover:scale-100 group-hover:opacity-100" />
@@ -57,8 +58,9 @@ export function Header() {
           </button>
         </nav>
 
-        {/* Language Switcher & Mobile Menu */}
-        <div className="flex items-center gap-4">
+        {/* Theme Toggle, Language Switcher & Mobile Menu */}
+        <div className="flex items-center gap-2">
+          <ThemeToggle />
           <LanguageSwitcher />
           <Button variant="ghost" size="icon" onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className="md:hidden">
             {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
