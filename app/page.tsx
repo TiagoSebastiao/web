@@ -18,8 +18,8 @@ export default function Page() {
         <main>
           <HeroSection />
           <FeaturedCars />
-          <MissionSection />
           <AboutSection />
+          <MissionSection />
           <ServicesSection />
           <ContactSection />
         </main>

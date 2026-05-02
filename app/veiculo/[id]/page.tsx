@@ -30,8 +30,8 @@ export default function VehicleDetailPage() {
   const { t, language } = useLanguage()
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
   const [isImageExpanded, setIsImageExpanded] = useState(false)
-  const [isDragging, setIsDragging] = useState(false)
-  const [dragStartX, setDragStartX] = useState(0)
+  const [zoom, setZoom] = useState(1)
+  const [touchStartX, setTouchStartX] = useState(0)
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "instant" })
@@ -43,240 +43,274 @@ export default function VehicleDetailPage() {
     return (
       <>
         <Header />
-        <div className="flex min-h-screen items-center justify-center pt-24">
+        <main className="flex min-h-[calc(100vh-96px)] items-center justify-center bg-background">
           <div className="text-center">
             <h1 className="text-2xl font-bold">Veículo não encontrado</h1>
             <Link href="/#anuncios">
               <Button className="mt-4">Voltar aos Veículos</Button>
             </Link>
           </div>
-        </div>
+        </main>
         <Footer />
       </>
     )
   }
 
   const handlePrevImage = () => {
-    setCurrentImageIndex((prev) => (prev === 0 ? car.images.length - 1 : prev - 1))
+    setZoom(1)
+    setCurrentImageIndex((prev) =>
+      prev === 0 ? car.images.length - 1 : prev - 1
+    )
   }
 
   const handleNextImage = () => {
-    setCurrentImageIndex((prev) => (prev === car.images.length - 1 ? 0 : prev + 1))
+    setZoom(1)
+    setCurrentImageIndex((prev) =>
+      prev === car.images.length - 1 ? 0 : prev + 1
+    )
   }
 
   const handleImageClick = (index: number) => {
+    setZoom(1)
     setCurrentImageIndex(index)
   }
 
   const handleExpandImage = () => {
-    if (!isDragging) {
-      setIsImageExpanded(true)
-    }
+    setZoom(1)
+    setIsImageExpanded(true)
   }
 
   const handleCloseExpanded = () => {
+    setZoom(1)
     setIsImageExpanded(false)
   }
 
-  const handleMouseDown = (e: React.MouseEvent<HTMLDivElement>) => {
-    setIsDragging(false)
-    setDragStartX(e.clientX)
-  }
+  const handleWheelZoom = (e: React.WheelEvent<HTMLImageElement>) => {
+    e.preventDefault()
+    e.stopPropagation()
 
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (e.buttons === 1) {
-      const diff = e.clientX - dragStartX
-      if (Math.abs(diff) > 50) {
-        setIsDragging(true)
-        if (diff > 0) {
-          handlePrevImage()
-        } else {
-          handleNextImage()
-        }
-        setDragStartX(e.clientX)
-      }
-      e.currentTarget.style.cursor = "grabbing"
+    if (e.deltaY < 0) {
+      setZoom((prev) => Math.min(prev + 0.2, 3))
     } else {
-      e.currentTarget.style.cursor = "grab"
+      setZoom((prev) => Math.max(prev - 0.2, 1))
     }
   }
 
-  const handleMouseUp = (e: React.MouseEvent<HTMLDivElement>) => {
-    e.currentTarget.style.cursor = "grab"
-    if (!isDragging) {
-      handleExpandImage()
+  const handleTouchStart = (e: React.TouchEvent<HTMLImageElement>) => {
+    setTouchStartX(e.touches[0].clientX)
+  }
+
+  const handleTouchEnd = (e: React.TouchEvent<HTMLImageElement>) => {
+    const touchEndX = e.changedTouches[0].clientX
+    const diff = touchStartX - touchEndX
+
+    if (Math.abs(diff) > 50) {
+      if (diff > 0) {
+        handleNextImage()
+      } else {
+        handlePrevImage()
+      }
     }
-    setTimeout(() => setIsDragging(false), 100)
   }
 
   return (
     <>
       <Header />
-      <div className="min-h-screen bg-background pt-16">
-        <div className="container mx-auto px-4 py-2">
+
+      <main className="min-h-screen bg-background">
+        <div className="container mx-auto px-4 pb-12 pt-5">
           <Link href="/#anuncios">
-            <Button variant="ghost" className="mb-1 gap-2">
+            <Button
+              variant="ghost"
+              className="mb-4 gap-2 px-0 text-sm font-semibold hover:bg-transparent hover:text-primary"
+            >
               <ArrowLeft className="h-4 w-4" />
               {t.vehicleDetail.backToVehicles}
             </Button>
           </Link>
 
-          <div className="mb-6 flex flex-col items-start justify-between gap-4 md:flex-row md:items-center">
+          <div className="grid gap-6 lg:grid-cols-[minmax(0,2fr)_400px]">
             <div>
-              <h1 className="text-4xl font-bold uppercase tracking-tight text-foreground">{car.name}</h1>
-              <p className="mt-2 text-muted-foreground">{car.description[language as keyof typeof car.description]}</p>
-            </div>
-          </div>
+              <div className="relative mb-3">
+                <div
+                  onClick={handleExpandImage}
+                  className="relative aspect-[16/8.5] cursor-pointer overflow-hidden rounded-2xl border border-border bg-muted shadow-xl"
+                >
+                  <img
+                    src={car.images[currentImageIndex] || "/placeholder.svg"}
+                    alt={`${car.name} - Image ${currentImageIndex + 1}`}
+                    className="block h-full w-full select-none object-cover object-center pointer-events-none"
+                    draggable="false"
+                  />
 
-          <div className="grid gap-8 lg:grid-cols-3">
-            <div className="lg:col-span-2">
-              <div
-                className="relative mb-4 aspect-[16/10] overflow-hidden rounded-lg bg-muted cursor-grab active:cursor-grabbing"
-                onMouseDown={handleMouseDown}
-                onMouseMove={handleMouseMove}
-                onMouseUp={handleMouseUp}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.cursor = "grab"
-                }}
-              >
-                <img
-                  src={car.images[currentImageIndex] || "/placeholder.svg"}
-                  alt={`${car.name} - Image ${currentImageIndex + 1}`}
-                  className="h-full w-full object-cover select-none pointer-events-none"
-                  draggable="false"
-                />
-              </div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent" />
 
-              <div className="relative">
-                <div className="flex items-center gap-2">
-                  <Button
-                    variant="outline"
-                    size="icon"
-                    className="shrink-0 bg-transparent"
-                    onClick={handlePrevImage}
-                    aria-label="Previous image"
-                  >
-                    <ChevronLeft className="h-4 w-4" />
-                  </Button>
+                  <div className="absolute bottom-0 left-0 right-0 p-5 md:p-7">
+                    <h1 className="max-w-4xl text-3xl font-black uppercase leading-tight tracking-tight text-white md:text-5xl">
+                      {car.name}
+                    </h1>
 
-                  <div className="flex flex-1 gap-2 overflow-x-auto">
-                    {car.images.map((image, index) => (
-                      <button
-                        key={index}
-                        onClick={() => handleImageClick(index)}
-                        className={`shrink-0 overflow-hidden rounded-md border-2 transition-all ${
-                          currentImageIndex === index ? "border-primary ring-2 ring-primary/50" : "border-border"
-                        }`}
-                      >
-                        <img
-                          src={image || "/placeholder.svg"}
-                          alt={`${car.name} thumbnail ${index + 1}`}
-                          className="h-20 w-28 object-cover"
-                        />
-                      </button>
-                    ))}
+                    <p className="mt-3 max-w-4xl text-sm leading-relaxed text-white/75 md:text-base">
+                      {car.description[language as keyof typeof car.description]}
+                    </p>
                   </div>
-
-                  <Button
-                    variant="outline"
-                    size="icon"
-                    className="shrink-0 bg-transparent"
-                    onClick={handleNextImage}
-                    aria-label="Next image"
-                  >
-                    <ChevronRight className="h-4 w-4" />
-                  </Button>
                 </div>
+
+                <button
+                  type="button"
+                  onClick={(e) => {
+                    e.stopPropagation()
+                    handlePrevImage()
+                  }}
+                  className="absolute left-4 top-1/2 hidden h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full bg-black/60 text-white backdrop-blur-md transition hover:bg-primary md:flex"
+                  aria-label="Previous image"
+                >
+                  <ChevronLeft className="h-5 w-5" />
+                </button>
+
+                <button
+                  type="button"
+                  onClick={(e) => {
+                    e.stopPropagation()
+                    handleNextImage()
+                  }}
+                  className="absolute right-4 top-1/2 hidden h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full bg-black/60 text-white backdrop-blur-md transition hover:bg-primary md:flex"
+                  aria-label="Next image"
+                >
+                  <ChevronRight className="h-5 w-5" />
+                </button>
+              </div>
+
+              <div className="flex gap-3 overflow-x-auto pb-2">
+                {car.images.map((image, index) => (
+                  <button
+                    key={index}
+                    onClick={() => handleImageClick(index)}
+                    className={`shrink-0 overflow-hidden rounded-xl border-2 transition-all ${
+                      currentImageIndex === index
+                        ? "border-primary ring-2 ring-primary/40"
+                        : "border-border opacity-70 hover:opacity-100"
+                    }`}
+                  >
+                    <img
+                      src={image || "/placeholder.svg"}
+                      alt={`${car.name} thumbnail ${index + 1}`}
+                      className="block h-16 w-28 object-cover md:h-20 md:w-32"
+                    />
+                  </button>
+                ))}
               </div>
             </div>
 
             <div>
-              <Card className="border-2 border-border">
-                <CardHeader>
-                  <CardTitle className="text-2xl">{t.vehicleDetail.specifications}</CardTitle>
+              <Card className="sticky top-28 rounded-2xl border border-border bg-card shadow-xl">
+                <CardHeader className="pb-3">
+                  <CardTitle className="text-2xl font-black">
+                    {t.vehicleDetail.specifications}
+                  </CardTitle>
                 </CardHeader>
+
                 <CardContent className="space-y-4">
                   <div className="grid grid-cols-2 gap-4 text-sm">
-                    <div className="flex items-center gap-2">
-                      <Calendar className="h-4 w-4 text-primary" />
+                    <div className="flex items-center gap-3">
+                      <Calendar className="h-5 w-5 text-primary" />
                       <div>
-                        <p className="text-xs text-muted-foreground">{t.vehicleDetail.registration}</p>
-                        <p className="font-semibold">{car.specifications.registration}</p>
+                        <p className="text-xs text-muted-foreground">
+                          {t.vehicleDetail.registration}
+                        </p>
+                        <p className="font-bold">{car.specifications.registration}</p>
                       </div>
                     </div>
-                    <div className="flex items-center gap-2">
-                      <Gauge className="h-4 w-4 text-primary" />
+
+                    <div className="flex items-center gap-3">
+                      <Gauge className="h-5 w-5 text-primary" />
                       <div>
-                        <p className="text-xs text-muted-foreground">{t.featured.km}</p>
-                        <p className="font-semibold">{car.km}</p>
+                        <p className="text-xs text-muted-foreground">
+                          {t.featured.km}
+                        </p>
+                        <p className="font-bold">{car.km}</p>
                       </div>
                     </div>
-                    <div className="flex items-center gap-2">
-                      <Fuel className="h-4 w-4 text-primary" />
+
+                    <div className="flex items-center gap-3">
+                      <Fuel className="h-5 w-5 text-primary" />
                       <div>
-                        <p className="text-xs text-muted-foreground">{t.vehicleDetail.fuelType}</p>
-                        <p className="font-semibold">{car.specifications.fuelType}</p>
+                        <p className="text-xs text-muted-foreground">
+                          {t.vehicleDetail.fuelType}
+                        </p>
+                        <p className="font-bold">{car.specifications.fuelType}</p>
                       </div>
                     </div>
-                    <div className="flex items-center gap-2">
-                      <Settings className="h-4 w-4 text-primary" />
+
+                    <div className="flex items-center gap-3">
+                      <Settings className="h-5 w-5 text-primary" />
                       <div>
-                        <p className="text-xs text-muted-foreground">{t.featured.transmission}</p>
-                        <p className="font-semibold">{car.transmission}</p>
+                        <p className="text-xs text-muted-foreground">
+                          {t.featured.transmission}
+                        </p>
+                        <p className="font-bold">{car.transmission}</p>
                       </div>
                     </div>
                   </div>
 
-                  <div className="space-y-2 border-t pt-4">
-                    <div className="flex justify-between">
+                  <div className="space-y-2.5 border-t border-border pt-4 text-sm">
+                    <div className="flex justify-between gap-4">
                       <span className="text-muted-foreground">{t.vehicleDetail.motor}</span>
-                      <span className="font-semibold">{car.specifications.motor}</span>
+                      <span className="text-right font-bold">{car.specifications.motor}</span>
                     </div>
-                    <div className="flex justify-between">
+
+                    <div className="flex justify-between gap-4">
                       <span className="text-muted-foreground">{t.vehicleDetail.category}</span>
-                      <span className="font-semibold">{car.specifications.category}</span>
+                      <span className="text-right font-bold">{car.specifications.category}</span>
                     </div>
-                    <div className="flex justify-between">
+
+                    <div className="flex justify-between gap-4">
                       <span className="text-muted-foreground">{t.vehicleDetail.seats}</span>
-                      <span className="font-semibold">{car.specifications.seats}</span>
+                      <span className="text-right font-bold">{car.specifications.seats}</span>
                     </div>
-                    <div className="flex justify-between">
+
+                    <div className="flex justify-between gap-4">
                       <span className="text-muted-foreground">{t.vehicleDetail.color}</span>
-                      <span className="font-semibold">{car.specifications.color}</span>
+                      <span className="text-right font-bold">{car.specifications.color}</span>
                     </div>
-                    <div className="flex justify-between">
+
+                    <div className="flex justify-between gap-4">
                       <span className="text-muted-foreground">{t.vehicleDetail.doors}</span>
-                      <span className="font-semibold">{car.specifications.doors}</span>
+                      <span className="text-right font-bold">{car.specifications.doors}</span>
                     </div>
-                    <div className="flex justify-between">
+
+                    <div className="flex justify-between gap-4">
                       <span className="text-muted-foreground">{t.vehicleDetail.origin}</span>
-                      <span className="font-semibold">{car.specifications.origin}</span>
+                      <span className="text-right font-bold">{car.specifications.origin}</span>
                     </div>
                   </div>
 
-                  <div className="border-t pt-4">
-                    <div className="mb-4 text-center">
-                      <p className="text-4xl font-bold text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
-                        {car.price}
-                      </p>
-                    </div>
+                  <div className="border-t border-border pt-4">
+                    <p className="mb-4 text-center text-4xl font-black text-white">
+                      {car.price}
+                    </p>
 
                     <div className="flex gap-3">
                       <Button
-                        className="h-14 flex-1 gap-2 bg-primary text-base font-bold hover:bg-primary/90 hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
+                        className="h-12 flex-1 gap-2 bg-primary text-sm font-bold transition-all duration-300 hover:scale-105 hover:bg-primary/90"
                         asChild
                       >
-                        <a href="https://wa.me/351912345678" target="_blank" rel="noopener noreferrer">
+                        <a
+                          href="https://wa.me/351938798993"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
                           <MessageCircle className="h-5 w-5" />
                           WhatsApp
                         </a>
                       </Button>
+
                       <Button
                         size="icon"
-                        className="h-14 w-14 shrink-0 bg-primary hover:bg-primary/90 shadow-lg"
+                        className="h-12 w-12 shrink-0 bg-primary hover:bg-primary/90"
                         asChild
                       >
-                        <a href="tel:+351912345678">
+                        <a href="tel:+351938798993">
                           <Phone className="h-5 w-5" />
                         </a>
                       </Button>
@@ -287,19 +321,20 @@ export default function VehicleDetailPage() {
             </div>
           </div>
 
-          <div className="mt-8 grid gap-6 md:grid-cols-3">
-            <Card className="border-2 border-border">
+          <div className="mt-8 grid gap-5 md:grid-cols-3">
+            <Card className="rounded-2xl border border-border bg-card">
               <CardHeader className="pb-4">
                 <CardTitle className="flex items-center gap-2">
                   <Settings className="h-5 w-5 text-primary" />
                   {t.vehicleDetail.equipment}
                 </CardTitle>
               </CardHeader>
+
               <CardContent className="pt-0">
                 <ul className="space-y-3">
                   {car.equipment.map((item, index) => (
                     <li key={index} className="flex items-start gap-2 text-sm">
-                      <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
+                      <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
                       <span>{item}</span>
                     </li>
                   ))}
@@ -307,48 +342,36 @@ export default function VehicleDetailPage() {
               </CardContent>
             </Card>
 
-            <Card className="border-2 border-border">
+            <Card className="rounded-2xl border border-border bg-card">
               <CardHeader className="pb-4">
                 <CardTitle className="flex items-center gap-2">
                   <Gauge className="h-5 w-5 text-primary" />
                   {t.vehicleDetail.technicalData}
                 </CardTitle>
               </CardHeader>
+
               <CardContent className="space-y-4 pt-0">
-                <div>
-                  <p className="text-xs text-muted-foreground">{t.vehicleDetail.weight}</p>
-                  <p className="font-semibold">{car.technicalData.weight}</p>
-                </div>
-                <div>
-                  <p className="text-xs text-muted-foreground">{t.vehicleDetail.engine}</p>
-                  <p className="font-semibold">{car.technicalData.engine}</p>
-                </div>
-                <div>
-                  <p className="text-xs text-muted-foreground">{t.vehicleDetail.power}</p>
-                  <p className="font-semibold">{car.technicalData.power}</p>
-                </div>
-                <div>
-                  <p className="text-xs text-muted-foreground">{t.vehicleDetail.torque}</p>
-                  <p className="font-semibold">{car.technicalData.torque}</p>
-                </div>
-                <div>
-                  <p className="text-xs text-muted-foreground">{t.vehicleDetail.acceleration}</p>
-                  <p className="font-semibold">{car.technicalData.acceleration}</p>
-                </div>
-                <div>
-                  <p className="text-xs text-muted-foreground">{t.vehicleDetail.topSpeed}</p>
-                  <p className="font-semibold">{car.technicalData.topSpeed}</p>
-                </div>
-                <div>
-                  <p className="text-xs text-muted-foreground">{t.vehicleDetail.consumption}</p>
-                  <p className="font-semibold">{car.technicalData.consumption}</p>
-                </div>
-                <div>
-                  <p className="text-xs text-muted-foreground">{t.vehicleDetail.emissions}</p>
-                  <p className="font-semibold">{car.technicalData.emissions}</p>
-                </div>
-                <div className="border-t pt-4">
-                  <p className="mb-3 font-semibold">{t.vehicleDetail.dimensions}</p>
+                {[
+                  [t.vehicleDetail.weight, car.technicalData.weight],
+                  [t.vehicleDetail.engine, car.technicalData.engine],
+                  [t.vehicleDetail.power, car.technicalData.power],
+                  [t.vehicleDetail.torque, car.technicalData.torque],
+                  [t.vehicleDetail.acceleration, car.technicalData.acceleration],
+                  [t.vehicleDetail.topSpeed, car.technicalData.topSpeed],
+                  [t.vehicleDetail.consumption, car.technicalData.consumption],
+                  [t.vehicleDetail.emissions, car.technicalData.emissions],
+                ].map(([label, value]) => (
+                  <div key={label}>
+                    <p className="text-xs text-muted-foreground">{label}</p>
+                    <p className="font-semibold">{value}</p>
+                  </div>
+                ))}
+
+                <div className="border-t border-border pt-4">
+                  <p className="mb-3 font-semibold">
+                    {t.vehicleDetail.dimensions}
+                  </p>
+
                   <div className="space-y-2 text-sm">
                     <div className="flex justify-between">
                       <span className="text-muted-foreground">{t.vehicleDetail.length}</span>
@@ -367,7 +390,9 @@ export default function VehicleDetailPage() {
                       <span>{car.technicalData.dimensions.wheelbase}</span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="text-muted-foreground">{t.vehicleDetail.trunkCapacity}</span>
+                      <span className="text-muted-foreground">
+                        {t.vehicleDetail.trunkCapacity}
+                      </span>
                       <span>{car.technicalData.dimensions.trunkCapacity}</span>
                     </div>
                   </div>
@@ -375,30 +400,37 @@ export default function VehicleDetailPage() {
               </CardContent>
             </Card>
 
-            <Card className="border-2 border-border">
+            <Card className="rounded-2xl border border-border bg-card">
               <CardHeader className="pb-4">
                 <CardTitle className="flex items-center gap-2">
                   <ShieldCheck className="h-5 w-5 text-primary" />
                   {t.vehicleDetail.details}
                 </CardTitle>
               </CardHeader>
+
               <CardContent className="space-y-4 pt-0">
                 <div>
-                  <p className="text-xs text-muted-foreground">{t.vehicleDetail.financing}</p>
+                  <p className="text-xs text-muted-foreground">
+                    {t.vehicleDetail.financing}
+                  </p>
                   <p className="font-semibold text-green-600">
-                    {car.details.financing ? t.vehicleDetail.financingAvailable : "Não disponível"}
+                    {car.details.financing
+                      ? t.vehicleDetail.financingAvailable
+                      : "Não disponível"}
                   </p>
                 </div>
+
                 <div>
-                  <p className="text-xs text-muted-foreground">{t.vehicleDetail.warranty}</p>
+                  <p className="text-xs text-muted-foreground">
+                    {t.vehicleDetail.warranty}
+                  </p>
                   <p className="font-semibold">{car.details.warranty}</p>
                 </div>
+
                 <div>
-                  <p className="text-xs text-muted-foreground">{t.vehicleDetail.ownerHistory}</p>
-                  <p className="font-semibold">{car.details.ownerHistory}</p>
-                </div>
-                <div>
-                  <p className="text-xs text-muted-foreground">{t.vehicleDetail.serviceHistory}</p>
+                  <p className="text-xs text-muted-foreground">
+                    {t.vehicleDetail.serviceHistory}
+                  </p>
                   <p className="font-semibold">{car.details.serviceHistory}</p>
                 </div>
               </CardContent>
@@ -408,25 +440,62 @@ export default function VehicleDetailPage() {
 
         {isImageExpanded && (
           <div
-            className="fixed inset-0 z-50 flex items-center justify-center bg-black/95"
+            className="fixed inset-0 z-50 flex items-center justify-center overflow-hidden bg-black/95 p-4"
             onClick={handleCloseExpanded}
           >
             <button
               onClick={handleCloseExpanded}
-              className="absolute left-4 top-4 rounded-full bg-white/10 p-2 backdrop-blur-sm transition-colors hover:bg-white/20"
+              className="absolute left-4 top-4 z-50 rounded-full bg-white/10 p-2 backdrop-blur-sm transition-colors hover:bg-white/20"
               aria-label="Close expanded image"
             >
               <X className="h-6 w-6 text-white" />
             </button>
+
+            <button
+              onClick={(e) => {
+                e.stopPropagation()
+                handlePrevImage()
+              }}
+              className="absolute left-4 top-1/2 z-50 flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full bg-white/10 text-white backdrop-blur-md transition hover:bg-primary"
+              aria-label="Previous image"
+            >
+              <ChevronLeft className="h-6 w-6" />
+            </button>
+
+            <button
+              onClick={(e) => {
+                e.stopPropagation()
+                handleNextImage()
+              }}
+              className="absolute right-4 top-1/2 z-50 flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full bg-white/10 text-white backdrop-blur-md transition hover:bg-primary"
+              aria-label="Next image"
+            >
+              <ChevronRight className="h-6 w-6" />
+            </button>
+
             <img
               src={car.images[currentImageIndex] || "/placeholder.svg"}
               alt={`${car.name} expanded`}
-              className="max-h-[90vh] max-w-[90vw] object-contain"
-              onClick={(e) => e.stopPropagation()}
+              className="max-h-[90vh] max-w-[90vw] cursor-pointer select-none object-contain transition-transform duration-200"
+              style={{ transform: `scale(${zoom})` }}
+              draggable="false"
+              onClick={(e) => {
+                e.stopPropagation()
+                handleNextImage()
+              }}
+              onWheel={handleWheelZoom}
+              onTouchStart={handleTouchStart}
+              onTouchEnd={handleTouchEnd}
             />
+
+            <div className="absolute bottom-5 left-1/2 z-50 -translate-x-1/2 rounded-full bg-white/10 px-4 py-2 text-sm font-semibold text-white backdrop-blur-md">
+              {currentImageIndex + 1} / {car.images.length} · Zoom{" "}
+              {Math.round(zoom * 100)}%
+            </div>
           </div>
         )}
-      </div>
+      </main>
+
       <Footer />
     </>
   )

@@ -6,27 +6,39 @@ import { Menu, X } from "lucide-react"
 import { LanguageSwitcher } from "./language-switcher"
 import { useLanguage } from "@/hooks/use-language"
 import Image from "next/image"
+import Link from "next/link"
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const { t } = useLanguage()
-
+  
   const scrollToSection = (id: string) => {
-    const element = document.getElementById(id)
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" })
-      setMobileMenuOpen(false)
-    }
+  const element = document.getElementById(id)
+
+  if (element) {
+    element.scrollIntoView({ behavior: "smooth" })
+    setMobileMenuOpen(false)
+    return
+  }
+
+  window.location.href = `/#${id}`
+  
   }
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border bg-background/95 shadow-sm backdrop-blur-sm supports-[backdrop-filter]:bg-background/90">
       <div className="container mx-auto flex h-24 items-center justify-between px-4 md:px-6">
         <div className="flex items-center">
-          
-          <Image src="/logo.png" alt="OTEN MOTORS" width={165} height={48} className="h-9 w-auto md:h-12" priority/>
-
-          {/*<Image src="/logo.png" alt="OTEN MOTORS" width={165} height={48} className="h-32 w-auto md:h-36" priority />*/}
+          <Link href="/" className="transition-transform hover:scale-105">
+            <Image
+              src="/logo.png"
+              alt="OTEN MOTORS"
+              width={165}
+              height={48}
+              className="h-9 w-auto cursor-pointer md:h-12"
+              priority
+            />
+          </Link>
         </div>
 
         {/* Desktop Navigation - Centered - Changed text color to white */}

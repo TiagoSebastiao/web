@@ -159,7 +159,7 @@ export const translations: Translations = {
       terms: "Termos e Condições",
       privacy: "Política de Privacidade",
       cookies: "Política de Cookies",
-      rights: "© 2025 OTEN MOTORS. Todos os direitos reservados.",
+      rights: "© 2026 OTEN MOTORS. Todos os direitos reservados.",
     },
     vehicleDetail: {
       specifications: "Especificações",
@@ -258,7 +258,7 @@ export const translations: Translations = {
       terms: "Terms and Conditions",
       privacy: "Privacy Policy",
       cookies: "Cookie Policy",
-      rights: "© 2025 OTEN MOTORS. All rights reserved.",
+      rights: "© 2026 OTEN MOTORS. All rights reserved.",
     },
     vehicleDetail: {
       specifications: "Specifications",
@@ -357,7 +357,7 @@ export const translations: Translations = {
       terms: "Términos y Condiciones",
       privacy: "Política de Privacidad",
       cookies: "Política de Cookies",
-      rights: "© 2025 OTEN MOTORS. Todos los derechos reservados.",
+      rights: "© 2026 OTEN MOTORS. Todos los derechos reservados.",
     },
     vehicleDetail: {
       specifications: "Especificaciones",
@@ -456,7 +456,7 @@ export const translations: Translations = {
       terms: "Conditions Générales",
       privacy: "Politique de Confidentialité",
       cookies: "Politique des Cookies",
-      rights: "© 2025 OTEN MOTORS. Tous droits réservés.",
+      rights: "© 2026 OTEN MOTORS. Tous droits réservés.",
     },
     vehicleDetail: {
       specifications: "Spécifications",
@@ -555,7 +555,7 @@ export const translations: Translations = {
       terms: "Allgemeine Geschäftsbedingungen",
       privacy: "Datenschutzrichtlinie",
       cookies: "Cookie-Richtlinie",
-      rights: "© 2025 OTEN MOTORS. Alle Rechte vorbehalten.",
+      rights: "© 2026 OTEN MOTORS. Alle Rechte vorbehalten.",
     },
     vehicleDetail: {
       specifications: "Spezifikationen",

@@ -15,6 +15,7 @@ import { useScrollAnimation } from "@/hooks/use-scroll-animation"
 export function ContactSection() {
   const { t } = useLanguage()
   const { ref, isVisible } = useScrollAnimation()
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -22,36 +23,64 @@ export function ContactSection() {
     message: "",
   })
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    alert("Mensagem enviada! Entraremos em contacto em breve.")
-    setFormData({ name: "", email: "", phone: "", message: "" })
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      })
+
+      if (!response.ok) {
+        alert("Erro ao enviar mensagem. Tente novamente.")
+        return
+      }
+
+      alert("Mensagem enviada! Entraremos em contacto em breve.")
+      setFormData({ name: "", email: "", phone: "", message: "" })
+    } catch {
+      alert("Erro ao enviar mensagem. Tente novamente.")
+    }
   }
 
   return (
-    <section id="contactos" ref={ref} className="bg-muted/30 py-24">
+    <section
+      id="contactos"
+      ref={ref}
+      className="scroll-mt-20 bg-muted/30 py-12 md:py-16"
+    >
       <div className="container mx-auto px-4">
+        {/* 🔥 Título */}
         <div
-          className={`mb-12 text-center transition-all duration-1000 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}
+          className={`mb-10 text-center transition-all duration-1000 ${
+            isVisible ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
+          }`}
         >
           <div className="inline-block">
-            <h2 className="text-5xl font-bold uppercase tracking-tight text-foreground md:text-6xl">
+            <h2 className="text-3xl font-black uppercase tracking-tight text-foreground md:text-5xl">
               {t.contact.title}
             </h2>
-            <div className="mt-4 h-1 w-full bg-primary"></div>
+            <div className="mx-auto mt-3 h-1 w-3/4 rounded-full bg-primary" />
           </div>
         </div>
 
-        <div className="mx-auto max-w-2xl space-y-8">
-          {/* Contact Form */}
+        {/* 🔥 FORM */}
+        <div className="mx-auto max-w-2xl">
           <Card
-            className={`border-border bg-card transition-all duration-1000 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}
+            className={`rounded-2xl border border-border bg-card shadow-lg transition-all duration-1000 ${
+              isVisible ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
+            }`}
           >
-            <CardHeader>
-              <CardTitle className="text-2xl font-bold uppercase tracking-tight text-center">
+            <CardHeader className="pb-4">
+              <CardTitle className="text-center text-xl font-black uppercase tracking-tight md:text-2xl">
                 {t.contact.formTitle}
               </CardTitle>
             </CardHeader>
+
             <CardContent>
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div>
@@ -59,95 +88,139 @@ export function ContactSection() {
                   <Input
                     id="name"
                     value={formData.name}
-                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                    onChange={(e) =>
+                      setFormData({ ...formData, name: e.target.value })
+                    }
                     required
-                    className="mt-1"
+                    className="mt-1 h-11"
                   />
                 </div>
-                <div>
-                  <Label htmlFor="email">{t.contact.email}</Label>
-                  <Input
-                    id="email"
-                    type="email"
-                    value={formData.email}
-                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    required
-                    className="mt-1"
-                  />
+
+                <div className="grid gap-4 md:grid-cols-2">
+                  <div>
+                    <Label htmlFor="email">{t.contact.email}</Label>
+                    <Input
+                      id="email"
+                      type="email"
+                      value={formData.email}
+                      onChange={(e) =>
+                        setFormData({ ...formData, email: e.target.value })
+                      }
+                      required
+                      className="mt-1 h-11"
+                    />
+                  </div>
+
+                  <div>
+                    <Label htmlFor="phone">{t.contact.phone}</Label>
+                    <Input
+                      id="phone"
+                      type="tel"
+                      value={formData.phone}
+                      onChange={(e) =>
+                        setFormData({ ...formData, phone: e.target.value })
+                      }
+                      required
+                      className="mt-1 h-11"
+                    />
+                  </div>
                 </div>
-                <div>
-                  <Label htmlFor="phone">{t.contact.phone}</Label>
-                  <Input
-                    id="phone"
-                    type="tel"
-                    value={formData.phone}
-                    onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                    required
-                    className="mt-1"
-                  />
-                </div>
+
                 <div>
                   <Label htmlFor="message">{t.contact.message}</Label>
                   <Textarea
                     id="message"
-                    rows={5}
+                    rows={4}
                     value={formData.message}
-                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                    onChange={(e) =>
+                      setFormData({ ...formData, message: e.target.value })
+                    }
                     required
-                    className="mt-1"
+                    className="mt-1 resize-none"
                   />
                 </div>
+
                 <Button
                   type="submit"
                   size="lg"
-                  className="w-full bg-primary py-6 text-base font-bold uppercase tracking-wide text-primary-foreground transition-all hover:scale-[1.02] hover:bg-primary/90"
+                  className="w-full rounded-xl bg-primary py-5 text-sm font-black uppercase tracking-wide text-primary-foreground transition-all hover:scale-[1.01] hover:bg-primary/90 hover:shadow-lg hover:shadow-primary/25 md:text-base"
                 >
                   {t.contact.send}
                 </Button>
               </form>
             </CardContent>
           </Card>
+        </div>
 
-          <div
-            className={`grid gap-4 sm:grid-cols-3 transition-all duration-1000 delay-200 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}
-          >
-            <Card className="border-border bg-card transition-all hover:border-primary/50 hover:shadow-lg">
-              <CardContent className="p-6 text-center">
-                <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-primary/10 ring-2 ring-primary/20">
-                  <MessageCircle className="h-7 w-7 text-primary" />
-                </div>
-                <h3 className="mb-2 text-sm font-bold uppercase tracking-tight">WhatsApp</h3>
-                <Button
-                  variant="outline"
-                  size="sm"
-                  className="mt-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground bg-transparent"
-                  onClick={() => window.open("https://wa.me/351912345678", "_blank")}
-                >
-                  Contactar
-                </Button>
-              </CardContent>
-            </Card>
+        {/* 🔥 CONTACT CARDS (EM BAIXO) */}
+        <div
+          className={`mt-8 grid gap-4 sm:grid-cols-3 transition-all duration-1000 delay-200 ${
+            isVisible ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
+          }`}
+        >
+          {/* WhatsApp */}
+          <Card className="rounded-2xl border border-border bg-card shadow-lg transition-all hover:-translate-y-1 hover:border-primary hover:shadow-xl hover:shadow-primary/20">
+            <CardContent className="p-5 text-center">
+              <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 ring-2 ring-primary/20">
+                <MessageCircle className="h-6 w-6 text-primary" />
+              </div>
 
-            <Card className="border-border bg-card transition-all hover:border-primary/50 hover:shadow-lg">
-              <CardContent className="p-6 text-center">
-                <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-primary/10 ring-2 ring-primary/20">
-                  <Phone className="h-7 w-7 text-primary" />
-                </div>
-                <h3 className="mb-2 text-sm font-bold uppercase tracking-tight">Telefone</h3>
-                <p className="text-sm font-medium text-muted-foreground">+351 912 345 678</p>
-              </CardContent>
-            </Card>
+              <h3 className="mb-2 text-sm font-black uppercase tracking-tight">
+                WhatsApp
+              </h3>
 
-            <Card className="border-border bg-card transition-all hover:border-primary/50 hover:shadow-lg">
-              <CardContent className="p-6 text-center">
-                <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-primary/10 ring-2 ring-primary/20">
-                  <Mail className="h-7 w-7 text-primary" />
-                </div>
-                <h3 className="mb-2 text-sm font-bold uppercase tracking-tight">Email</h3>
-                <p className="text-sm font-medium text-muted-foreground">info@otenmotors.pt</p>
-              </CardContent>
-            </Card>
-          </div>
+              <Button
+                variant="outline"
+                size="sm"
+                className="mt-2 border-primary text-primary hover:bg-primary hover:text-white"
+                onClick={() =>
+                  window.open("https://wa.me/351938798993", "_blank")
+                }
+              >
+                Contactar
+              </Button>
+            </CardContent>
+          </Card>
+
+          {/* Telefone */}
+          <Card className="rounded-2xl border border-border bg-card shadow-lg transition-all hover:-translate-y-1 hover:border-primary hover:shadow-xl hover:shadow-primary/20">
+            <CardContent className="p-5 text-center">
+              <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 ring-2 ring-primary/20">
+                <Phone className="h-6 w-6 text-primary" />
+              </div>
+
+              <h3 className="mb-2 text-sm font-black uppercase tracking-tight">
+                Telefone
+              </h3>
+
+              <a
+                href="tel:+351938798993"
+                className="text-sm font-semibold text-muted-foreground hover:text-primary"
+              >
+                +351 938 798 993
+              </a>
+            </CardContent>
+          </Card>
+
+          {/* Email */}
+          <Card className="rounded-2xl border border-border bg-card shadow-lg transition-all hover:-translate-y-1 hover:border-primary hover:shadow-xl hover:shadow-primary/20">
+            <CardContent className="p-5 text-center">
+              <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 ring-2 ring-primary/20">
+                <Mail className="h-6 w-6 text-primary" />
+              </div>
+
+              <h3 className="mb-2 text-sm font-black uppercase tracking-tight">
+                Email
+              </h3>
+
+              <a
+                href="mailto:geral@otenmotors.com"
+                className="text-sm font-semibold text-muted-foreground hover:text-primary"
+              >
+                geral@otenmotors.com
+              </a>
+            </CardContent>
+          </Card>
         </div>
       </div>
     </section>

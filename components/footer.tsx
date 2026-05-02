@@ -1,8 +1,9 @@
 "use client"
 
 import { useLanguage } from "@/hooks/use-language"
-import { Facebook, Instagram, Linkedin, Youtube } from "lucide-react"
+import { Facebook, Instagram, Youtube } from "lucide-react"
 import Image from "next/image"
+import Link from "next/link"
 
 const TikTokIcon = () => (
   <svg viewBox="0 0 24 24" fill="currentColor" className="h-5 w-5">
@@ -19,53 +20,86 @@ export function Footer() {
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
           <div>
             <div className="mb-4">
-              <Image src="/logo.png" alt="OTEN MOTORS" width={360} height={120} className="h-12 w-auto md:h-14 opacity-80"/>
+              <Image
+                src="/logo.png"
+                alt="OTEN MOTORS"
+                width={360}
+                height={120}
+                className="h-12 w-auto md:h-14 opacity-100"
+              />
             </div>
+
             <p className="text-sm font-light text-muted-foreground leading-relaxed">
-              Excelência em veículos premium desde 2010.
+              Excelência em venda de veículos desde 2026.
             </p>
           </div>
 
           <div>
             <h3 className="mb-4 text-lg font-bold uppercase tracking-tight">Links</h3>
+              <ul className="space-y-2 text-sm font-light text-muted-foreground">
+              <li>
+                <Link href="/termos" className="hover:text-foreground transition-colors">
+                  {t.footer.terms}
+                </Link>
+              </li>
+
+              <li>
+                <Link href="/privacidade" className="hover:text-foreground transition-colors">
+                  {t.footer.privacy}
+                </Link>
+              </li>
+
+              <li>
+                <Link href="/cookies" className="hover:text-foreground transition-colors">
+                  {t.footer.cookies}
+                </Link>
+              </li>
+
+              <li>
+                <a
+                  href="https://www.livroreclamacoes.pt/Inicio/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-foreground transition-colors"
+                >
+                  Livro de Reclamações
+                </a>
+              </li>
+            </ul>
+            
+          </div>
+
+          <div>
+            <h3 className="mb-4 text-lg font-bold uppercase tracking-tight">
+              Contactos
+            </h3>
+
             <ul className="space-y-2 text-sm font-light text-muted-foreground">
-              <li>
-                <button className="hover:text-foreground transition-colors">{t.footer.terms}</button>
-              </li>
-              <li>
-                <button className="hover:text-foreground transition-colors">{t.footer.privacy}</button>
-              </li>
-              <li>
-                <button className="hover:text-foreground transition-colors">{t.footer.cookies}</button>
-              </li>
+              <li>+351 938 798 993</li>
+              <li>geral@otenmotors.com</li>
             </ul>
           </div>
 
           <div>
-            <h3 className="mb-4 text-lg font-bold uppercase tracking-tight">Contactos</h3>
-            <ul className="space-y-2 text-sm font-light text-muted-foreground">
-              <li>+351 912 345 678</li>
-              <li>info@otenmotors.pt</li>
-            </ul>
-          </div>
+            <h3 className="mb-4 text-lg font-bold uppercase tracking-tight">
+              Redes Sociais
+            </h3>
 
-          <div>
-            <h3 className="mb-4 text-lg font-bold uppercase tracking-tight">Redes Sociais</h3>
             <div className="flex gap-3">
               <button className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 text-primary ring-2 ring-primary/20 transition-all hover:scale-110 hover:bg-primary hover:text-primary-foreground hover:ring-primary">
                 <Facebook className="h-5 w-5" />
               </button>
+
               <button className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 text-primary ring-2 ring-primary/20 transition-all hover:scale-110 hover:bg-primary hover:text-primary-foreground hover:ring-primary">
                 <Instagram className="h-5 w-5" />
               </button>
+
               <button className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 text-primary ring-2 ring-primary/20 transition-all hover:scale-110 hover:bg-primary hover:text-primary-foreground hover:ring-primary">
                 <Youtube className="h-5 w-5" />
               </button>
+
               <button className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 text-primary ring-2 ring-primary/20 transition-all hover:scale-110 hover:bg-primary hover:text-primary-foreground hover:ring-primary">
                 <TikTokIcon />
-              </button>
-              <button className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 text-primary ring-2 ring-primary/20 transition-all hover:scale-110 hover:bg-primary hover:text-primary-foreground hover:ring-primary">
-                <Linkedin className="h-5 w-5" />
               </button>
             </div>
           </div>

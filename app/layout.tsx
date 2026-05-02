@@ -12,7 +12,7 @@ const montserrat = Montserrat({
 })
 
 export const metadata: Metadata = {
-  title: "OTEN MOTORS - Stand Automóvel Premium",
+  title: "OTEN MOTORS - Stand Automóvel",
   description:
     "Descubra veículos exclusivos onde qualidade e prestígio se encontram. Stand automóvel de confiança com os melhores carros do mercado.",
   generator: "v0.app",

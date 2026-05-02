@@ -31,7 +31,11 @@ export function ServicesSection() {
   ]
 
   return (
-    <section id="servicos" ref={ref} className="bg-secondary/30 py-24">
+    <section
+      id="servicos"
+      ref={ref}
+      className="scroll-mt-20 bg-secondary/30 py-12 md:py-16"
+    >
       <div className="container mx-auto px-4">
         <div
           className={`mb-16 text-center transition-all duration-1000 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}
@@ -40,7 +44,7 @@ export function ServicesSection() {
             <h2 className="text-5xl font-bold uppercase tracking-tight text-foreground md:text-6xl">
               {t.services.title}
             </h2>
-            <div className="mt-3 h-1 w-full bg-primary"></div>
+            <div className="mx-auto mt-3 h-1 w-3/4 rounded-full bg-primary" />
           </div>
         </div>
 
