@@ -25,32 +25,35 @@ export function Footer() {
                 alt="OTEN MOTORS"
                 width={360}
                 height={120}
-                className="h-12 w-auto md:h-14 opacity-100"
+                className="h-12 w-auto opacity-100 md:h-14"
               />
             </div>
 
-            <p className="text-sm font-light text-muted-foreground leading-relaxed">
-              Excelência em venda de veículos desde 2026.
+            <p className="text-sm font-light leading-relaxed text-muted-foreground">
+              {t.footer.description}
             </p>
           </div>
 
           <div>
-            <h3 className="mb-4 text-lg font-bold uppercase tracking-tight">Links</h3>
-              <ul className="space-y-2 text-sm font-light text-muted-foreground">
+            <h3 className="mb-4 text-lg font-bold uppercase tracking-tight">
+              {t.footer.links}
+            </h3>
+
+            <ul className="space-y-2 text-sm font-light text-muted-foreground">
               <li>
-                <Link href="/termos" className="hover:text-foreground transition-colors">
+                <Link href="/termos" className="transition-colors hover:text-foreground">
                   {t.footer.terms}
                 </Link>
               </li>
 
               <li>
-                <Link href="/privacidade" className="hover:text-foreground transition-colors">
+                <Link href="/privacidade" className="transition-colors hover:text-foreground">
                   {t.footer.privacy}
                 </Link>
               </li>
 
               <li>
-                <Link href="/cookies" className="hover:text-foreground transition-colors">
+                <Link href="/cookies" className="transition-colors hover:text-foreground">
                   {t.footer.cookies}
                 </Link>
               </li>
@@ -60,29 +63,39 @@ export function Footer() {
                   href="https://www.livroreclamacoes.pt/Inicio/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:text-foreground transition-colors"
+                  className="transition-colors hover:text-foreground"
                 >
-                  Livro de Reclamações
+                  {t.footer.complaintsBook}
                 </a>
               </li>
             </ul>
-            
           </div>
 
           <div>
             <h3 className="mb-4 text-lg font-bold uppercase tracking-tight">
-              Contactos
+              {t.footer.contacts}
             </h3>
 
             <ul className="space-y-2 text-sm font-light text-muted-foreground">
-              <li>+351 938 798 993</li>
-              <li>geral@otenmotors.com</li>
+              <li>
+                <a href="tel:+351938798993" className="transition-colors hover:text-foreground">
+                  +351 938 798 993
+                </a>
+              </li>
+              <li>
+                <a
+                  href="mailto:geral@otenmotors.com"
+                  className="transition-colors hover:text-foreground"
+                >
+                  geral@otenmotors.com
+                </a>
+              </li>
             </ul>
           </div>
 
           <div>
             <h3 className="mb-4 text-lg font-bold uppercase tracking-tight">
-              Redes Sociais
+              {t.footer.social}
             </h3>
 
             <div className="flex gap-3">

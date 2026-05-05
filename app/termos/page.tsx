@@ -370,7 +370,7 @@ export default function TermsPage() {
     <>
       <Header />
       <main className="min-h-screen bg-background">
-        <section className="container mx-auto px-4 py-14 md:py-20">
+        <section className="container mx-auto px-4 pb-14 pt-28 md:pb-20 md:pt-32">
           <div className="mx-auto max-w-4xl">
             <h1 className="text-4xl font-black uppercase tracking-tight md:text-5xl">
               {page.title}

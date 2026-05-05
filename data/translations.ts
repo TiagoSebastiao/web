@@ -54,9 +54,14 @@ export interface Translations {
       whatsapp: string
     }
     footer: {
+      description: string
+      links: string
       terms: string
       privacy: string
       cookies: string
+      complaintsBook: string
+      contacts: string
+      social: string
       rights: string
     }
     vehicleDetail: {
@@ -113,7 +118,7 @@ export const translations: Translations = {
     mission: {
       title: "Nossa Missão",
       description:
-        "Na OTEN MOTORS, dedicamo-nos a proporcionar uma experiência única na compra e venda de veículos de luxo. Com mais de 15 anos de experiência no mercado automóvel, oferecemos apenas as melhores viaturas, cuidadosamente selecionadas e inspecionadas. A nossa missão é garantir a satisfação total dos nossos clientes através de um serviço personalizado, transparência absoluta e veículos de excelência incomparável.",
+        "Na OTEN MOTORS, o nosso compromisso vai muito além de uma simples venda — procuramos proporcionar uma experiência completa, transparente e totalmente personalizada na aquisição do seu veículo. Acreditamos que cada cliente é único, e é por isso que damos especial atenção às suas necessidades, expectativas e preferências. Selecionamos cuidadosamente cada viatura, garantindo elevados padrões de qualidade, desempenho e fiabilidade, para que cada escolha seja feita com total confiança. A nossa missão é clara: garantir não apenas a satisfação, mas também o agrado e a confiança de cada cliente, construindo relações duradouras baseadas em transparência, profissionalismo e compromisso.",
     },
     featured: {
       title: "Veículos em Destaque",
@@ -132,9 +137,9 @@ export const translations: Translations = {
     about: {
       title: "Sobre Nós",
       description1:
-        "A OTEN MOTORS é um stand automóvel de referência no mercado português, especializado em veículos premium e de luxo. Com uma equipa de profissionais experientes e apaixonados por automóveis, oferecemos um serviço completo e personalizado.",
+        "A OTEN MOTORS posiciona-se como uma referência no mercado automóvel português, especializada na comercialização de veículos premium. Com uma equipa orientada para o detalhe, proporcionamos um acompanhamento próximo e personalizado em todas as etapas do processo.",
       description2:
-        "Todos os nossos veículos passam por uma rigorosa inspeção de qualidade e dispõem de garantia. Trabalhamos com as melhores marcas e oferecemos soluções de financiamento adaptadas às suas necessidades.",
+        "Cada viatura é cuidadosamente selecionada e sujeita a uma rigorosa inspeção técnica, garantindo elevados padrões de qualidade e fiabilidade. Trabalhamos com marcas de excelência e disponibilizamos soluções de financiamento ajustadas, pensadas para responder às necessidades de cada cliente.",
     },
     services: {
       title: "Porquê Escolher-nos",
@@ -156,10 +161,15 @@ export const translations: Translations = {
       whatsapp: "WhatsApp",
     },
     footer: {
+      description: "Excelência na venda de veículos com foco no cliente e na confiança.",
+      links: "Links",
       terms: "Termos e Condições",
       privacy: "Política de Privacidade",
       cookies: "Política de Cookies",
-      rights: "© 2026 OTEN MOTORS. Todos os direitos reservados.",
+      complaintsBook: "Livro de Reclamações",
+      contacts: "Contactos",
+      social: "Redes Sociais",
+      rights: "© 2025 OTEN MOTORS. Todos os direitos reservados.",
     },
     vehicleDetail: {
       specifications: "Especificações",
@@ -212,7 +222,7 @@ export const translations: Translations = {
     mission: {
       title: "Our Mission",
       description:
-        "At OTEN MOTORS, we are dedicated to providing a unique experience in buying and selling luxury vehicles. With over 15 years of experience in the automotive market, we offer only the finest vehicles, carefully selected and inspected. Our mission is to ensure complete customer satisfaction through personalized service, absolute transparency, and vehicles of unmatched excellence.",
+        "At OTEN MOTORS, our commitment goes far beyond a simple sale — we aim to provide a complete, transparent, and fully personalized experience when acquiring your vehicle. We believe every client is unique, which is why we pay close attention to their needs, expectations, and preferences. Each vehicle is carefully selected to ensure high standards of quality, performance, and reliability, so every decision is made with total confidence. Our mission is clear: to ensure not only satisfaction, but also the trust and appreciation of each client, building long-lasting relationships based on transparency, professionalism, and commitment.",
     },
     featured: {
       title: "Featured Vehicles",
@@ -231,11 +241,11 @@ export const translations: Translations = {
     about: {
       title: "About Us",
       description1:
-        "OTEN MOTORS is a leading car dealership in the Portuguese market, specializing in premium and luxury vehicles. With a team of experienced professionals passionate about automobiles, we offer complete and personalized service.",
+        "OTEN MOTORS positions itself as a reference in the Portuguese automotive market, specializing in the sale of premium vehicles. With a detail-oriented team, we provide close and personalized support throughout every stage of the process.",
       description2:
-        "All our vehicles undergo rigorous quality inspection and come with warranty. We work with the best brands and offer financing solutions tailored to your needs.",
+        "Each vehicle is carefully selected and subjected to a rigorous technical inspection, ensuring high standards of quality and reliability. We work with leading brands and offer tailored financing solutions designed to meet each client's needs.",
     },
-    services: {
+        services: {
       title: "Why Choose Us",
       service1: "Premium Vehicle Sales",
       service1desc: "Exclusive selection of luxury cars from the best brands, carefully inspected",
@@ -255,10 +265,15 @@ export const translations: Translations = {
       whatsapp: "WhatsApp",
     },
     footer: {
+      description: "Excellence in vehicle sales with a focus on customer satisfaction and trust.",
+      links: "Links",
       terms: "Terms and Conditions",
       privacy: "Privacy Policy",
       cookies: "Cookie Policy",
-      rights: "© 2026 OTEN MOTORS. All rights reserved.",
+      complaintsBook: "Complaints Book",
+      contacts: "Contacts",
+      social: "Social Media",
+      rights: "© 2025 OTEN MOTORS. All rights reserved.",
     },
     vehicleDetail: {
       specifications: "Specifications",
@@ -311,7 +326,7 @@ export const translations: Translations = {
     mission: {
       title: "Nuestra Misión",
       description:
-        "En OTEN MOTORS, nos dedicamos a proporcionar una experiencia única en la compra y venta de vehículos de lujo. Con más de 15 años de experiencia en el mercado automotriz, ofrecemos solo los mejores vehículos, cuidadosamente seleccionados e inspeccionados. Nuestra misión es garantizar la satisfacción total de nuestros clientes a través de un servicio personalizado, transparencia absoluta y vehículos de excelencia incomparable.",
+        "En OTEN MOTORS, nuestro compromiso va mucho más allá de una simple venta — buscamos ofrecer una experiencia completa, transparente y totalmente personalizada en la adquisición de su vehículo. Creemos que cada cliente es único, por eso prestamos especial atención a sus necesidades, expectativas y preferencias. Seleccionamos cuidadosamente cada vehículo, garantizando altos estándares de calidad, rendimiento y fiabilidad, para que cada decisión se tome con total confianza. Nuestra misión es clara: garantizar no solo la satisfacción, sino también la confianza y el agrado de cada cliente, construyendo relaciones duraderas basadas en la transparencia, el profesionalismo y el compromiso.",
     },
     featured: {
       title: "Vehículos Destacados",
@@ -330,9 +345,9 @@ export const translations: Translations = {
     about: {
       title: "Sobre Nosotros",
       description1:
-        "OTEN MOTORS es un concesionario de automóviles de referencia en el mercado portugués, especializado en vehículos premium y de lujo. Con un equipo de profesionales experimentados y apasionados por los automóviles, ofrecemos un servicio completo y personalizado.",
+        "OTEN MOTORS se posiciona como una referencia en el mercado automotriz portugués, especializada en la comercialización de vehículos premium. Con un equipo orientado al detalle, ofrecemos un acompañamiento cercano y personalizado en todas las etapas del proceso.",
       description2:
-        "Todos nuestros vehículos pasan por una rigurosa inspección de calidad y disponen de garantía. Trabajamos con las mejores marcas y ofrecemos soluciones de financiamiento adaptadas a sus necesidades.",
+        "Cada vehículo es cuidadosamente seleccionado y sometido a una rigurosa inspección técnica, garantizando altos estándares de calidad y fiabilidad. Trabajamos con marcas de excelencia y ofrecemos soluciones de financiación adaptadas a las necesidades de cada cliente.",
     },
     services: {
       title: "Por Qué Elegirnos",
@@ -354,10 +369,15 @@ export const translations: Translations = {
       whatsapp: "WhatsApp",
     },
     footer: {
+      description: "Excelencia en la venta de vehículos con enfoque en el cliente y la confianza.",
+      links: "Enlaces",
       terms: "Términos y Condiciones",
       privacy: "Política de Privacidad",
       cookies: "Política de Cookies",
-      rights: "© 2026 OTEN MOTORS. Todos los derechos reservados.",
+      complaintsBook: "Libro de Reclamaciones",
+      contacts: "Contactos",
+      social: "Redes Sociales",
+      rights: "© 2025 OTEN MOTORS. Todos los derechos reservados.",
     },
     vehicleDetail: {
       specifications: "Especificaciones",
@@ -410,7 +430,7 @@ export const translations: Translations = {
     mission: {
       title: "Notre Mission",
       description:
-        "Chez OTEN MOTORS, nous nous consacrons à offrir une expérience unique dans l'achat et la vente de véhicules de luxe. Avec plus de 15 ans d'expérience sur le marché automobile, nous proposons uniquement les meilleurs véhicules, soigneusement sélectionnés et inspectés. Notre mission est de garantir la satisfaction totale de nos clients grâce à un service personnalisé, une transparence absolue et des véhicules d'excellence incomparable.",
+      "Chez OTEN MOTORS, notre engagement va bien au-delà d'une simple vente — nous cherchons à offrir une expérience complète, transparente et entièrement personnalisée lors de l'acquisition de votre véhicule. Nous croyons que chaque client est unique, c'est pourquoi nous accordons une attention particulière à ses besoins, attentes et préférences. Chaque véhicule est soigneusement sélectionné afin de garantir des standards élevés de qualité, de performance et de fiabilité, pour que chaque décision soit prise en toute confiance. Notre mission est claire : garantir non seulement la satisfaction, mais aussi la confiance et l'appréciation de chaque client, en construisant des relations durables basées sur la transparence, le professionnalisme et l'engagement.",
     },
     featured: {
       title: "Véhicules en Vedette",
@@ -429,9 +449,9 @@ export const translations: Translations = {
     about: {
       title: "À Propos",
       description1:
-        "OTEN MOTORS est un concessionnaire automobile de référence sur le marché portugais, spécialisé dans les véhicules premium et de luxe. Avec une équipe de professionnels expérimentés et passionnés par l'automobile, nous offrons un service complet et personnalisé.",
+        "OTEN MOTORS se positionne comme une référence sur le marché automobile portugais, spécialisée dans la commercialisation de véhicules premium. Avec une équipe attentive aux détails, nous offrons un accompagnement proche et personnalisé à chaque étape du processus.",
       description2:
-        "Tous nos véhicules font l'objet d'une inspection de qualité rigoureuse et sont assortis d'une garantie. Nous travaillons avec les meilleures marques et proposons des solutions de financement adaptées à vos besoins.",
+        "Chaque véhicule est soigneusement sélectionné et soumis à une inspection technique rigoureuse, garantissant des standards élevés de qualité et de fiabilité. Nous travaillons avec des marques de référence et proposons des solutions de financement adaptées aux besoins de chaque client.",
     },
     services: {
       title: "Pourquoi Nous Choisir",
@@ -453,10 +473,15 @@ export const translations: Translations = {
       whatsapp: "WhatsApp",
     },
     footer: {
+      description: "Excellence dans la vente de véhicules avec une approche centrée sur le client et la confiance.",
+      links: "Liens",
       terms: "Conditions Générales",
       privacy: "Politique de Confidentialité",
       cookies: "Politique des Cookies",
-      rights: "© 2026 OTEN MOTORS. Tous droits réservés.",
+      complaintsBook: "Livre de Réclamations",
+      contacts: "Contact",
+      social: "Réseaux Sociaux",
+      rights: "© 2025 OTEN MOTORS. Tous droits réservés.",
     },
     vehicleDetail: {
       specifications: "Spécifications",
@@ -509,7 +534,7 @@ export const translations: Translations = {
     mission: {
       title: "Unsere Mission",
       description:
-        "Bei OTEN MOTORS widmen wir uns einer einzigartigen Erfahrung beim Kauf und Verkauf von Luxusfahrzeugen. Mit über 15 Jahren Erfahrung auf dem Automobilmarkt bieten wir nur die besten Fahrzeuge, sorgfältig ausgewählt und geprüft. Unsere Mission ist es, die vollständige Zufriedenheit unserer Kunden durch personalisierten Service, absolute Transparenz und Fahrzeuge von unvergleichlicher Exzellenz zu gewährleisten.",
+        "Bei OTEN MOTORS geht unser Engagement weit über einen einfachen Verkauf hinaus — wir möchten eine vollständige, transparente und individuell abgestimmte Erfahrung beim Fahrzeugkauf bieten. Wir glauben, dass jeder Kunde einzigartig ist, weshalb wir besonderen Wert auf seine Bedürfnisse, Erwartungen und Wünsche legen. Jedes Fahrzeug wird sorgfältig ausgewählt, um hohe Standards in Bezug auf Qualität, Leistung und Zuverlässigkeit zu gewährleisten, damit jede Entscheidung mit voller Sicherheit getroffen werden kann. Unsere Mission ist klar: nicht nur Zufriedenheit, sondern auch Vertrauen und Wertschätzung jedes Kunden zu gewährleisten und langfristige Beziehungen auf Basis von Transparenz, Professionalität und Engagement aufzubauen.",
     },
     featured: {
       title: "Ausgewählte Fahrzeuge",
@@ -526,11 +551,11 @@ export const translations: Translations = {
       manual: "Manuell",
     },
     about: {
-      title: "Über uns",
+      title: "Über Uns",
       description1:
-        "OTEN MOTORS ist ein führendes Autohaus auf dem portugiesischen Markt, spezialisiert auf Premium- und Luxusfahrzeuge. Mit einem Team erfahrener Fachleute, die sich für Autos begeistern, bieten wir umfassenden und personalisierten Service.",
+        "OTEN MOTORS positioniert sich als Referenz auf dem portugiesischen Automobilmarkt und ist auf den Verkauf von Premiumfahrzeugen spezialisiert. Mit einem detailorientierten Team bieten wir eine persönliche und enge Betreuung in allen Phasen des Prozesses.",
       description2:
-        "Alle unsere Fahrzeuge durchlaufen eine strenge Qualitätsprüfung und sind garantiert. Wir arbeiten mit den besten Marken zusammen und bieten Finanzierungslösungen, die auf Ihre Bedürfnisse zugeschnitten sind.",
+        "Jedes Fahrzeug wird sorgfältig ausgewählt und einer strengen technischen Prüfung unterzogen, um höchste Qualitäts- und Zuverlässigkeitsstandards zu gewährleisten. Wir arbeiten mit führenden Marken und bieten maßgeschneiderte Finanzierungslösungen, die auf die Bedürfnisse jedes Kunden abgestimmt sind.",
     },
     services: {
       title: "Warum uns wählen",
@@ -552,10 +577,15 @@ export const translations: Translations = {
       whatsapp: "WhatsApp",
     },
     footer: {
+      description: "Exzellenz im Fahrzeugverkauf mit Fokus auf Kundenzufriedenheit und Vertrauen.",
+      links: "Links",
       terms: "Allgemeine Geschäftsbedingungen",
       privacy: "Datenschutzrichtlinie",
       cookies: "Cookie-Richtlinie",
-      rights: "© 2026 OTEN MOTORS. Alle Rechte vorbehalten.",
+      complaintsBook: "Beschwerdebuch",
+      contacts: "Kontakt",
+      social: "Soziale Medien",
+      rights: "© 2025 OTEN MOTORS. Alle Rechte vorbehalten.",
     },
     vehicleDetail: {
       specifications: "Spezifikationen",
