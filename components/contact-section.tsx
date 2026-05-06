@@ -24,9 +24,9 @@ export function ContactSection() {
   })
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
+  e.preventDefault()
 
-    try {
+  try {
       const response = await fetch("/api/contact", {
         method: "POST",
         headers: {
@@ -35,8 +35,10 @@ export function ContactSection() {
         body: JSON.stringify(formData),
       })
 
+      const result = await response.json()
+
       if (!response.ok) {
-        alert("Erro ao enviar mensagem. Tente novamente.")
+        alert(result.error || "Erro ao enviar mensagem. Tente novamente.")
         return
       }
 
