@@ -211,7 +211,7 @@ export const featuredCars: FeaturedCar[] = [
     fuel: "Diesel",
     transmission: "Automática",
     image: "/luxury-audi-a6-avant-s-line-white.jpg",
-    featured: true,
+    featured: false,
     images: [
       "/luxury-audi-a6-avant-s-line-white.jpg",
       "/audi-a6-avant-interior.jpg",
