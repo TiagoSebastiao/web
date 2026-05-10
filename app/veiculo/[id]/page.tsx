@@ -134,7 +134,7 @@ export default function VehicleDetailPage() {
               <div className="relative mb-3">
                 <div
                   onClick={handleExpandImage}
-                  className="relative aspect-[16/8.5] cursor-pointer overflow-hidden rounded-2xl border border-border bg-muted shadow-xl"
+                  className="relative aspect-[16/10] cursor-pointer overflow-hidden rounded-2xl border border-border bg-muted shadow-xl md:aspect-[16/8.5]"
                 >
                   <img
                     src={car.images[currentImageIndex] || "/placeholder.svg"}
@@ -143,17 +143,31 @@ export default function VehicleDetailPage() {
                     draggable="false"
                   />
 
-                  <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent" />
+                  <div className="absolute inset-0 hidden bg-gradient-to-t from-black via-black/30 to-transparent md:block" />
 
-                  <div className="absolute bottom-0 left-0 right-0 p-5 md:p-7">
-                    <h1 className="max-w-4xl text-3xl font-black uppercase leading-tight tracking-tight text-white md:text-5xl">
+                  <div className="absolute bottom-0 left-0 right-0 hidden p-7 md:block">
+                    <h1 className="max-w-4xl text-5xl font-black uppercase leading-tight tracking-tight text-white">
                       {car.name}
                     </h1>
 
-                    <p className="mt-3 max-w-4xl text-sm leading-relaxed text-white/75 md:text-base">
-                      {car.description[language as keyof typeof car.description]}
+                    <p className="mt-3 max-w-4xl text-base leading-relaxed text-white/75">
+                      {
+                        car.description[
+                          language as keyof typeof car.description
+                        ]
+                      }
                     </p>
                   </div>
+                </div>
+
+                <div className="mt-5 block md:hidden">
+                  <h1 className="text-3xl font-black uppercase leading-tight tracking-tight text-foreground">
+                    {car.name}
+                  </h1>
+
+                  <p className="mt-3 text-base leading-relaxed text-muted-foreground">
+                    {car.description[language as keyof typeof car.description]}
+                  </p>
                 </div>
 
                 <button
@@ -218,7 +232,9 @@ export default function VehicleDetailPage() {
                         <p className="text-xs text-muted-foreground">
                           {t.vehicleDetail.registration}
                         </p>
-                        <p className="font-bold">{car.specifications.registration}</p>
+                        <p className="font-bold">
+                          {car.specifications.registration}
+                        </p>
                       </div>
                     </div>
 
@@ -238,7 +254,9 @@ export default function VehicleDetailPage() {
                         <p className="text-xs text-muted-foreground">
                           {t.vehicleDetail.fuelType}
                         </p>
-                        <p className="font-bold">{car.specifications.fuelType}</p>
+                        <p className="font-bold">
+                          {car.specifications.fuelType}
+                        </p>
                       </div>
                     </div>
 
@@ -255,33 +273,57 @@ export default function VehicleDetailPage() {
 
                   <div className="space-y-2.5 border-t border-border pt-4 text-sm">
                     <div className="flex justify-between gap-4">
-                      <span className="text-muted-foreground">{t.vehicleDetail.motor}</span>
-                      <span className="text-right font-bold">{car.specifications.motor}</span>
+                      <span className="text-muted-foreground">
+                        {t.vehicleDetail.motor}
+                      </span>
+                      <span className="text-right font-bold">
+                        {car.specifications.motor}
+                      </span>
                     </div>
 
                     <div className="flex justify-between gap-4">
-                      <span className="text-muted-foreground">{t.vehicleDetail.category}</span>
-                      <span className="text-right font-bold">{car.specifications.category}</span>
+                      <span className="text-muted-foreground">
+                        {t.vehicleDetail.category}
+                      </span>
+                      <span className="text-right font-bold">
+                        {car.specifications.category}
+                      </span>
                     </div>
 
                     <div className="flex justify-between gap-4">
-                      <span className="text-muted-foreground">{t.vehicleDetail.seats}</span>
-                      <span className="text-right font-bold">{car.specifications.seats}</span>
+                      <span className="text-muted-foreground">
+                        {t.vehicleDetail.seats}
+                      </span>
+                      <span className="text-right font-bold">
+                        {car.specifications.seats}
+                      </span>
                     </div>
 
                     <div className="flex justify-between gap-4">
-                      <span className="text-muted-foreground">{t.vehicleDetail.color}</span>
-                      <span className="text-right font-bold">{car.specifications.color}</span>
+                      <span className="text-muted-foreground">
+                        {t.vehicleDetail.color}
+                      </span>
+                      <span className="text-right font-bold">
+                        {car.specifications.color}
+                      </span>
                     </div>
 
                     <div className="flex justify-between gap-4">
-                      <span className="text-muted-foreground">{t.vehicleDetail.doors}</span>
-                      <span className="text-right font-bold">{car.specifications.doors}</span>
+                      <span className="text-muted-foreground">
+                        {t.vehicleDetail.doors}
+                      </span>
+                      <span className="text-right font-bold">
+                        {car.specifications.doors}
+                      </span>
                     </div>
 
                     <div className="flex justify-between gap-4">
-                      <span className="text-muted-foreground">{t.vehicleDetail.origin}</span>
-                      <span className="text-right font-bold">{car.specifications.origin}</span>
+                      <span className="text-muted-foreground">
+                        {t.vehicleDetail.origin}
+                      </span>
+                      <span className="text-right font-bold">
+                        {car.specifications.origin}
+                      </span>
                     </div>
                   </div>
 
@@ -356,7 +398,10 @@ export default function VehicleDetailPage() {
                   [t.vehicleDetail.engine, car.technicalData.engine],
                   [t.vehicleDetail.power, car.technicalData.power],
                   [t.vehicleDetail.torque, car.technicalData.torque],
-                  [t.vehicleDetail.acceleration, car.technicalData.acceleration],
+                  [
+                    t.vehicleDetail.acceleration,
+                    car.technicalData.acceleration,
+                  ],
                   [t.vehicleDetail.topSpeed, car.technicalData.topSpeed],
                   [t.vehicleDetail.consumption, car.technicalData.consumption],
                   [t.vehicleDetail.emissions, car.technicalData.emissions],
@@ -374,21 +419,33 @@ export default function VehicleDetailPage() {
 
                   <div className="space-y-2 text-sm">
                     <div className="flex justify-between">
-                      <span className="text-muted-foreground">{t.vehicleDetail.length}</span>
+                      <span className="text-muted-foreground">
+                        {t.vehicleDetail.length}
+                      </span>
                       <span>{car.technicalData.dimensions.length}</span>
                     </div>
+
                     <div className="flex justify-between">
-                      <span className="text-muted-foreground">{t.vehicleDetail.width}</span>
+                      <span className="text-muted-foreground">
+                        {t.vehicleDetail.width}
+                      </span>
                       <span>{car.technicalData.dimensions.width}</span>
                     </div>
+
                     <div className="flex justify-between">
-                      <span className="text-muted-foreground">{t.vehicleDetail.height}</span>
+                      <span className="text-muted-foreground">
+                        {t.vehicleDetail.height}
+                      </span>
                       <span>{car.technicalData.dimensions.height}</span>
                     </div>
+
                     <div className="flex justify-between">
-                      <span className="text-muted-foreground">{t.vehicleDetail.wheelbase}</span>
+                      <span className="text-muted-foreground">
+                        {t.vehicleDetail.wheelbase}
+                      </span>
                       <span>{car.technicalData.dimensions.wheelbase}</span>
                     </div>
+
                     <div className="flex justify-between">
                       <span className="text-muted-foreground">
                         {t.vehicleDetail.trunkCapacity}
