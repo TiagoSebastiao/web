@@ -57,7 +57,7 @@ export const featuredCars: FeaturedCar[] = [
   //bmw serie 1 116d 2021
   {
   id: "bmw-serie-1-116d-2021",
-  name: "BMW Série 1 116d Auto",
+  name: "BMW Série 1 116d",
   price: "21.900€",
   year: 2021,
   km: "136.000 km",
@@ -182,6 +182,7 @@ export const featuredCars: FeaturedCar[] = [
     seats: 5,
     color: "Preto",
     doors: 5,
+    origin: "Importado",
   },
 
   equipment: [
@@ -197,14 +198,14 @@ export const featuredCars: FeaturedCar[] = [
   ],
 
   technicalData: {
-    engine: "1.995 cc",
+    weight: "A confirmar",
+    engine: "1.995 Turbo Diesel",
     power: "184 cv (135 kW)",
-    fuel: "Gasóleo",
-    transmission: "Automática",
-    emissions: "0 g/km CO₂ (NEDC)",
+    torque: "A confirmar",
     acceleration: "A confirmar",
     topSpeed: "A confirmar",
-    consumption: "A confirmar",
+    consumption: "A confirmar L/100km",
+    emissions: "A confirmar",
     dimensions: {
       length: "A confirmar",
       width: "A confirmar",
