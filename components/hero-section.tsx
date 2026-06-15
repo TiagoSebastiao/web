@@ -75,7 +75,7 @@ export function HeroSection() {
               variant="outline"
               className="group min-w-[220px] gap-2 rounded-md border-2 border-white/20 bg-white/5 px-8 py-7 text-base font-bold uppercase tracking-wide text-white backdrop-blur-md transition-all duration-300 hover:scale-105 hover:border-primary hover:bg-primary hover:text-primary-foreground hover:shadow-xl"
               onClick={() =>
-                window.open("https://wa.me/351938798993", "_blank")
+                window.open("https://wa.me/351967339061", "_blank")
               }
             >
               <MessageCircle className="h-5 w-5 transition-transform group-hover:rotate-12" />

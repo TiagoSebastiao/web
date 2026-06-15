@@ -176,7 +176,7 @@ export function ContactSection() {
                 size="sm"
                 className="mt-2 border-primary text-primary hover:bg-primary hover:text-white"
                 onClick={() =>
-                  window.open("https://wa.me/351938798993", "_blank")
+                  window.open("https://wa.me/351967339061", "_blank")
                 }
               >
                 Contactar
@@ -196,10 +196,10 @@ export function ContactSection() {
               </h3>
 
               <a
-                href="tel:+351938798993"
+                href="tel:+351967339061"
                 className="text-sm font-semibold text-muted-foreground hover:text-primary"
               >
-                +351 938 798 993
+                +351 967 339 061
               </a>
             </CardContent>
           </Card>

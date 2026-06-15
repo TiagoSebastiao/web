@@ -338,7 +338,7 @@ export default function VehicleDetailPage() {
                         asChild
                       >
                         <a
-                          href="https://wa.me/351938798993"
+                          href="https://wa.me/351967339061"
                           target="_blank"
                           rel="noopener noreferrer"
                         >
@@ -352,7 +352,7 @@ export default function VehicleDetailPage() {
                         className="h-12 w-12 shrink-0 bg-primary hover:bg-primary/90"
                         asChild
                       >
-                        <a href="tel:+351938798993">
+                        <a href="tel:+351967339061">
                           <Phone className="h-5 w-5" />
                         </a>
                       </Button>
