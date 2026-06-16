@@ -28,6 +28,8 @@ export interface Translations {
       hybrid: string
       automatic: string
       manual: string
+      reserved: string 
+      sold: string
     }
     about: {
       title: string
@@ -133,6 +135,8 @@ export const translations: Translations = {
       hybrid: "Híbrido",
       automatic: "Automática",
       manual: "Manual",
+      reserved: "Reservado",
+      sold: "Vendido",
     },
     about: {
       title: "Sobre Nós",
@@ -237,6 +241,8 @@ export const translations: Translations = {
       hybrid: "Hybrid",
       automatic: "Automatic",
       manual: "Manual",
+      reserved: "Reserved",
+      sold: "Sold",
     },
     about: {
       title: "About Us",
@@ -341,6 +347,8 @@ export const translations: Translations = {
       hybrid: "Híbrido",
       automatic: "Automática",
       manual: "Manual",
+      reserved: "Reservado",
+      sold: "Vendido",
     },
     about: {
       title: "Sobre Nosotros",
@@ -445,6 +453,8 @@ export const translations: Translations = {
       hybrid: "Hybride",
       automatic: "Automatique",
       manual: "Manuelle",
+      reserved: "Réservé",
+      sold: "Vendu",
     },
     about: {
       title: "À Propos",
@@ -549,6 +559,8 @@ export const translations: Translations = {
       hybrid: "Hybrid",
       automatic: "Automatik",
       manual: "Manuell",
+      reserved: "Reserviert",
+      sold: "Verkauft"
     },
     about: {
       title: "Über Uns",

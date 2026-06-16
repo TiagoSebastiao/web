@@ -3,7 +3,7 @@
 import type React from "react"
 
 import { useParams } from "next/navigation"
-import { featuredCars } from "@/data/featuredCars"
+import { featuredCars, type Language } from "@/data/featuredCars"
 import { useLanguage } from "@/hooks/use-language"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
@@ -28,6 +28,8 @@ import { Footer } from "@/components/footer"
 export default function VehicleDetailPage() {
   const params = useParams()
   const { t, language } = useLanguage()
+  const currentLanguage = language as Language
+
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
   const [isImageExpanded, setIsImageExpanded] = useState(false)
   const [zoom, setZoom] = useState(1)
@@ -45,9 +47,10 @@ export default function VehicleDetailPage() {
         <Header />
         <main className="flex min-h-[calc(100vh-96px)] items-center justify-center bg-background">
           <div className="text-center">
-            <h1 className="text-2xl font-bold">Veículo não encontrado</h1>
             <Link href="/#anuncios">
-              <Button className="mt-4">Voltar aos Veículos</Button>
+              <Button className="mt-4">
+                {t.vehicleDetail.backToVehicles}
+              </Button>
             </Link>
           </div>
         </main>
@@ -139,7 +142,7 @@ export default function VehicleDetailPage() {
                   <img
                     src={car.images[currentImageIndex] || "/placeholder.svg"}
                     alt={`${car.name} - Image ${currentImageIndex + 1}`}
-                    className="block h-full w-full select-none object-cover object-center pointer-events-none"
+                    className="pointer-events-none block h-full w-full select-none object-cover object-center"
                     draggable="false"
                   />
 
@@ -151,11 +154,7 @@ export default function VehicleDetailPage() {
                     </h1>
 
                     <p className="mt-3 max-w-4xl text-base leading-relaxed text-white/75">
-                      {
-                        car.description[
-                          language as keyof typeof car.description
-                        ]
-                      }
+                      {car.description[currentLanguage]}
                     </p>
                   </div>
                 </div>
@@ -166,7 +165,7 @@ export default function VehicleDetailPage() {
                   </h1>
 
                   <p className="mt-3 text-base leading-relaxed text-muted-foreground">
-                    {car.description[language as keyof typeof car.description]}
+                    {car.description[currentLanguage]}
                   </p>
                 </div>
 
@@ -200,7 +199,7 @@ export default function VehicleDetailPage() {
                   <button
                     key={index}
                     onClick={() => handleImageClick(index)}
-                    className={`shrink-0 overflow-hidden rounded-xl border-2 transition-all ${
+                    className={`shrink-0 cursor-pointer overflow-hidden rounded-xl border-2 transition-all ${
                       currentImageIndex === index
                         ? "border-primary ring-2 ring-primary/40"
                         : "border-border opacity-70 hover:opacity-100"
@@ -255,7 +254,7 @@ export default function VehicleDetailPage() {
                           {t.vehicleDetail.fuelType}
                         </p>
                         <p className="font-bold">
-                          {car.specifications.fuelType}
+                          {car.specifications.fuelType[currentLanguage]}
                         </p>
                       </div>
                     </div>
@@ -266,7 +265,9 @@ export default function VehicleDetailPage() {
                         <p className="text-xs text-muted-foreground">
                           {t.featured.transmission}
                         </p>
-                        <p className="font-bold">{car.transmission}</p>
+                        <p className="font-bold">
+                          {car.transmission[currentLanguage]}
+                        </p>
                       </div>
                     </div>
                   </div>
@@ -277,7 +278,7 @@ export default function VehicleDetailPage() {
                         {t.vehicleDetail.motor}
                       </span>
                       <span className="text-right font-bold">
-                        {car.specifications.motor}
+                        {car.specifications.motor[currentLanguage]}
                       </span>
                     </div>
 
@@ -286,7 +287,7 @@ export default function VehicleDetailPage() {
                         {t.vehicleDetail.category}
                       </span>
                       <span className="text-right font-bold">
-                        {car.specifications.category}
+                        {car.specifications.category[currentLanguage]}
                       </span>
                     </div>
 
@@ -304,7 +305,7 @@ export default function VehicleDetailPage() {
                         {t.vehicleDetail.color}
                       </span>
                       <span className="text-right font-bold">
-                        {car.specifications.color}
+                        {car.specifications.color[currentLanguage]}
                       </span>
                     </div>
 
@@ -322,7 +323,7 @@ export default function VehicleDetailPage() {
                         {t.vehicleDetail.origin}
                       </span>
                       <span className="text-right font-bold">
-                        {car.specifications.origin}
+                        {car.specifications.origin[currentLanguage]}
                       </span>
                     </div>
                   </div>
@@ -377,7 +378,7 @@ export default function VehicleDetailPage() {
                   {car.equipment.map((item, index) => (
                     <li key={index} className="flex items-start gap-2 text-sm">
                       <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
-                      <span>{item}</span>
+                      <span>{item[currentLanguage]}</span>
                     </li>
                   ))}
                 </ul>
@@ -394,17 +395,20 @@ export default function VehicleDetailPage() {
 
               <CardContent className="space-y-4 pt-0">
                 {[
-                  [t.vehicleDetail.weight, car.technicalData.weight],
-                  [t.vehicleDetail.engine, car.technicalData.engine],
-                  [t.vehicleDetail.power, car.technicalData.power],
-                  [t.vehicleDetail.torque, car.technicalData.torque],
+                  [t.vehicleDetail.weight, car.technicalData.weight[currentLanguage]],
+                  [t.vehicleDetail.engine, car.technicalData.engine[currentLanguage]],
+                  [t.vehicleDetail.power, car.technicalData.power[currentLanguage]],
+                  [t.vehicleDetail.torque, car.technicalData.torque[currentLanguage]],
                   [
                     t.vehicleDetail.acceleration,
-                    car.technicalData.acceleration,
+                    car.technicalData.acceleration[currentLanguage],
                   ],
-                  [t.vehicleDetail.topSpeed, car.technicalData.topSpeed],
-                  [t.vehicleDetail.consumption, car.technicalData.consumption],
-                  [t.vehicleDetail.emissions, car.technicalData.emissions],
+                  [t.vehicleDetail.topSpeed, car.technicalData.topSpeed[currentLanguage]],
+                  [
+                    t.vehicleDetail.consumption,
+                    car.technicalData.consumption[currentLanguage],
+                  ],
+                  [t.vehicleDetail.emissions, car.technicalData.emissions[currentLanguage]],
                 ].map(([label, value]) => (
                   <div key={label}>
                     <p className="text-xs text-muted-foreground">{label}</p>
@@ -422,35 +426,49 @@ export default function VehicleDetailPage() {
                       <span className="text-muted-foreground">
                         {t.vehicleDetail.length}
                       </span>
-                      <span>{car.technicalData.dimensions.length}</span>
+                      <span>
+                        {car.technicalData.dimensions.length[currentLanguage]}
+                      </span>
                     </div>
 
                     <div className="flex justify-between">
                       <span className="text-muted-foreground">
                         {t.vehicleDetail.width}
                       </span>
-                      <span>{car.technicalData.dimensions.width}</span>
+                      <span>
+                        {car.technicalData.dimensions.width[currentLanguage]}
+                      </span>
                     </div>
 
                     <div className="flex justify-between">
                       <span className="text-muted-foreground">
                         {t.vehicleDetail.height}
                       </span>
-                      <span>{car.technicalData.dimensions.height}</span>
+                      <span>
+                        {car.technicalData.dimensions.height[currentLanguage]}
+                      </span>
                     </div>
 
                     <div className="flex justify-between">
                       <span className="text-muted-foreground">
                         {t.vehicleDetail.wheelbase}
                       </span>
-                      <span>{car.technicalData.dimensions.wheelbase}</span>
+                      <span>
+                        {car.technicalData.dimensions.wheelbase[currentLanguage]}
+                      </span>
                     </div>
 
                     <div className="flex justify-between">
                       <span className="text-muted-foreground">
                         {t.vehicleDetail.trunkCapacity}
                       </span>
-                      <span>{car.technicalData.dimensions.trunkCapacity}</span>
+                      <span>
+                        {
+                          car.technicalData.dimensions.trunkCapacity[
+                            currentLanguage
+                          ]
+                        }
+                      </span>
                     </div>
                   </div>
                 </div>
@@ -470,25 +488,24 @@ export default function VehicleDetailPage() {
                   <p className="text-xs text-muted-foreground">
                     {t.vehicleDetail.financing}
                   </p>
-                  <p className="font-semibold text-green-600">
-                    {car.details.financing
-                      ? t.vehicleDetail.financingAvailable
-                      : "Não disponível"}
-                  </p>
                 </div>
 
                 <div>
                   <p className="text-xs text-muted-foreground">
                     {t.vehicleDetail.warranty}
                   </p>
-                  <p className="font-semibold">{car.details.warranty}</p>
+                  <p className="font-semibold">
+                    {car.details.warranty[currentLanguage]}
+                  </p>
                 </div>
 
                 <div>
                   <p className="text-xs text-muted-foreground">
                     {t.vehicleDetail.serviceHistory}
                   </p>
-                  <p className="font-semibold">{car.details.serviceHistory}</p>
+                  <p className="font-semibold">
+                    {car.details.serviceHistory[currentLanguage]}
+                  </p>
                 </div>
               </CardContent>
             </Card>

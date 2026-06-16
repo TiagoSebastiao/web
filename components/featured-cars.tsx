@@ -1,6 +1,6 @@
 "use client"
 
-import { featuredCars } from "@/data/featuredCars"
+import { featuredCars, type Language } from "@/data/featuredCars"
 import { Card, CardContent, CardFooter } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Calendar, Fuel, Gauge, Settings } from "lucide-react"
@@ -9,37 +9,18 @@ import { useScrollAnimation } from "@/hooks/use-scroll-animation"
 import Link from "next/link"
 
 export function FeaturedCars() {
-  const { t } = useLanguage()
+  const { t, language } = useLanguage()
   const { ref, isVisible } = useScrollAnimation()
 
+  const currentLanguage = language as Language
+
   const visibleCars = featuredCars.filter((car) => car.featured)
-
-  const translateFuel = (fuel: string) => {
-    const fuelMap: { [key: string]: string } = {
-      Diesel: t.featured.diesel,
-      Gasolina: t.featured.gasoline,
-      Elétrico: t.featured.electric,
-      Híbrido: t.featured.hybrid,
-    }
-
-    return fuelMap[fuel] || fuel
-  }
-
-  const translateTransmission = (transmission: string) => {
-    const transMap: { [key: string]: string } = {
-      Automática: t.featured.automatic,
-      Manual: t.featured.manual,
-    }
-
-    return transMap[transmission] || transmission
-  }
-
+  
   const getStatusLabel = (status?: string) => {
-    if (status === "reservado") return "Reservado"
-    if (status === "vendido") return "Vendido"
+    if (status === "reservado") return t.featured.reserved
+    if (status === "vendido") return t.featured.sold
     return null
   }
-
   if (visibleCars.length === 0) return null
 
   return (
@@ -79,7 +60,7 @@ export function FeaturedCars() {
               <Link
                 key={car.id}
                 href={`/veiculo/${car.id}`}
-                className={`block transition-all duration-700 ${
+                className={`block cursor-pointer transition-all duration-700 ${
                   isVisible
                     ? "translate-y-0 opacity-100"
                     : "translate-y-8 opacity-0"
@@ -130,47 +111,23 @@ export function FeaturedCars() {
                       <div className="flex items-center gap-2 text-muted-foreground">
                         <Fuel className="h-4 w-4 shrink-0 text-primary" />
                         <span className="font-semibold text-foreground">
-                          {translateFuel(car.fuel)}
+                          {car.fuel[currentLanguage]}
                         </span>
                       </div>
 
                       <div className="flex items-center gap-2 text-muted-foreground">
                         <Settings className="h-4 w-4 shrink-0 text-primary" />
                         <span className="font-semibold text-foreground">
-                          {translateTransmission(car.transmission)}
+                          {car.transmission[currentLanguage]}
                         </span>
                       </div>
                     </div>
                   </CardContent>
 
                   <CardFooter className="p-3 pt-0">
-                    <Button
-                      className="
-                        w-full
-                        rounded-lg
-                        bg-primary
-                        py-3
-                        text-xs
-                        font-black
-                        uppercase
-                        tracking-wide
-                        text-primary-foreground
-                        transition-all
-                        duration-300
-                        ease-out
-                        group-hover:scale-[1.03]
-                        group-hover:bg-primary/90
-                        group-hover:shadow-xl
-                        group-hover:shadow-primary/50
-                        active:scale-[0.98]
-                        md:text-sm
-                      "
-                    >
+                    <Button className="w-full cursor-pointer rounded-lg bg-primary py-3 text-xs font-black uppercase tracking-wide text-primary-foreground transition-all duration-300 ease-out group-hover:scale-[1.03] group-hover:bg-primary/90 group-hover:shadow-xl group-hover:shadow-primary/50 active:scale-[0.98] md:text-sm">
                       <span className="flex items-center justify-center gap-2">
                         {t.featured.viewDetails}
-                        <span className="transition-transform duration-300 group-hover:translate-x-1">
-                          →
-                        </span>
                       </span>
                     </Button>
                   </CardFooter>

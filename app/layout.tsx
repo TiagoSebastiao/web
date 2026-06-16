@@ -1,7 +1,6 @@
 import type React from "react"
 import type { Metadata } from "next"
 import { Montserrat } from "next/font/google"
-import { Analytics } from "@vercel/analytics/next"
 import { LanguageProvider } from "@/hooks/use-language"
 import "./globals.css"
 
@@ -33,7 +32,6 @@ export default function RootLayout({
     <html lang="pt" className="dark scroll-smooth">
       <body className={`${montserrat.variable} font-sans antialiased`}>
         <LanguageProvider>{children}</LanguageProvider>
-        <Analytics />
       </body>
     </html>
   )
