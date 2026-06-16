@@ -144,8 +144,34 @@ export function FeaturedCars() {
                   </CardContent>
 
                   <CardFooter className="p-3 pt-0">
-                    <Button className="w-full rounded-lg bg-primary py-3 text-xs font-black uppercase tracking-wide text-primary-foreground transition-all duration-300 group-hover:bg-primary/90 group-hover:shadow-lg group-hover:shadow-primary/25 md:text-sm">
-                      {t.featured.viewDetails}
+                    <Button
+                      className="
+                        w-full
+                        rounded-lg
+                        bg-primary
+                        py-3
+                        text-xs
+                        font-black
+                        uppercase
+                        tracking-wide
+                        text-primary-foreground
+                        transition-all
+                        duration-300
+                        ease-out
+                        group-hover:scale-[1.03]
+                        group-hover:bg-primary/90
+                        group-hover:shadow-xl
+                        group-hover:shadow-primary/50
+                        active:scale-[0.98]
+                        md:text-sm
+                      "
+                    >
+                      <span className="flex items-center justify-center gap-2">
+                        {t.featured.viewDetails}
+                        <span className="transition-transform duration-300 group-hover:translate-x-1">
+                          →
+                        </span>
+                      </span>
                     </Button>
                   </CardFooter>
                 </Card>
