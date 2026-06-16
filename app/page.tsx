@@ -10,12 +10,6 @@ import { ContactSection } from "@/components/contact-section"
 import { Footer } from "@/components/footer"
 import { LanguageProvider } from "@/hooks/use-language"
 
-export const metadata = {
-  title: 'Oten Motors | Carros Usados e Semi-Novos',
-  description:
-    'Stand automóveis de carros usados e semi-novos selecionados. Conheça a Oten Motors.',
-}
-
 export default function Page() {
   return (
     <LanguageProvider>
