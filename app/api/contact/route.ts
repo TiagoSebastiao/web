@@ -3,8 +3,6 @@ import { NextResponse } from "next/server"
 
 export const runtime = "nodejs"
 
-const resend = new Resend(process.env.RESEND_API_KEY)
-
 export async function POST(request: Request) {
   try {
     const { name, email, phone, message } = await request.json()
@@ -16,16 +14,28 @@ export async function POST(request: Request) {
       )
     }
 
-    if (!process.env.RESEND_API_KEY) {
+    const resendApiKey = process.env.RESEND_API_KEY
+    const contactToEmail = process.env.CONTACT_TO_EMAIL
+
+    if (!resendApiKey) {
       return NextResponse.json(
         { error: "RESEND_API_KEY não configurada." },
         { status: 500 }
       )
     }
 
+    if (!contactToEmail) {
+      return NextResponse.json(
+        { error: "CONTACT_TO_EMAIL não configurado." },
+        { status: 500 }
+      )
+    }
+
+    const resend = new Resend(resendApiKey)
+
     const data = await resend.emails.send({
       from: "OTEN MOTORS <onboarding@resend.dev>",
-      to: process.env.CONTACT_TO_EMAIL || "teu-email@exemplo.com",
+      to: contactToEmail,
       replyTo: email,
       subject: `Novo contacto pelo website - ${name}`,
       html: `
