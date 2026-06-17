@@ -54,6 +54,9 @@ export interface Translations {
       message: string
       send: string
       whatsapp: string
+      call: string
+      sendEmail: string
+      contactButton: string
     }
     footer: {
       description: string
@@ -163,6 +166,9 @@ export const translations: Translations = {
       message: "Mensagem",
       send: "Enviar Mensagem",
       whatsapp: "WhatsApp",
+      call: "Ligar",
+      sendEmail: "Enviar Email",
+      contactButton: "Contactar",
     },
     footer: {
       description: "Excelência na venda de veículos com foco no cliente e na confiança.",
@@ -173,7 +179,7 @@ export const translations: Translations = {
       complaintsBook: "Livro de Reclamações",
       contacts: "Contactos",
       social: "Redes Sociais",
-      rights: "© 2025 OTEN MOTORS. Todos os direitos reservados.",
+      rights: "© 2026 OTEN MOTORS. Todos os direitos reservados.",
     },
     vehicleDetail: {
       specifications: "Especificações",
@@ -262,13 +268,16 @@ export const translations: Translations = {
     },
     contact: {
       title: "Contact",
-      formTitle: "Send Us a Message",
+      formTitle: "Send us a Message",
       name: "Full Name",
       email: "Email",
       phone: "Phone",
       message: "Message",
       send: "Send Message",
       whatsapp: "WhatsApp",
+      call: "Call",
+      sendEmail: "Send Email",
+      contactButton: "Contact",
     },
     footer: {
       description: "Excellence in vehicle sales with a focus on customer satisfaction and trust.",
@@ -279,7 +288,7 @@ export const translations: Translations = {
       complaintsBook: "Complaints Book",
       contacts: "Contacts",
       social: "Social Media",
-      rights: "© 2025 OTEN MOTORS. All rights reserved.",
+      rights: "© 2026 OTEN MOTORS. All rights reserved.",
     },
     vehicleDetail: {
       specifications: "Specifications",
@@ -368,13 +377,16 @@ export const translations: Translations = {
     },
     contact: {
       title: "Contacto",
-      formTitle: "Envíenos un Mensaje",
+      formTitle: "Envíanos un Mensaje",
       name: "Nombre Completo",
-      email: "Email",
+      email: "Correo Electrónico",
       phone: "Teléfono",
       message: "Mensaje",
       send: "Enviar Mensaje",
       whatsapp: "WhatsApp",
+      call: "Llamar",
+      sendEmail: "Enviar Correo",
+      contactButton: "Contactar",
     },
     footer: {
       description: "Excelencia en la venta de vehículos con enfoque en el cliente y la confianza.",
@@ -385,7 +397,7 @@ export const translations: Translations = {
       complaintsBook: "Libro de Reclamaciones",
       contacts: "Contactos",
       social: "Redes Sociales",
-      rights: "© 2025 OTEN MOTORS. Todos los derechos reservados.",
+      rights: "© 2026 OTEN MOTORS. Todos los derechos reservados.",
     },
     vehicleDetail: {
       specifications: "Especificaciones",
@@ -481,6 +493,9 @@ export const translations: Translations = {
       message: "Message",
       send: "Envoyer le Message",
       whatsapp: "WhatsApp",
+      call: "Appeler",
+      sendEmail: "Envoyer un Email",
+      contactButton: "Contacter",
     },
     footer: {
       description: "Excellence dans la vente de véhicules avec une approche centrée sur le client et la confiance.",
@@ -491,7 +506,7 @@ export const translations: Translations = {
       complaintsBook: "Livre de Réclamations",
       contacts: "Contact",
       social: "Réseaux Sociaux",
-      rights: "© 2025 OTEN MOTORS. Tous droits réservés.",
+      rights: "© 2026 OTEN MOTORS. Tous droits réservés.",
     },
     vehicleDetail: {
       specifications: "Spécifications",
@@ -587,6 +602,9 @@ export const translations: Translations = {
       message: "Nachricht",
       send: "Nachricht senden",
       whatsapp: "WhatsApp",
+      call: "Anrufen",
+      sendEmail: "E-Mail senden",
+      contactButton: "Kontaktieren",
     },
     footer: {
       description: "Exzellenz im Fahrzeugverkauf mit Fokus auf Kundenzufriedenheit und Vertrauen.",
@@ -597,7 +615,7 @@ export const translations: Translations = {
       complaintsBook: "Beschwerdebuch",
       contacts: "Kontakt",
       social: "Soziale Medien",
-      rights: "© 2025 OTEN MOTORS. Alle Rechte vorbehalten.",
+      rights: "© 2026 OTEN MOTORS. Alle Rechte vorbehalten.",
     },
     vehicleDetail: {
       specifications: "Spezifikationen",

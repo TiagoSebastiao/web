@@ -99,21 +99,45 @@ export function Footer() {
             </h3>
 
             <div className="flex gap-3">
-              <button className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 text-primary ring-2 ring-primary/20 transition-all hover:scale-110 hover:bg-primary hover:text-primary-foreground hover:ring-primary">
+              <a
+                href="https://www.facebook.com/otenmotors/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 text-primary ring-2 ring-primary/20 transition-all hover:scale-110 hover:bg-primary hover:text-primary-foreground hover:ring-primary"
+                aria-label="Facebook"
+              >
                 <Facebook className="h-5 w-5" />
-              </button>
+              </a>
 
-              <button className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 text-primary ring-2 ring-primary/20 transition-all hover:scale-110 hover:bg-primary hover:text-primary-foreground hover:ring-primary">
+              <a
+                href="https://www.instagram.com/otenmotors"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 text-primary ring-2 ring-primary/20 transition-all hover:scale-110 hover:bg-primary hover:text-primary-foreground hover:ring-primary"
+                aria-label="Instagram"
+              >
                 <Instagram className="h-5 w-5" />
-              </button>
+              </a>
 
-              <button className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 text-primary ring-2 ring-primary/20 transition-all hover:scale-110 hover:bg-primary hover:text-primary-foreground hover:ring-primary">
+              <a
+                href="https://www.youtube.com/@OTENMOTORS"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 text-primary ring-2 ring-primary/20 transition-all hover:scale-110 hover:bg-primary hover:text-primary-foreground hover:ring-primary"
+                aria-label="YouTube"
+              >
                 <Youtube className="h-5 w-5" />
-              </button>
+              </a>
 
-              <button className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 text-primary ring-2 ring-primary/20 transition-all hover:scale-110 hover:bg-primary hover:text-primary-foreground hover:ring-primary">
+              <a
+                href="https://www.tiktok.com/@otenmotors"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 text-primary ring-2 ring-primary/20 transition-all hover:scale-110 hover:bg-primary hover:text-primary-foreground hover:ring-primary"
+                aria-label="TikTok"
+              >
                 <TikTokIcon />
-              </button>
+              </a>
             </div>
           </div>
         </div>

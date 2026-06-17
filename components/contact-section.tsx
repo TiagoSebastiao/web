@@ -162,42 +162,46 @@ export function ContactSection() {
         >
           {/* WhatsApp */}
           <Card className="rounded-2xl border border-border bg-card shadow-lg transition-all hover:-translate-y-1 hover:border-primary hover:shadow-xl hover:shadow-primary/20">
-            <CardContent className="p-5 text-center">
-              <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 ring-2 ring-primary/20">
+            <CardContent className="flex flex-col items-center p-5 text-center">
+              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 ring-2 ring-primary/20">
                 <MessageCircle className="h-6 w-6 text-primary" />
               </div>
 
-              <h3 className="mb-2 text-sm font-black uppercase tracking-tight">
-                WhatsApp
+              <h3 className="mb-3 text-sm font-black uppercase tracking-tight">
+                {t.contact.whatsapp}
               </h3>
 
               <Button
                 variant="outline"
                 size="sm"
-                className="mt-2 border-primary text-primary hover:bg-primary hover:text-white"
-                onClick={() =>
-                  window.open("https://wa.me/351967339061", "_blank")
-                }
+                className="border-primary text-primary hover:bg-primary hover:text-white"
+                asChild
               >
-                Contactar
+                <a
+                  href="https://wa.me/351967339061"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {t.contact.contactButton}
+                </a>
               </Button>
             </CardContent>
           </Card>
 
           {/* Telefone */}
           <Card className="rounded-2xl border border-border bg-card shadow-lg transition-all hover:-translate-y-1 hover:border-primary hover:shadow-xl hover:shadow-primary/20">
-            <CardContent className="p-5 text-center">
-              <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 ring-2 ring-primary/20">
+            <CardContent className="flex flex-col items-center p-5 text-center">
+              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 ring-2 ring-primary/20">
                 <Phone className="h-6 w-6 text-primary" />
               </div>
 
-              <h3 className="mb-2 text-sm font-black uppercase tracking-tight">
-                Telefone
+              <h3 className="mb-3 text-sm font-black uppercase tracking-tight">
+                {t.contact.phone}
               </h3>
 
               <a
                 href="tel:+351967339061"
-                className="text-sm font-semibold text-muted-foreground hover:text-primary"
+                className="text-sm font-semibold text-muted-foreground transition-colors hover:text-primary"
               >
                 +351 967 339 061
               </a>
@@ -206,18 +210,18 @@ export function ContactSection() {
 
           {/* Email */}
           <Card className="rounded-2xl border border-border bg-card shadow-lg transition-all hover:-translate-y-1 hover:border-primary hover:shadow-xl hover:shadow-primary/20">
-            <CardContent className="p-5 text-center">
-              <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 ring-2 ring-primary/20">
+            <CardContent className="flex flex-col items-center p-5 text-center">
+              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 ring-2 ring-primary/20">
                 <Mail className="h-6 w-6 text-primary" />
               </div>
 
-              <h3 className="mb-2 text-sm font-black uppercase tracking-tight">
-                Email
+              <h3 className="mb-3 text-sm font-black uppercase tracking-tight">
+                {t.contact.email}
               </h3>
 
               <a
                 href="mailto:geral@otenmotors.com"
-                className="text-sm font-semibold text-muted-foreground hover:text-primary"
+                className="text-sm font-semibold text-muted-foreground transition-colors hover:text-primary"
               >
                 geral@otenmotors.com
               </a>
