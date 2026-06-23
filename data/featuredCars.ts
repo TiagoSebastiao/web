@@ -50,7 +50,7 @@ export interface FeaturedCar {
   }
 
   details: {
-    financing: boolean
+    financing: TranslatedText
     warranty: TranslatedText
     serviceHistory: TranslatedText
   }
@@ -91,7 +91,7 @@ const imported: TranslatedText = {
 export const featuredCars: FeaturedCar[] = [
   {
     id: "bmw-serie-1-116d-2021",
-    name: "BMW Série 1 116d",
+    name: "BMW Serie 1 116d",
     price: "21.900€",
     year: 2021,
     km: "136.000 km",
@@ -112,10 +112,10 @@ export const featuredCars: FeaturedCar[] = [
     ],
 
     description: {
-      pt: "BMW Série 1 116d automático, de 5 portas, com motor diesel 1.5 de 116 cv. Viatura compacta, elegante e eficiente, ideal para utilização diária, oferecendo conforto, tecnologia e a qualidade típica da BMW.",
+      pt: "BMW Serie 1 116d automático, de 5 portas, com motor diesel 1.5 de 116 cv. Viatura compacta, elegante e eficiente, ideal para utilização diária, oferecendo conforto, tecnologia e a qualidade típica da BMW.",
       en: "BMW 1 Series 116d automatic, 5-door hatchback, with a 1.5 diesel engine producing 116 hp. A compact, elegant and efficient vehicle, ideal for daily use, offering comfort, technology and BMW build quality.",
       es: "BMW Serie 1 116d automático, de 5 puertas, con motor diésel 1.5 de 116 cv. Vehículo compacto, elegante y eficiente, ideal para el uso diario, con confort, tecnología y la calidad típica de BMW.",
-      fr: "BMW Série 1 116d automatique, 5 portes, avec moteur diesel 1.5 de 116 ch. Véhicule compact, élégant et efficient, idéal pour un usage quotidien, offrant confort, technologie et qualité BMW.",
+      fr: "BMW Serie 1 116d automatique, 5 portes, avec moteur diesel 1.5 de 116 ch. Véhicule compact, élégant et efficient, idéal pour un usage quotidien, offrant confort, technologie et qualité BMW.",
       de: "BMW 1er 116d Automatik, 5-Türer, mit 1,5-Liter-Dieselmotor und 116 PS. Ein kompakter, eleganter und effizienter Wagen, ideal für den Alltag, mit Komfort, Technologie und BMW-Qualität.",
     },
 
@@ -437,7 +437,13 @@ export const featuredCars: FeaturedCar[] = [
     },
 
     details: {
-      financing: true,
+      financing: {
+        pt: "Até 120 meses",
+        en: "Up to 120 months",
+        es: "Hasta 120 meses",
+        fr: "Jusqu'à 120 mois",
+        de: "Bis zu 120 Monate",
+      },
       warranty: {
         pt: "18 meses",
         en: "18 months",
@@ -612,7 +618,7 @@ export const featuredCars: FeaturedCar[] = [
     },
 
     details: {
-      financing: true,
+      financing: toConfirm,
       warranty: toConfirm,
       serviceHistory: toConfirm,
     },
