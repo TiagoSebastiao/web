@@ -488,6 +488,9 @@ export default function VehicleDetailPage() {
                   <p className="text-xs text-muted-foreground">
                     {t.vehicleDetail.financing}
                   </p>
+                  <p className="font-semibold">
+                    {car.details.financing[currentLanguage]}
+                  </p>
                 </div>
 
                 <div>
