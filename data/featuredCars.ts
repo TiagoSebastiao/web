@@ -97,14 +97,18 @@ export const featuredCars: FeaturedCar[] = [
     km: "136.000 km",
     fuel: diesel,
     transmission: automatic,
-    image: "/bmw-serie-1-116d-azul.png",
+    image: "/bmw-serie-1-116d-1.jpg",
     featured: true,
     status: "disponivel",
 
     images: [
-      "/bmw-serie-1-116d-azul.png",
-      "/bmw-serie-1-116d-azul.png",
-      "/bmw-serie-1-116d-azul.png",
+      "/bmw-serie-1-116d-1.jpg",
+      "/bmw-serie-1-116d-3.jpg",
+      "/bmw-serie-1-116d-2.jpg",
+      "/bmw-serie-1-116d-4.jpg",
+      "/bmw-serie-1-116d-5.jpg",
+      "/bmw-serie-1-116d-6.jpg",
+      "/bmw-serie-1-116d-7.jpg",
     ],
 
     description: {
@@ -434,13 +438,25 @@ export const featuredCars: FeaturedCar[] = [
 
     details: {
       financing: true,
-      warranty: toConfirm,
-      serviceHistory: toConfirm,
+      warranty: {
+        pt: "18 meses",
+        en: "18 months",
+        es: "18 meses",
+        fr: "18 mois",
+        de: "18 Monate",
+      },
+      serviceHistory: {
+        pt: "Revisões & Histórico Completo",
+        en: "Full Service & Maintenance History",
+        es: "Historial Completo de Revisiones y Mantenimiento",
+        fr: "Historique Complet d’Entretien et de Révisions",
+        de: "Vollständige Service- und Wartungshistorie",
+      },
     },
   },
   {
     id: "bmw-serie-4-420d-gran-coupe-2015",
-    name: "BMW Série 4 420d Gran Coupé Auto",
+    name: "BMW Série 4 420d Coupé Auto",
     price: "A confirmar",
     year: 2015,
     km: "182.000 km", 
@@ -457,11 +473,11 @@ export const featuredCars: FeaturedCar[] = [
     ],
 
     description: {
-      pt: "BMW Série 4 420d Gran Coupé automático, de 5 portas, com motor diesel 2.0 de 184 cv. Viatura elegante, desportiva e confortável, com boa performance, consumos equilibrados e qualidade premium BMW.",
-      en: "BMW 4 Series 420d Gran Coupé automatic, 5-door, with a 2.0 diesel engine producing 184 hp. An elegant, sporty and comfortable vehicle with strong performance, balanced fuel consumption and BMW premium quality.",
-      es: "BMW Serie 4 420d Gran Coupé automático, de 5 puertas, con motor diésel 2.0 de 184 cv. Vehículo elegante, deportivo y cómodo, con buen rendimiento y calidad premium BMW.",
-      fr: "BMW Série 4 420d Gran Coupé automatique, 5 portes, avec moteur diesel 2.0 de 184 ch. Véhicule élégant, sportif et confortable, offrant de bonnes performances et la qualité premium BMW.",
-      de: "BMW 4er 420d Gran Coupé Automatik, 5-Türer, mit 2,0-Liter-Dieselmotor und 184 PS. Ein elegantes, sportliches und komfortables Fahrzeug mit BMW Premium-Qualität.",
+      pt: "BMW Série 4 420d Coupé automático, de 5 portas, com motor diesel 2.0 de 184 cv. Viatura elegante, desportiva e confortável, com boa performance, consumos equilibrados e qualidade premium BMW.",
+      en: "BMW 4 Series 420d Coupé automatic, 5-door, with a 2.0 diesel engine producing 184 hp. An elegant, sporty and comfortable vehicle with strong performance, balanced fuel consumption and BMW premium quality.",
+      es: "BMW Serie 4 420d Coupé automático, de 5 puertas, con motor diésel 2.0 de 184 cv. Vehículo elegante, deportivo y cómodo, con buen rendimiento y calidad premium BMW.",
+      fr: "BMW Série 4 420d Coupé automatique, 5 portes, avec moteur diesel 2.0 de 184 ch. Véhicule élégant, sportif et confortable, offrant de bonnes performances et la qualité premium BMW.",
+      de: "BMW 4er 420d Coupé Automatik, 5-Türer, mit 2,0-Liter-Dieselmotor und 184 PS. Ein elegantes, sportliches und komfortables Fahrzeug mit BMW Premium-Qualität.",
     },
 
     specifications: {
