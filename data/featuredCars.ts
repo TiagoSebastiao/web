@@ -97,7 +97,7 @@ export const featuredCars: FeaturedCar[] = [
     km: "136.000 km",
     fuel: diesel,
     transmission: automatic,
-    image: "/bmw-serie-1-116d-1.jpg",
+    image: "/bmw-serie-1-116d-1.png",
     featured: true,
     status: "disponivel",
 
