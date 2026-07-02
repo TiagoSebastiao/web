@@ -97,18 +97,19 @@ export const featuredCars: FeaturedCar[] = [
     km: "136.000 km",
     fuel: diesel,
     transmission: automatic,
-    image: "/bmw-serie-1-116d-1.png",
+    image: "/bmw-serie-1-116d-1.webp",
     featured: true,
     status: "disponivel",
 
     images: [
-      "/bmw-serie-1-116d-1.png",
-      "/bmw-serie-1-116d-3.png",
-      "/bmw-serie-1-116d-2.jpg",
-      "/bmw-serie-1-116d-4.png",
-      "/bmw-serie-1-116d-5.png",
-      "/bmw-serie-1-116d-6.jpg",
-      "/bmw-serie-1-116d-7.jpg",
+      "/bmw-serie-1-116d-1.webp",
+      "/bmw-serie-1-116d-3.webp",
+      "/bmw-serie-1-116d-2.webp",
+      "/bmw-serie-1-116d-4.webp",
+      "/bmw-serie-1-116d-5.webp",
+      "/bmw-serie-1-116d-6.webp",
+      "/bmw-serie-1-116d-7.webp",
+      "/bmw-serie-1-116d-8.webp",
     ],
 
     description: {
