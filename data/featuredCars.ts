@@ -102,8 +102,8 @@ export const featuredCars: FeaturedCar[] = [
     status: "disponivel",
 
     images: [
-      "/bmw-serie-1-116d-1.webp",
-      "/bmw-serie-1-116d-3.webp",
+      "/bmw-serie-1-116d-1-white.webp",
+      "/bmw-serie-1-116d-3-white.webp",
       "/bmw-serie-1-116d-2.webp",
       "/bmw-serie-1-116d-4.webp",
       "/bmw-serie-1-116d-5.webp",
