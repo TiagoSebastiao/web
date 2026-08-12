@@ -147,13 +147,43 @@ export default function VehicleDetailPage() {
                   />
 
                   <div className="absolute inset-0 hidden bg-gradient-to-t from-black via-black/30 to-transparent md:block" />
-
-                  <div className="absolute bottom-0 left-0 right-0 hidden p-7 md:block">
-                    <h1 className="max-w-4xl text-5xl font-black uppercase leading-tight tracking-tight text-white">
+                  <div
+                    className="
+                      mt-5
+                      md:absolute
+                      md:bottom-0
+                      md:left-0
+                      md:right-0
+                      md:mt-0
+                      md:p-7
+                    "
+                  >
+                    <h1
+                      className="
+                        text-3xl
+                        font-black
+                        uppercase
+                        leading-tight
+                        tracking-tight
+                        text-foreground
+                        md:max-w-4xl
+                        md:text-5xl
+                        md:text-white
+                      "
+                    >
                       {car.name}
                     </h1>
 
-                    <p className="mt-3 max-w-4xl text-base leading-relaxed text-white/75">
+                    <p
+                      className="
+                        mt-3
+                        text-base
+                        leading-relaxed
+                        text-muted-foreground
+                        md:max-w-4xl
+                        md:text-white/75
+                      "
+                    >
                       {car.description[currentLanguage]}
                     </p>
                   </div>

@@ -50,17 +50,24 @@ export function HeroSection() {
               : "translate-y-10 opacity-0"
           }`}
         >
-          {/* Title */}
           <h1 className="text-5xl font-black leading-[0.95] tracking-tight text-white md:text-7xl lg:text-8xl">
-            {t.hero.title}
+            <span className="block text-primary">
+              OTEN MOTORS
+            </span>
+
+            <span className="block">
+              {t.hero.title}
+            </span>
           </h1>
 
-          {/* Subtitle */}
-          <p className="mx-auto mt-8 max-w-3xl text-lg font-medium text-gray-300 md:text-xl lg:text-2xl">
+          <p className="mx-auto mt-6 max-w-2xl text-base font-medium text-gray-300 md:text-lg">
+            Stand automóvel especializado na compra e venda de viaturas selecionadas.
+          </p>
+
+          <p className="mx-auto mt-4 max-w-3xl text-lg font-medium text-gray-300 md:text-xl lg:text-2xl">
             {t.hero.subtitle}
           </p>
 
-          {/* Buttons */}
           <div className="mt-10 flex flex-col items-center justify-center gap-5 sm:flex-row">
             <Button
               size="lg"
