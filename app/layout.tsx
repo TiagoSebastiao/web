@@ -11,7 +11,25 @@ const montserrat = Montserrat({
 })
 
 export const metadata: Metadata = {
-  title: "OTEN MOTORS - Stand Automóvel",
+  metadataBase: new URL("https://www.otenmotors.com"),
+
+  title: {
+    default: "OTEN MOTORS | Stand Automóvel",
+    template: "%s | OTEN MOTORS",
+  },
+
+  description:
+    "OTEN MOTORS é um stand automóvel especializado na compra e venda de viaturas selecionadas, com financiamento, garantia e acompanhamento personalizado.",
+
+  alternates: {
+    canonical: "/",
+  },
+
+  robots: {
+    index: true,
+    follow: true,
+  },
+
   icons: {
     icon: [
       {
@@ -28,10 +46,76 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode
 }>) {
+
+  const jsonLd = {
+    "@context": "https://schema.org",
+
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://www.otenmotors.com/#website",
+
+        url: "https://www.otenmotors.com/",
+
+        name: "OTEN MOTORS",
+
+        alternateName: [
+          "Oten Motors",
+          "otenmotors.com",
+        ],
+
+        publisher: {
+          "@id": "https://www.otenmotors.com/#organization",
+        },
+      },
+
+      {
+        "@type": "AutoDealer",
+        "@id": "https://www.otenmotors.com/#organization",
+
+        name: "OTEN MOTORS",
+        alternateName: "Oten Motors",
+
+        url: "https://www.otenmotors.com/",
+
+        logo: {
+          "@type": "ImageObject",
+          url: "https://www.otenmotors.com/icon.png",
+        },
+
+        telephone: "+351967339061",
+
+        email: "geral@otenmotors.com",
+
+        areaServed: {
+          "@type": "Country",
+          name: "Portugal",
+        },
+
+        sameAs: [
+          "https://www.instagram.com/otenmotors/",
+          "https://www.facebook.com/otenmotors/",
+          "https://www.tiktok.com/@otenmotors",
+          "https://www.youtube.com/@otenmotors",
+        ],
+      },
+    ],
+  }
   return (
     <html lang="pt" className="dark scroll-smooth">
       <body className={`${montserrat.variable} font-sans antialiased`}>
-        <LanguageProvider>{children}</LanguageProvider>
+
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(jsonLd),
+          }}
+        />
+
+        <LanguageProvider>
+          {children}
+        </LanguageProvider>
+
       </body>
     </html>
   )
