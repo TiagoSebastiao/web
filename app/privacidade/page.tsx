@@ -20,7 +20,7 @@ const content = {
         title: "2. Responsável pelo tratamento",
         text: [
           "A entidade responsável pelo tratamento dos dados pessoais é a OTEN MOTORS.",
-          "Contacto: geral@otenmotors.com | +351 938 798 993.",
+          "Contacto: geral@otenmotors.com | +351 967 339 061.",
         ],
       },
       {
@@ -94,7 +94,7 @@ const content = {
         title: "2. Data controller",
         text: [
           "The entity responsible for processing personal data is OTEN MOTORS.",
-          "Contact: geral@otenmotors.com | +351 938 798 993.",
+          "Contact: geral@otenmotors.com | +351 967 339 061.",
         ],
       },
       {
@@ -168,7 +168,7 @@ const content = {
         title: "2. Responsable del tratamiento",
         text: [
           "La entidad responsable del tratamiento de los datos personales es OTEN MOTORS.",
-          "Contacto: geral@otenmotors.com | +351 938 798 993.",
+          "Contacto: geral@otenmotors.com | +351 967 339 061.",
         ],
       },
       {
@@ -242,7 +242,7 @@ const content = {
         title: "2. Responsable du traitement",
         text: [
           "L’entité responsable du traitement des données personnelles est OTEN MOTORS.",
-          "Contact : geral@otenmotors.com | +351 938 798 993.",
+          "Contact : geral@otenmotors.com | +351 967 339 061.",
         ],
       },
       {
@@ -316,7 +316,7 @@ const content = {
         title: "2. Verantwortlicher",
         text: [
           "Verantwortlich für die Verarbeitung personenbezogener Daten ist OTEN MOTORS.",
-          "Kontakt: geral@otenmotors.com | +351 938 798 993.",
+          "Kontakt: geral@otenmotors.com | +351 967 339 061.",
         ],
       },
       {

@@ -13,7 +13,7 @@ const content = {
         title: "1. Identificação",
         text: [
           "O presente website é propriedade da OTEN MOTORS e destina-se à divulgação de veículos automóveis, serviços associados e contactos comerciais.",
-          "Para qualquer questão relacionada com o website ou com os veículos apresentados, poderá contactar-nos através do email geral@otenmotors.com ou do telefone +351 938 798 993.",
+          "Para qualquer questão relacionada com o website ou com os veículos apresentados, poderá contactar-nos através do email geral@otenmotors.com ou do telefone +351 967 339 061.",
         ],
       },
       {
@@ -84,7 +84,7 @@ const content = {
         title: "1. Identification",
         text: [
           "This website is owned by OTEN MOTORS and is intended to present vehicles, related services and commercial contacts.",
-          "For any question related to the website or the vehicles displayed, you may contact us at geral@otenmotors.com or +351 938 798 993.",
+          "For any question related to the website or the vehicles displayed, you may contact us at geral@otenmotors.com or +351 967 339 061.",
         ],
       },
       {
@@ -155,7 +155,7 @@ const content = {
         title: "1. Identificación",
         text: [
           "Este sitio web es propiedad de OTEN MOTORS y está destinado a la divulgación de vehículos, servicios asociados y contactos comerciales.",
-          "Para cualquier cuestión relacionada con el sitio web o los vehículos presentados, puede contactarnos por email en geral@otenmotors.com o por teléfono en +351 938 798 993.",
+          "Para cualquier cuestión relacionada con el sitio web o los vehículos presentados, puede contactarnos por email en geral@otenmotors.com o por teléfono en +351 967 339 061.",
         ],
       },
       {
@@ -226,7 +226,7 @@ const content = {
         title: "1. Identification",
         text: [
           "Ce site web appartient à OTEN MOTORS et vise à présenter des véhicules, des services associés et des contacts commerciaux.",
-          "Pour toute question relative au site ou aux véhicules présentés, vous pouvez nous contacter à geral@otenmotors.com ou au +351 938 798 993.",
+          "Pour toute question relative au site ou aux véhicules présentés, vous pouvez nous contacter à geral@otenmotors.com ou au +351 967 339 061.",
         ],
       },
       {
@@ -297,7 +297,7 @@ const content = {
         title: "1. Identifikation",
         text: [
           "Diese Website gehört OTEN MOTORS und dient der Präsentation von Fahrzeugen, damit verbundenen Dienstleistungen und Geschäftskontakten.",
-          "Bei Fragen zur Website oder zu den präsentierten Fahrzeugen kontaktieren Sie uns bitte unter geral@otenmotors.com oder +351 938 798 993.",
+          "Bei Fragen zur Website oder zu den präsentierten Fahrzeugen kontaktieren Sie uns bitte unter geral@otenmotors.com oder +351 967 339 061.",
         ],
       },
       {
