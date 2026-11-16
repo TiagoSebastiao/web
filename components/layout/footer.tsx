@@ -23,17 +23,6 @@ export function Footer() {
   // Guia para estrangeiros: só existe em EN, FR e DE.
   const guideLink = isGuideLocale(locale) ? guide[locale] : null
 
-  // Linha com os dados legais da empresa (só aparece o que estiver preenchido em config/site.ts).
-  // Ordem do art. 171.º do Código das Sociedades Comerciais: firma, tipo, sede, conservatória, NIPC, capital.
-  const legalLine = [
-    legal.companyName,
-    legal.legalForm,
-    legal.registeredOffice && `${t("registeredOffice")}: ${legal.registeredOffice}`,
-    legal.commercialRegistry && `${t("registry")}: ${legal.commercialRegistry}`,
-    legal.nipc && `${t("nipc")} ${legal.nipc}`,
-    legal.shareCapital && `${t("shareCapital")}: ${legal.shareCapital}`,
-  ].filter(Boolean)
-
   return (
     <footer className="relative overflow-hidden border-t border-white/10 bg-gradient-to-b from-background to-black pt-16 pb-8">
       <div aria-hidden="true" className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary to-transparent" />
@@ -130,7 +119,6 @@ export function Footer() {
         </p>
 
         <div className="mt-8 border-t border-white/10 pt-6 text-center text-xs text-muted-foreground">
-          {legalLine.length > 0 && <p className="mb-2">{legalLine.join(" · ")}</p>}
           <p>{t("rights", { year: new Date().getFullYear() })}</p>
         </div>
       </div>

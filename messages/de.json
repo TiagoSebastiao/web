@@ -139,12 +139,8 @@
     "privacy": "Datenschutzerklärung",
     "cookies": "Cookie-Richtlinie",
     "complaintsBook": "Beschwerdebuch",
-    "nipc": "Steuernummer",
     "adr": "Alternative Streitbeilegung",
-    "rights": "© {year} OTEN MOTORS. Alle Rechte vorbehalten.",
-    "registeredOffice": "Sitz",
-    "registry": "Eingetragen bei",
-    "shareCapital": "Stammkapital"
+    "rights": "© {year} OTEN MOTORS. Alle Rechte vorbehalten."
   },
   "vehicle": {
     "back": "Alle Fahrzeuge ansehen",

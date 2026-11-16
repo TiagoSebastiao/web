@@ -139,12 +139,8 @@
     "privacy": "Politique de confidentialité",
     "cookies": "Politique de cookies",
     "complaintsBook": "Livre de réclamations",
-    "nipc": "N° fiscal",
     "adr": "Règlement extrajudiciaire des litiges",
-    "rights": "© {year} OTEN MOTORS. Tous droits réservés.",
-    "registeredOffice": "Siège social",
-    "registry": "Immatriculée à",
-    "shareCapital": "Capital social"
+    "rights": "© {year} OTEN MOTORS. Tous droits réservés."
   },
   "vehicle": {
     "back": "Voir tous les véhicules",
