@@ -1,0 +1,383 @@
+{
+  "meta": {
+    "title": "OTEN MOTORS | Nearly new and used car dealer in Portugal",
+    "description": "Car dealer specialising in buying and selling nearly new and used vehicles. Browse our available cars with real photos and get in touch on WhatsApp.",
+    "vehicleDescription": "{year} {name}, {mileage}, {fuel}, {transmission} transmission. {price}. Full photo gallery and specifications at OTEN MOTORS.",
+    "vehicleNotFound": "Vehicle not found"
+  },
+  "nav": {
+    "vehicles": "Vehicles",
+    "tradeIn": "Trade-in",
+    "about": "About us",
+    "contact": "Contact",
+    "whatsapp": "WhatsApp",
+    "home": "OTEN MOTORS — home page",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "language": "Language",
+    "floatingWhatsapp": "Chat on WhatsApp"
+  },
+  "hero": {
+    "eyebrow": "Nearly new & used cars",
+    "title": "Nearly new and used cars, <hl>chosen one by one.</hl>",
+    "intro": "Discover carefully selected cars, real photos and transparent information. Get all your questions answered quickly and personally on WhatsApp.",
+    "ctaVehicles": "View vehicles",
+    "viewCar": "View car",
+    "showSlide": "Show {name}"
+  },
+  "highlights": {
+    "title": "Why OTEN MOTORS",
+    "selection": {
+      "title": "Carefully selected",
+      "text": "Cars chosen one by one. Every car is inspected and tested before it joins our stock."
+    },
+    "photos": {
+      "title": "Real photos",
+      "text": "We photograph every car ourselves, inside and out."
+    },
+    "direct": {
+      "title": "Direct contact",
+      "text": "You always deal with us, from the first message to handover."
+    },
+    "buy": {
+      "title": "We accept your car as a trade-in",
+      "text": "Want to sell or change your car? We'll make you an offer, with no obligation."
+    },
+    "heading": "Buying a car, made simple",
+    "subtitle": "A small dealer that pays attention to every car and every customer."
+  },
+  "vehicles": {
+    "title": "Available vehicles",
+    "subtitle": "Real photos and clear information for every car.",
+    "viewVehicle": "View vehicle",
+    "priceOnRequest": "Price on request",
+    "photos": "{count} photos",
+    "empty": "There are no vehicles listed on the website right now. See our listings on Standvirtual or get in touch.",
+    "moreOnStandvirtual": "See all our listings on Standvirtual",
+    "status": {
+      "available": "Available",
+      "reserved": "Reserved",
+      "sold": "Sold"
+    },
+    "eyebrow": "Current stock"
+  },
+  "standvirtual": {
+    "eyebrow": "Our listings",
+    "title": "Follow OTEN MOTORS on Standvirtual",
+    "text": "Standvirtual, Portugal’s leading car marketplace, is our main listing channel. Our profile shows every car in stock and new arrivals as soon as they come in.",
+    "cta": "View our Standvirtual profile",
+    "newWindow": "opens in a new window"
+  },
+  "about": {
+    "eyebrow": "About us",
+    "title": "A dealer for people looking for more than just a car",
+    "text1": "At OTEN MOTORS, we believe buying a car should be simple, transparent and safe. We focus on a carefully chosen selection of nearly new and used cars, with an eye for quality, attention to detail and close, personal support.",
+    "text2": "More than selling cars, we want to build lasting relationships of trust, making sure every customer finds the right solution for their needs.",
+    "stepsTitle": "How it works",
+    "steps": {
+      "choose": {
+        "title": "Choose your car",
+        "text": "Browse the cars here on our website or on our Standvirtual profile."
+      },
+      "talk": {
+        "title": "Talk to us",
+        "text": "Ask anything and request more photos or videos. We reply as quickly as we can."
+      },
+      "visit": {
+        "title": "See the car",
+        "text": "We agree a day and place with you to see the car and take a test drive."
+      },
+      "drive": {
+        "title": "We deliver your car",
+        "text": "We handle the paperwork and deliver the car ready to drive, to your door."
+      }
+    },
+    "imageAlt": "Interior of the BMW 4 Series photographed by OTEN MOTORS"
+  },
+  "sell": {
+    "title": "Want to sell your car?",
+    "text": "We also buy cars. Send us the make, model, year, mileage and a few photos on WhatsApp and we’ll get back to you with an offer.",
+    "cta": "Request an offer",
+    "whatsappMessage": "Hello! I’d like to sell my car. Make and model: … Year: … Mileage: …",
+    "points": [
+      "No-obligation offer",
+      "All handled on WhatsApp",
+      "Quick reply"
+    ]
+  },
+  "contact": {
+    "eyebrow": "Contact",
+    "title": "Get in touch",
+    "subtitle": "Choose whichever channel suits you. We reply as quickly as we can.",
+    "formTitle": "Send us a message",
+    "name": "Name",
+    "email": "Email",
+    "phone": "Phone",
+    "optional": "optional",
+    "message": "Message",
+    "messagePlaceholder": "E.g. I’m interested in the BMW 4 Series. Could you send more photos?",
+    "send": "Send message",
+    "sending": "Sending…",
+    "success": "Thank you! We’ve received your message and will reply shortly.",
+    "error": "Your message could not be sent. Please try again or contact us on WhatsApp.",
+    "invalid": "Please check the highlighted fields and try again.",
+    "privacy": "Your details are only used to reply to this request. Find out more in our <link>Privacy Policy</link>.",
+    "whatsapp": "WhatsApp",
+    "whatsappAction": "Start a chat",
+    "phoneTitle": "Phone",
+    "emailTitle": "Email",
+    "whatsappMessage": "Hello! I found you on the OTEN MOTORS website and would like more information."
+  },
+  "footer": {
+    "description": "Car dealer specialising in buying and selling nearly new and used vehicles.",
+    "explore": "Explore",
+    "legal": "Legal information",
+    "contacts": "Contact",
+    "social": "Social media",
+    "terms": "Terms and Conditions",
+    "privacy": "Privacy Policy",
+    "cookies": "Cookie Policy",
+    "complaintsBook": "Complaints Book",
+    "nipc": "Tax no.",
+    "adr": "Alternative dispute resolution",
+    "rights": "© {year} OTEN MOTORS. All rights reserved.",
+    "registeredOffice": "Registered office",
+    "registry": "Registered at",
+    "shareCapital": "Share capital"
+  },
+  "vehicle": {
+    "back": "See all vehicles",
+    "previousPhoto": "Previous photo",
+    "nextPhoto": "Next photo",
+    "openPhoto": "Enlarge photo",
+    "closePhoto": "Close",
+    "photoCounter": "{current} / {total}",
+    "photoAlt": "{name} — photo {number}",
+    "thumbnail": "Show photo {number}",
+    "keySpecs": "Key details",
+    "firstRegistration": "First registered",
+    "mileage": "Mileage",
+    "fuel": "Fuel",
+    "transmission": "Transmission",
+    "engine": "Engine",
+    "engineValue": "{cc} cc",
+    "cylindersValue": "{count} cylinders",
+    "power": "Power",
+    "powerValue": "{hp} hp ({kw} kW)",
+    "bodyType": "Body type",
+    "doors": "Doors",
+    "seats": "Seats",
+    "color": "Colour",
+    "origin": "Origin",
+    "equipment": "Equipment",
+    "technicalData": "Technical data",
+    "torque": "Torque",
+    "acceleration": "0–100 km/h",
+    "topSpeed": "Top speed",
+    "consumption": "Average consumption",
+    "co2": "CO₂ emissions",
+    "weight": "Weight",
+    "dimensions": "Dimensions",
+    "length": "Length",
+    "width": "Width",
+    "height": "Height",
+    "wheelbase": "Wheelbase",
+    "trunk": "Boot capacity",
+    "conditions": "Terms",
+    "warranty": "Warranty",
+    "warrantyValue": "{months} months",
+    "serviceHistory": "Maintenance",
+    "contactTitle": "Interested in this car?",
+    "contactText": "Get in touch for more information or to arrange a viewing.",
+    "whatsappCta": "Chat on WhatsApp",
+    "call": "Call",
+    "whatsappMessage": "Hello! I’m interested in the {name} ({url}). Is it still available?",
+    "standvirtualCta": "View listing on Standvirtual",
+    "disclaimer": "Information is indicative. Please confirm all details with us before buying.",
+    "performance": "By the numbers",
+    "gallery": "Gallery",
+    "overview": "About this car",
+    "dataSheet": "Spec sheet",
+    "otherVehicles": "More cars in stock",
+    "viewGallery": "View photos",
+    "hpUnit": "hp"
+  },
+  "notFound": {
+    "title": "Page not found",
+    "text": "The page you are looking for does not exist or the vehicle is no longer available.",
+    "cta": "See available vehicles"
+  },
+  "labels": {
+    "fuel": {
+      "diesel": "Diesel",
+      "petrol": "Petrol",
+      "hybrid": "Hybrid",
+      "pluginHybrid": "Plug-in hybrid",
+      "electric": "Electric",
+      "lpg": "LPG"
+    },
+    "transmission": {
+      "automatic": "Automatic",
+      "manual": "Manual"
+    },
+    "bodyType": {
+      "hatchback": "Hatchback",
+      "coupe": "Coupé",
+      "sedan": "Saloon",
+      "estate": "Estate",
+      "suv": "SUV",
+      "convertible": "Convertible",
+      "van": "MPV"
+    },
+    "origin": {
+      "national": "Portuguese",
+      "imported": "Imported"
+    },
+    "color": {
+      "black": "Black",
+      "blue": "Blue",
+      "white": "White",
+      "grey": "Grey",
+      "silver": "Silver",
+      "red": "Red",
+      "green": "Green",
+      "brown": "Brown",
+      "beige": "Beige"
+    },
+    "equipment": {
+      "adaptiveCruiseControl": "Adaptive cruise control",
+      "airbags": "Airbags",
+      "alarm": "Alarm",
+      "alloyWheels": "Alloy wheels",
+      "androidAutoAppleCarplay": "Android Auto and Apple CarPlay",
+      "autoDimmingMirror": "Auto-dimming rear-view mirror",
+      "autoParkingAssist": "Automatic parking",
+      "automaticClimate": "Automatic climate control",
+      "bluetooth": "Bluetooth",
+      "clothUpholstery": "Cloth upholstery",
+      "cruiseControl": "Cruise control",
+      "dabRadio": "DAB radio",
+      "daytimeRunningLights": "Daytime running lights",
+      "digitalCockpit": "Digital cockpit",
+      "drivingModes": "Driving modes (Eco Pro, Comfort, Sport)",
+      "dualZoneClimate": "Dual-zone automatic climate control",
+      "eCall": "Emergency call (eCall)",
+      "electricHeatedMirrors": "Electric heated mirrors",
+      "electricWindowsFront": "Front electric windows",
+      "fogLights": "Fog lights",
+      "idrive": "iDrive system with display",
+      "isofix": "Isofix",
+      "keylessStart": "Keyless start",
+      "laneKeepingAssist": "Lane keeping assist",
+      "leatherMultifunctionSteeringWheel": "Leather multifunction steering wheel",
+      "ledHeadlights": "LED headlights",
+      "lightSensor": "Light sensor",
+      "metallicPaint": "Metallic paint",
+      "mSportSteeringWheel": "M sport multifunction steering wheel",
+      "navigation": "Navigation system",
+      "paddleShifters": "Steering wheel paddle shifters",
+      "parkingAssist": "Parking assistant",
+      "parkingSensorsFrontRear": "Front and rear parking sensors",
+      "parkingSensorsRear": "Rear parking sensors",
+      "rainSensor": "Rain sensor",
+      "startStop": "Start/Stop system",
+      "tyrePressureMonitoring": "Tyre pressure monitoring"
+    }
+  },
+  "finance": {
+    "title": "How much per month?",
+    "intro": "Choose the down payment and term, and enter the rate you were offered by a lender to estimate the monthly payment.",
+    "downPayment": "Deposit",
+    "term": "Term",
+    "months": "{count, plural, one {# month} other {# months}}",
+    "rate": "Annual interest rate",
+    "ratePlaceholder": "Rate from your offer",
+    "rateHelp": "Enter the nominal annual rate of your offer (between {min}% and {max}%).",
+    "monthly": "Estimated monthly payment",
+    "perMonth": "/month",
+    "missingRate": "Enter the rate to see the monthly payment.",
+    "financed": "Amount to finance",
+    "total": "Total paid (incl. deposit)",
+    "disclaimer": "Purely indicative calculation tool, for the user's own use only. The figures come solely from the data you entered and are not a credit proposal, offer, recommendation or credit advertising. OTEN MOTORS does not grant credit, is not a credit intermediary, has no relationship with any lender and does not assess, propose or forward finance applications. The calculation uses monthly compound interest on the amount financed and does not include APR, fees, stamp duty, insurance or other charges. The accepted rate is limited to between {min}% and {max}%; the upper limit is the legal maximum APR for used-car credit set by Banco de Portugal for {period}. For real, binding terms, contact a credit institution authorised by Banco de Portugal.",
+    "shortcut": "Monthly payment",
+    "rateOutOfRange": "The rate must be between {min}% and {max}%."
+  },
+  "transparency": {
+    "title": "Transparency",
+    "intro": "What we know about this car, and what you can ask us to confirm before you decide.",
+    "photosLabel": "Photos",
+    "photosValue": "{count} real photos of this car",
+    "originLabel": "Origin",
+    "registrationLabel": "First registration and mileage",
+    "serviceLabel": "Servicing",
+    "warrantyLabel": "Warranty",
+    "warrantyNote": "Commercial warranty provided by a partner company, under the terms of its certificate. This does not affect the legal guarantee of conformity under Decree-Law No. 84/2021. See Terms and Conditions."
+  },
+  "finder": {
+    "eyebrow": "Find your car",
+    "title": "Which car is right for you?",
+    "subtitle": "Answer 5 quick questions. Based on studies and listings from Portugal's used-car market, we suggest the models and years that make sense for you, and show what we have in stock.",
+    "budget": {
+      "question": "What's your budget?",
+      "b10": "Up to €10,000",
+      "b15": "€10,000 to €15,000",
+      "b25": "€15,000 to €25,000",
+      "b25plus": "Over €25,000"
+    },
+    "use": {
+      "question": "Where will you drive most?",
+      "city": "City",
+      "mixed": "Mixed",
+      "road": "Open road and motorway"
+    },
+    "km": {
+      "question": "How many km a year?",
+      "low": "Under 10,000",
+      "mid": "10,000 to 20,000",
+      "high": "Over 20,000"
+    },
+    "gearbox": {
+      "question": "Which gearbox?",
+      "automatic": "Automatic",
+      "manual": "Manual",
+      "any": "No preference"
+    },
+    "waiting": "Answer the 5 questions to see our analysis ({answered}/5).",
+    "searchForYou": "Like any of these suggestions? Send us your answers and we'll look for the best cars for you, with no obligation.",
+    "cta": "Search for me",
+    "whatsappMessage": "Hi! I'm looking for a car. Budget: {budget}. Type: {body}. Use: {use}. Km per year: {km}. Gearbox: {gearbox}. Your website's assistant suggested: {models}. Can you help me find one?",
+    "reset": "Start again",
+    "body": {
+      "question": "What kind of car?",
+      "small": "Small car",
+      "compact": "Hatchback",
+      "suv": "SUV",
+      "family": "Family / estate",
+      "any": "No preference"
+    },
+    "analysisTitle": "Our analysis",
+    "reason": {
+      "dieselRoad": "With high mileage on open roads, diesel is still the cheapest per kilometre. That's why it's the most sought-after fuel on Portugal's used market (47% of demand). If you'd rather avoid diesel, a hybrid is the alternative.",
+      "dieselMixed": "At over 20,000 km a year, a diesel pays for itself quickly, even in mixed driving. If part of the journey is in town, a hybrid is a good alternative.",
+      "hybridCity": "In town, a hybrid uses little fuel in stop-start traffic because it recovers energy when braking, and it never needs charging. If you can charge at home, an electric car lowers the cost per km even further.",
+      "hybridMixed": "For mixed driving and average mileage, a hybrid is the sweet spot: it saves in town without penalising you on the open road. Petrol is the cheapest to buy.",
+      "petrolLow": "Under 10,000 km a year, a diesel never makes up for its higher price and servicing costs. Petrol is cheaper to buy and to run.",
+      "petrolLowCity": "With low mileage, mostly in town, petrol is the cheapest choice to buy. If your budget allows, a hybrid uses much less in traffic."
+    },
+    "chargeHome": "Electric cars only pay off if you can charge at home or at work.",
+    "modelsTitle": "Models we'd look for you",
+    "automaticAvailable": "Automatic versions available",
+    "cheaper": "Below your budget",
+    "source": "Source",
+    "stockTitle": "From our stock",
+    "disclaimer": "Suggestions based on studies, rankings and listings from Portugal's used-car market (2025–2026). Years are a guide only: the price always depends on mileage, version and condition.",
+    "relaxed": "We couldn't find this type of car within this budget and preferences. These are the closest alternatives."
+  },
+  "social": {
+    "eyebrow": "Social media",
+    "title": "Follow us on social media",
+    "subtitle": "New arrivals, videos and news from the dealership, first-hand.",
+    "follow": "Follow",
+    "open": "Open OTEN MOTORS on {name} (new window)"
+  }
+}

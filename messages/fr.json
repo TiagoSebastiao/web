@@ -1,0 +1,383 @@
+{
+  "meta": {
+    "title": "OTEN MOTORS | Véhicules récents et d’occasion au Portugal",
+    "description": "Garage spécialisé dans les voitures récentes et d’occasion. Découvrez nos véhicules en photos réelles et contactez-nous sur WhatsApp.",
+    "vehicleDescription": "{name} de {year}, {mileage}, {fuel}, boîte {transmission}. {price}. Photos et caractéristiques complètes chez OTEN MOTORS.",
+    "vehicleNotFound": "Véhicule introuvable"
+  },
+  "nav": {
+    "vehicles": "Véhicules",
+    "tradeIn": "Reprise",
+    "about": "À propos",
+    "contact": "Contact",
+    "whatsapp": "WhatsApp",
+    "home": "OTEN MOTORS — page d’accueil",
+    "openMenu": "Ouvrir le menu",
+    "closeMenu": "Fermer le menu",
+    "language": "Langue",
+    "floatingWhatsapp": "Écrire sur WhatsApp"
+  },
+  "hero": {
+    "eyebrow": "Occasions récentes",
+    "title": "Occasions récentes et d'occasion, choisies <hl>une à une.</hl>",
+    "intro": "Découvrez des voitures sélectionnées avec rigueur, des photos réelles et des informations transparentes. Obtenez des réponses rapides et personnalisées à toutes vos questions sur WhatsApp.",
+    "ctaVehicles": "Voir les véhicules",
+    "viewCar": "Voir la voiture",
+    "showSlide": "Afficher {name}"
+  },
+  "highlights": {
+    "title": "Pourquoi OTEN MOTORS",
+    "selection": {
+      "title": "Sélection rigoureuse",
+      "text": "Des voitures choisies une à une. Chaque véhicule est inspecté et essayé avant d'entrer en stock."
+    },
+    "photos": {
+      "title": "Photos réelles",
+      "text": "Nous photographions nous-mêmes chaque véhicule, intérieur et extérieur."
+    },
+    "direct": {
+      "title": "Contact direct",
+      "text": "Vous traitez toujours avec nous, du premier contact à la livraison."
+    },
+    "buy": {
+      "title": "Nous reprenons votre voiture",
+      "text": "Vous souhaitez vendre ou changer de voiture ? Nous vous faisons une offre sans engagement."
+    },
+    "heading": "Acheter une voiture, en toute simplicité",
+    "subtitle": "Un petit concessionnaire, attentif à chaque véhicule et à chaque client."
+  },
+  "vehicles": {
+    "title": "Véhicules disponibles",
+    "subtitle": "Des photos réelles et des informations claires pour chaque véhicule.",
+    "viewVehicle": "Voir le véhicule",
+    "priceOnRequest": "Prix sur demande",
+    "photos": "{count} photos",
+    "empty": "Aucun véhicule n’est publié sur le site pour le moment. Consultez nos annonces sur Standvirtual ou contactez-nous.",
+    "moreOnStandvirtual": "Voir toutes nos annonces sur Standvirtual",
+    "status": {
+      "available": "Disponible",
+      "reserved": "Réservé",
+      "sold": "Vendu"
+    },
+    "eyebrow": "Stock actuel"
+  },
+  "standvirtual": {
+    "eyebrow": "Nos annonces",
+    "title": "Suivez OTEN MOTORS sur Standvirtual",
+    "text": "Standvirtual, le principal site d’annonces automobiles au Portugal, est notre canal de vente. Notre profil présente tous les véhicules en stock et les nouveautés dès leur arrivée.",
+    "cta": "Voir notre profil Standvirtual",
+    "newWindow": "s’ouvre dans une nouvelle fenêtre"
+  },
+  "about": {
+    "eyebrow": "À propos",
+    "title": "Un garage pensé pour ceux qui cherchent plus qu'une voiture",
+    "text1": "Chez OTEN MOTORS, nous pensons qu'acheter une voiture doit être simple, transparent et sûr. Nous misons sur une sélection rigoureuse de véhicules récents et d'occasion, en privilégiant la qualité, le souci du détail et un accompagnement proche et personnalisé.",
+    "text2": "Au-delà de vendre des voitures, nous voulons construire des relations de confiance durables, pour que chaque client trouve la solution adaptée à ses besoins.",
+    "stepsTitle": "Comment ça marche",
+    "steps": {
+      "choose": {
+        "title": "Choisissez le véhicule",
+        "text": "Consultez les véhicules ici sur le site ou sur notre profil Standvirtual."
+      },
+      "talk": {
+        "title": "Contactez-nous",
+        "text": "Posez vos questions et demandez plus de photos ou de vidéos. Nous répondons au plus vite."
+      },
+      "visit": {
+        "title": "Voyez la voiture",
+        "text": "Nous convenons avec vous d’un jour et d’un lieu pour voir le véhicule et faire un essai."
+      },
+      "drive": {
+        "title": "Nous vous livrons votre voiture",
+        "text": "Nous nous occupons des formalités et vous livrons la voiture prête à rouler, chez vous."
+      }
+    },
+    "imageAlt": "Intérieur de la BMW Série 4 photographié par OTEN MOTORS"
+  },
+  "sell": {
+    "title": "Vous voulez vendre votre voiture ?",
+    "text": "Nous achetons aussi des véhicules. Envoyez-nous la marque, le modèle, l’année, le kilométrage et quelques photos sur WhatsApp, et nous vous répondrons avec une offre.",
+    "cta": "Demander une offre",
+    "whatsappMessage": "Bonjour ! J’aimerais vendre ma voiture. Marque et modèle : … Année : … Kilométrage : …",
+    "points": [
+      "Offre sans engagement",
+      "Tout se fait sur WhatsApp",
+      "Réponse rapide"
+    ]
+  },
+  "contact": {
+    "eyebrow": "Contact",
+    "title": "Contactez-nous",
+    "subtitle": "Choisissez le canal qui vous convient. Nous répondons au plus vite.",
+    "formTitle": "Envoyez-nous un message",
+    "name": "Nom",
+    "email": "E-mail",
+    "phone": "Téléphone",
+    "optional": "facultatif",
+    "message": "Message",
+    "messagePlaceholder": "Ex. : La BMW Série 4 m’intéresse. Pouvez-vous m’envoyer plus de photos ?",
+    "send": "Envoyer le message",
+    "sending": "Envoi en cours…",
+    "success": "Merci ! Nous avons bien reçu votre message et vous répondrons rapidement.",
+    "error": "Le message n’a pas pu être envoyé. Réessayez ou contactez-nous sur WhatsApp.",
+    "invalid": "Vérifiez les champs signalés et réessayez.",
+    "privacy": "Vos données sont utilisées uniquement pour répondre à cette demande. En savoir plus dans notre <link>Politique de confidentialité</link>.",
+    "whatsapp": "WhatsApp",
+    "whatsappAction": "Ouvrir la conversation",
+    "phoneTitle": "Téléphone",
+    "emailTitle": "E-mail",
+    "whatsappMessage": "Bonjour ! Je viens du site d’OTEN MOTORS et j’aimerais avoir plus d’informations."
+  },
+  "footer": {
+    "description": "Concessionnaire spécialisé dans l’achat et la vente de véhicules récents et d’occasion.",
+    "explore": "Explorer",
+    "legal": "Informations légales",
+    "contacts": "Contact",
+    "social": "Réseaux sociaux",
+    "terms": "Conditions générales",
+    "privacy": "Politique de confidentialité",
+    "cookies": "Politique de cookies",
+    "complaintsBook": "Livre de réclamations",
+    "nipc": "N° fiscal",
+    "adr": "Règlement extrajudiciaire des litiges",
+    "rights": "© {year} OTEN MOTORS. Tous droits réservés.",
+    "registeredOffice": "Siège social",
+    "registry": "Immatriculée à",
+    "shareCapital": "Capital social"
+  },
+  "vehicle": {
+    "back": "Voir tous les véhicules",
+    "previousPhoto": "Photo précédente",
+    "nextPhoto": "Photo suivante",
+    "openPhoto": "Agrandir la photo",
+    "closePhoto": "Fermer",
+    "photoCounter": "{current} / {total}",
+    "photoAlt": "{name} — photo {number}",
+    "thumbnail": "Voir la photo {number}",
+    "keySpecs": "Caractéristiques",
+    "firstRegistration": "1ʳᵉ immatriculation",
+    "mileage": "Kilométrage",
+    "fuel": "Carburant",
+    "transmission": "Boîte",
+    "engine": "Moteur",
+    "engineValue": "{cc} cm³",
+    "cylindersValue": "{count} cylindres",
+    "power": "Puissance",
+    "powerValue": "{hp} ch ({kw} kW)",
+    "bodyType": "Carrosserie",
+    "doors": "Portes",
+    "seats": "Places",
+    "color": "Couleur",
+    "origin": "Origine",
+    "equipment": "Équipements",
+    "technicalData": "Données techniques",
+    "torque": "Couple",
+    "acceleration": "0–100 km/h",
+    "topSpeed": "Vitesse maximale",
+    "consumption": "Consommation moyenne",
+    "co2": "Émissions de CO₂",
+    "weight": "Poids",
+    "dimensions": "Dimensions",
+    "length": "Longueur",
+    "width": "Largeur",
+    "height": "Hauteur",
+    "wheelbase": "Empattement",
+    "trunk": "Coffre",
+    "conditions": "Conditions",
+    "warranty": "Garantie",
+    "warrantyValue": "{months} mois",
+    "serviceHistory": "Entretien",
+    "contactTitle": "Ce véhicule vous intéresse ?",
+    "contactText": "Contactez-nous pour plus d’informations ou pour convenir d’une visite.",
+    "whatsappCta": "Écrire sur WhatsApp",
+    "call": "Appeler",
+    "whatsappMessage": "Bonjour ! La {name} ({url}) m’intéresse. Est-elle toujours disponible ?",
+    "standvirtualCta": "Voir l’annonce sur Standvirtual",
+    "disclaimer": "Informations indicatives. Confirmez toutes les données avec nous avant l’achat.",
+    "performance": "En chiffres",
+    "gallery": "Galerie",
+    "overview": "À propos de ce véhicule",
+    "dataSheet": "Fiche technique",
+    "otherVehicles": "Autres véhicules en stock",
+    "viewGallery": "Voir les photos",
+    "hpUnit": "ch"
+  },
+  "notFound": {
+    "title": "Page introuvable",
+    "text": "La page que vous cherchez n’existe pas ou le véhicule n’est plus disponible.",
+    "cta": "Voir les véhicules disponibles"
+  },
+  "labels": {
+    "fuel": {
+      "diesel": "Diesel",
+      "petrol": "Essence",
+      "hybrid": "Hybride",
+      "pluginHybrid": "Hybride rechargeable",
+      "electric": "Électrique",
+      "lpg": "GPL"
+    },
+    "transmission": {
+      "automatic": "Automatique",
+      "manual": "Manuelle"
+    },
+    "bodyType": {
+      "hatchback": "Compacte",
+      "coupe": "Coupé",
+      "sedan": "Berline",
+      "estate": "Break",
+      "suv": "SUV",
+      "convertible": "Cabriolet",
+      "van": "Monospace"
+    },
+    "origin": {
+      "national": "Portugal",
+      "imported": "Importé"
+    },
+    "color": {
+      "black": "Noir",
+      "blue": "Bleu",
+      "white": "Blanc",
+      "grey": "Gris",
+      "silver": "Argent",
+      "red": "Rouge",
+      "green": "Vert",
+      "brown": "Marron",
+      "beige": "Beige"
+    },
+    "equipment": {
+      "adaptiveCruiseControl": "Régulateur de vitesse adaptatif",
+      "airbags": "Airbags",
+      "alarm": "Alarme",
+      "alloyWheels": "Jantes en alliage",
+      "androidAutoAppleCarplay": "Android Auto et Apple CarPlay",
+      "autoDimmingMirror": "Rétroviseur intérieur électrochrome",
+      "autoParkingAssist": "Stationnement automatique",
+      "automaticClimate": "Climatisation automatique",
+      "bluetooth": "Bluetooth",
+      "clothUpholstery": "Sellerie en tissu",
+      "cruiseControl": "Régulateur de vitesse",
+      "dabRadio": "Radio DAB",
+      "daytimeRunningLights": "Feux de jour",
+      "digitalCockpit": "Combiné d’instruments numérique",
+      "drivingModes": "Modes de conduite (Eco Pro, Comfort, Sport)",
+      "dualZoneClimate": "Climatisation automatique bizone",
+      "eCall": "Appel d’urgence (eCall)",
+      "electricHeatedMirrors": "Rétroviseurs électriques et chauffants",
+      "electricWindowsFront": "Vitres électriques avant",
+      "fogLights": "Antibrouillards",
+      "idrive": "Système iDrive avec écran",
+      "isofix": "Isofix",
+      "keylessStart": "Démarrage sans clé",
+      "laneKeepingAssist": "Aide au maintien dans la voie",
+      "leatherMultifunctionSteeringWheel": "Volant multifonction en cuir",
+      "ledHeadlights": "Phares LED",
+      "lightSensor": "Capteur de luminosité",
+      "metallicPaint": "Peinture métallisée",
+      "mSportSteeringWheel": "Volant sport M multifonction",
+      "navigation": "Système de navigation",
+      "paddleShifters": "Palettes au volant",
+      "parkingAssist": "Assistant de stationnement",
+      "parkingSensorsFrontRear": "Radars de stationnement avant et arrière",
+      "parkingSensorsRear": "Radars de stationnement arrière",
+      "rainSensor": "Capteur de pluie",
+      "startStop": "Système Start/Stop",
+      "tyrePressureMonitoring": "Contrôle de la pression des pneus"
+    }
+  },
+  "finance": {
+    "title": "Combien par mois ?",
+    "intro": "Choisissez l'apport et la durée, puis saisissez le taux proposé par un organisme de crédit pour estimer la mensualité.",
+    "downPayment": "Apport",
+    "term": "Durée",
+    "months": "{count, plural, one {# mois} other {# mois}}",
+    "rate": "Taux d’intérêt annuel nominal",
+    "ratePlaceholder": "Taux de votre offre",
+    "rateHelp": "Saisissez le taux nominal annuel de votre offre (entre {min} % et {max} %).",
+    "monthly": "Mensualité estimée",
+    "perMonth": "/mois",
+    "missingRate": "Saisissez le taux pour voir la mensualité.",
+    "financed": "Montant à financer",
+    "total": "Total payé (apport compris)",
+    "disclaimer": "Outil de calcul purement indicatif, réservé à l'usage personnel de l'utilisateur. Les montants découlent uniquement des données saisies et ne constituent ni une proposition, ni une offre, ni une recommandation, ni une publicité de crédit. OTEN MOTORS n'accorde pas de crédit, n'est pas intermédiaire en crédit, n'a aucun lien avec des organismes de financement et n'analyse, ne propose ni ne transmet aucune demande de financement. Le calcul applique des intérêts composés mensuels sur le montant financé et n'inclut ni TAEG, ni frais, ni droits de timbre, ni assurances, ni autres charges. Le taux accepté est limité entre {min} % et {max} % ; la limite maximale correspond au TAEG maximal légal pour le crédit automobile d'occasion fixé par la Banque du Portugal pour le {period}. Pour des conditions réelles et contractuelles, adressez-vous à un établissement de crédit agréé par la Banque du Portugal.",
+    "shortcut": "Simuler",
+    "rateOutOfRange": "Le taux doit être compris entre {min} % et {max} %."
+  },
+  "transparency": {
+    "title": "Transparence",
+    "intro": "Ce que nous savons de cette voiture, et ce que vous pouvez nous demander pour le vérifier avant de décider.",
+    "photosLabel": "Photos",
+    "photosValue": "{count} photos réelles de cette voiture",
+    "originLabel": "Origine",
+    "registrationLabel": "1re immatriculation et kilométrage",
+    "serviceLabel": "Entretien",
+    "warrantyLabel": "Garantie",
+    "warrantyNote": "Garantie commerciale fournie par une entreprise partenaire, selon les conditions de son certificat. Elle ne porte pas atteinte à la garantie légale de conformité prévue par le décret-loi n° 84/2021. Voir les Conditions générales."
+  },
+  "finder": {
+    "eyebrow": "Trouvez votre voiture",
+    "title": "Quelle voiture est faite pour vous ?",
+    "subtitle": "Répondez à 5 questions rapides. À partir d’études et d’annonces du marché de l’occasion au Portugal, nous vous suggérons les modèles et les années qui vous conviennent, et vous montrons notre stock.",
+    "budget": {
+      "question": "Quel est votre budget ?",
+      "b10": "Jusqu’à 10 000 €",
+      "b15": "De 10 000 à 15 000 €",
+      "b25": "De 15 000 à 25 000 €",
+      "b25plus": "Plus de 25 000 €"
+    },
+    "use": {
+      "question": "Où roulerez-vous le plus ?",
+      "city": "En ville",
+      "mixed": "Mixte",
+      "road": "Route et autoroute"
+    },
+    "km": {
+      "question": "Combien de km par an ?",
+      "low": "Moins de 10 000",
+      "mid": "De 10 000 à 20 000",
+      "high": "Plus de 20 000"
+    },
+    "gearbox": {
+      "question": "Quelle boîte préférez-vous ?",
+      "automatic": "Automatique",
+      "manual": "Manuelle",
+      "any": "Peu importe"
+    },
+    "waiting": "Répondez aux 5 questions pour voir notre analyse ({answered}/5).",
+    "searchForYou": "Une suggestion vous plaît ? Envoyez-nous vos réponses et nous chercherons les meilleures voitures pour vous, sans engagement.",
+    "cta": "Chercher pour moi",
+    "whatsappMessage": "Bonjour ! Je cherche une voiture. Budget : {budget}. Type : {body}. Usage : {use}. Km par an : {km}. Boîte : {gearbox}. L’assistant de votre site m’a suggéré : {models}. Pouvez-vous m’aider ?",
+    "reset": "Recommencer",
+    "body": {
+      "question": "Quel type de voiture ?",
+      "small": "Citadine",
+      "compact": "Compacte",
+      "suv": "SUV",
+      "family": "Familiale / break",
+      "any": "Peu importe"
+    },
+    "analysisTitle": "Notre analyse",
+    "reason": {
+      "dieselRoad": "Avec beaucoup de kilomètres sur route, le diesel reste le moins cher au kilomètre. C’est d’ailleurs le carburant le plus recherché sur le marché de l’occasion au Portugal (47 % de la demande). Si vous préférez éviter le diesel, l’hybride est l’alternative.",
+      "dieselMixed": "Au-delà de 20 000 km par an, un diesel est vite rentabilisé, même en usage mixte. Si une partie du trajet se fait en ville, un hybride est une bonne alternative.",
+      "hybridCity": "En ville, un hybride consomme peu dans les embouteillages car il récupère l’énergie au freinage, sans jamais devoir être rechargé. Si vous pouvez recharger chez vous, une électrique réduit encore le coût au km.",
+      "hybridMixed": "Pour un usage mixte et un kilométrage moyen, l’hybride est le bon compromis : économique en ville sans pénaliser sur route. L’essence est la moins chère à l’achat.",
+      "petrolLow": "Sous 10 000 km par an, un diesel ne compense jamais son prix et son entretien plus élevés. Une essence est moins chère à l’achat et à l’entretien.",
+      "petrolLowCity": "Avec peu de kilomètres, surtout en ville, l’essence est le choix le moins cher à l’achat. Si le budget le permet, un hybride consomme nettement moins dans la circulation."
+    },
+    "chargeHome": "Une électrique n’est rentable que si vous pouvez la recharger chez vous ou au travail.",
+    "modelsTitle": "Les modèles que nous chercherions pour vous",
+    "automaticAvailable": "Versions automatiques disponibles",
+    "cheaper": "Sous votre budget",
+    "source": "Source",
+    "stockTitle": "Dans notre stock",
+    "disclaimer": "Suggestions fondées sur des études, classements et annonces du marché de l’occasion au Portugal (2025–2026). Les années sont indicatives : le prix dépend toujours du kilométrage, de la version et de l’état.",
+    "relaxed": "Nous n’avons pas trouvé ce type de voiture avec ce budget et ces préférences. Voici les alternatives les plus proches."
+  },
+  "social": {
+    "eyebrow": "Réseaux sociaux",
+    "title": "Suivez-nous sur les réseaux sociaux",
+    "subtitle": "Nouveaux arrivages, vidéos et actualités du garage, en avant-première.",
+    "follow": "Suivre",
+    "open": "Ouvrir OTEN MOTORS sur {name} (nouvelle fenêtre)"
+  }
+}

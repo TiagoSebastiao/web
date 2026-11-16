@@ -1,0 +1,375 @@
+/*
+ * Efeitos visuais e animações do site.
+ * Tudo em CSS (sem bibliotecas). Quem tem "reduzir movimento" ativo no
+ * sistema operativo vê o site sem animações (ver fim do ficheiro).
+ */
+
+/* Scroll suave para as âncoras do menu; sem scroll horizontal acidental. */
+html {
+  scroll-behavior: smooth;
+  overflow-x: clip;
+}
+
+/* ---------- Revelar ao fazer scroll ----------
+ * Elementos com data-reveal aparecem suavemente quando entram no ecrã.
+ * A classe "reveal-ready" só é posta por JavaScript (layout.tsx): sem JS,
+ * o conteúdo aparece logo, sem animação. --reveal-delay cria efeito cascata. */
+.reveal-ready [data-reveal] {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1) var(--reveal-delay, 0ms),
+    transform 0.8s cubic-bezier(0.22, 1, 0.36, 1) var(--reveal-delay, 0ms);
+}
+.reveal-ready [data-reveal="left"] {
+  transform: translateX(-36px);
+}
+.reveal-ready [data-reveal="right"] {
+  transform: translateX(36px);
+}
+.reveal-ready [data-reveal="zoom"] {
+  transform: scale(0.94);
+}
+.reveal-ready [data-reveal][data-shown] {
+  opacity: 1;
+  transform: none;
+}
+
+/* ---------- Entrada do hero (logo ao carregar) ---------- */
+@keyframes enter-up {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+    filter: blur(6px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+    filter: blur(0);
+  }
+}
+.enter {
+  animation: enter-up 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-delay: var(--enter-delay, 0ms);
+}
+
+/* ---------- Fundo com grelha e luzes ---------- */
+.bg-grid {
+  background-image:
+    linear-gradient(to right, rgb(255 255 255 / 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(255 255 255 / 0.05) 1px, transparent 1px);
+  background-size: 56px 56px;
+  mask-image: radial-gradient(ellipse 80% 70% at 50% 30%, #000 30%, transparent 75%);
+}
+
+@keyframes orb-drift {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(40px, -30px, 0) scale(1.12);
+  }
+}
+.orb {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(90px);
+  pointer-events: none;
+  animation: orb-drift 14s ease-in-out infinite;
+}
+
+/* Linhas de luz que atravessam o hero (efeito "velocidade"). */
+@keyframes speed-line {
+  0% {
+    transform: translateX(-120%);
+    opacity: 0;
+  }
+  15% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(260%);
+    opacity: 0;
+  }
+}
+.speed-line {
+  position: absolute;
+  height: 1px;
+  width: 40%;
+  background: linear-gradient(90deg, transparent, oklch(0.65 0.24 25 / 0.9), transparent);
+  animation: speed-line 6s cubic-bezier(0.6, 0, 0.4, 1) infinite;
+}
+
+/* ---------- Texto ---------- */
+.text-gradient {
+  background: linear-gradient(180deg, #fff 45%, rgb(255 255 255 / 0.8));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.text-gradient-red {
+  background: linear-gradient(90deg, oklch(0.68 0.22 25), oklch(0.6 0.25 15), oklch(0.75 0.17 45));
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: gradient-pan 6s linear infinite;
+}
+@keyframes gradient-pan {
+  to {
+    background-position: 200% center;
+  }
+}
+
+/* ---------- Botões ---------- */
+.btn-shine {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+.btn-shine::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(110deg, transparent 30%, rgb(255 255 255 / 0.35) 50%, transparent 70%);
+  transform: translateX(-120%);
+  transition: transform 0.7s ease;
+}
+.btn-shine:hover::after {
+  transform: translateX(120%);
+}
+/* Sombra discreta: o botão destaca-se pela cor, não pelo brilho. */
+.btn-glow {
+  box-shadow: 0 8px 24px -12px oklch(0.58 0.24 25 / 0.55);
+}
+
+/* ---------- Cartões ---------- */
+/* Contorno em gradiente que acende ao passar o rato. */
+.card-glow {
+  position: relative;
+}
+.card-glow::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(140deg, oklch(0.65 0.24 25), transparent 40%, transparent 60%, oklch(0.65 0.24 25 / 0.6));
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+.card-glow:hover::before,
+.card-glow:focus-visible::before {
+  opacity: 1;
+}
+
+.glass {
+  background: linear-gradient(180deg, rgb(255 255 255 / 0.06), rgb(255 255 255 / 0.02));
+  border: 1px solid rgb(255 255 255 / 0.1);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+/* ---------- Contorno animado (banner Standvirtual) ---------- */
+@property --border-angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+@keyframes border-spin {
+  to {
+    --border-angle: 360deg;
+  }
+}
+.animated-border {
+  border: 1px solid transparent;
+  background:
+    linear-gradient(var(--card), var(--card)) padding-box,
+    conic-gradient(
+        from var(--border-angle),
+        oklch(0.25 0 0) 0%,
+        oklch(0.65 0.24 25) 10%,
+        oklch(0.25 0 0) 22%,
+        oklch(0.25 0 0) 100%
+      )
+      border-box;
+  animation: border-spin 6s linear infinite;
+}
+
+/* ---------- Montra do hero ---------- */
+/* Barra de progresso de cada fotografia (a troca acontece no fim da animação). */
+@keyframes hero-progress {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+.hero-progress {
+  animation: hero-progress linear forwards;
+}
+/* Movimento lento na fotografia visível: zoom pequeno (3%) e deslize lateral (--pan).
+   Zoom pequeno de propósito: ampliar muito uma foto mostra os píxeis. */
+@keyframes hero-zoom {
+  from {
+    transform: scale(1.03) translate3d(0, 0, 0);
+  }
+  to {
+    transform: scale(1.06) translate3d(var(--pan, 0), 0, 0);
+  }
+}
+.hero-zoom {
+  animation: hero-zoom linear forwards;
+  backface-visibility: hidden;
+}
+/* Degradês da montra: várias paragens seguem uma curva suave (fundem com o preto sem riscas). */
+.hero-fade-bottom {
+  background: linear-gradient(
+    to top,
+    var(--background) 0%,
+    oklch(0.08 0 0 / 0.92) 8%,
+    oklch(0.08 0 0 / 0.7) 20%,
+    oklch(0.08 0 0 / 0.4) 34%,
+    oklch(0.08 0 0 / 0.15) 48%,
+    transparent 62%
+  );
+}
+.hero-fade-left {
+  background: linear-gradient(
+    to right,
+    var(--background) 0%,
+    oklch(0.08 0 0 / 0.9) 8%,
+    oklch(0.08 0 0 / 0.65) 20%,
+    oklch(0.08 0 0 / 0.35) 34%,
+    oklch(0.08 0 0 / 0.12) 48%,
+    transparent 62%
+  );
+}
+/* Grão fino (ruído SVG) que "quebra" as bandas dos degradês escuros. */
+.hero-grain {
+  pointer-events: none;
+  opacity: 0.06;
+  /* Desaparece nas margens da foto, para a moldura não se notar contra o fundo. */
+  -webkit-mask-image: linear-gradient(to top, transparent 0%, #000 35%), linear-gradient(to right, transparent 0%, #000 35%);
+  -webkit-mask-composite: source-in;
+  mask-image: linear-gradient(to top, transparent 0%, #000 35%), linear-gradient(to right, transparent 0%, #000 35%);
+  mask-composite: intersect;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+/* A legenda do carro entra suavemente quando muda de viatura. */
+@keyframes caption-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+}
+.caption-in {
+  animation: caption-in 600ms ease-out both;
+}
+
+/* ---------- Flutuar ---------- */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+.float {
+  animation: float 6s ease-in-out infinite;
+}
+.float-delayed {
+  animation: float 7s ease-in-out 1.5s infinite;
+}
+
+/* ---------- Pulsar (botão WhatsApp) ---------- */
+@keyframes pulse-ring {
+  0% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  100% {
+    transform: scale(1.8);
+    opacity: 0;
+  }
+}
+.pulse-ring::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: inherit;
+  animation: pulse-ring 2.2s cubic-bezier(0.2, 0.6, 0.4, 1) infinite;
+  z-index: -1;
+}
+
+/* Ponto verde "disponível" a pulsar. */
+@keyframes ping {
+  75%,
+  100% {
+    transform: scale(2.2);
+    opacity: 0;
+  }
+}
+.ping {
+  animation: ping 1.6s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+/* ---------- Página da viatura ---------- */
+/* Texto gigante só com contorno (marca por trás do título do hero). */
+.text-outline {
+  color: transparent;
+  -webkit-text-stroke: 1px rgb(255 255 255 / 0.1);
+}
+
+/* Aproximação lenta da foto de capa (efeito "Ken Burns"). */
+@keyframes ken-burns {
+  from {
+    transform: scale(1.12);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+/* 1,5 s: tem de acabar antes de a página da viatura descer sozinha (1,8 s), para as duas
+   animações não se cruzarem. */
+.ken-burns {
+  animation: ken-burns 1.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* Mostradores: o arco enche quando o cartão entra no ecrã. */
+.gauge-value {
+  stroke-dasharray: var(--gauge-fill);
+  filter: drop-shadow(0 0 6px oklch(0.58 0.24 25 / 0.7));
+  transition: stroke-dasharray 1.6s cubic-bezier(0.22, 1, 0.36, 1) 0.2s;
+}
+.reveal-ready [data-reveal]:not([data-shown]) .gauge-value {
+  stroke-dasharray: 0 100;
+}
+
+/* ---------- Acessibilidade ---------- */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .reveal-ready [data-reveal] {
+    opacity: 1;
+    transform: none;
+  }
+}

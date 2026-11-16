@@ -1,0 +1,383 @@
+{
+  "meta": {
+    "title": "OTEN MOTORS | Jung- und Gebrauchtwagen in Portugal",
+    "description": "Autohaus für Jung- und Gebrauchtwagen. Entdecken Sie unsere verfügbaren Fahrzeuge mit echten Fotos und schreiben Sie uns per WhatsApp.",
+    "vehicleDescription": "{name}, Baujahr {year}, {mileage}, {fuel}, {transmission}. {price}. Alle Fotos und Details bei OTEN MOTORS.",
+    "vehicleNotFound": "Fahrzeug nicht gefunden"
+  },
+  "nav": {
+    "vehicles": "Fahrzeuge",
+    "tradeIn": "Inzahlungnahme",
+    "about": "Über uns",
+    "contact": "Kontakt",
+    "whatsapp": "WhatsApp",
+    "home": "OTEN MOTORS — Startseite",
+    "openMenu": "Menü öffnen",
+    "closeMenu": "Menü schließen",
+    "language": "Sprache",
+    "floatingWhatsapp": "Per WhatsApp schreiben"
+  },
+  "hero": {
+    "eyebrow": "Junge Gebrauchte & Gebrauchtwagen",
+    "title": "Junge Gebrauchte und Gebrauchtwagen, <hl>einzeln ausgewählt.</hl>",
+    "intro": "Entdecken Sie sorgfältig ausgewählte Fahrzeuge, echte Fotos und transparente Informationen. Alle Ihre Fragen beantworten wir schnell und persönlich per WhatsApp.",
+    "ctaVehicles": "Fahrzeuge ansehen",
+    "viewCar": "Fahrzeug ansehen",
+    "showSlide": "{name} anzeigen"
+  },
+  "highlights": {
+    "title": "Warum OTEN MOTORS",
+    "selection": {
+      "title": "Sorgfältige Auswahl",
+      "text": "Jedes Fahrzeug einzeln ausgewählt. Jedes Auto wird geprüft und Probe gefahren, bevor es in unseren Bestand kommt."
+    },
+    "photos": {
+      "title": "Echte Fotos",
+      "text": "Wir fotografieren jedes Fahrzeug selbst, innen und außen."
+    },
+    "direct": {
+      "title": "Direkter Kontakt",
+      "text": "Sie sprechen immer direkt mit uns, vom ersten Kontakt bis zur Übergabe."
+    },
+    "buy": {
+      "title": "Wir nehmen Ihr Auto in Zahlung",
+      "text": "Sie möchten Ihr Auto verkaufen oder wechseln? Wir machen Ihnen ein unverbindliches Angebot."
+    },
+    "heading": "Autokauf ohne Umwege",
+    "subtitle": "Ein kleines Autohaus mit Blick für jedes Fahrzeug und jeden Kunden."
+  },
+  "vehicles": {
+    "title": "Verfügbare Fahrzeuge",
+    "subtitle": "Echte Fotos und klare Informationen zu jedem Fahrzeug.",
+    "viewVehicle": "Fahrzeug ansehen",
+    "priceOnRequest": "Preis auf Anfrage",
+    "photos": "{count} Fotos",
+    "empty": "Derzeit sind keine Fahrzeuge auf der Website eingestellt. Sehen Sie sich unsere Anzeigen auf Standvirtual an oder kontaktieren Sie uns.",
+    "moreOnStandvirtual": "Alle Anzeigen auf Standvirtual ansehen",
+    "status": {
+      "available": "Verfügbar",
+      "reserved": "Reserviert",
+      "sold": "Verkauft"
+    },
+    "eyebrow": "Aktueller Bestand"
+  },
+  "standvirtual": {
+    "eyebrow": "Unsere Anzeigen",
+    "title": "Folgen Sie OTEN MOTORS auf Standvirtual",
+    "text": "Standvirtual, Portugals führender Automarkt, ist unser wichtigster Anzeigenkanal. In unserem Profil finden Sie alle Fahrzeuge im Bestand und Neuzugänge, sobald sie eintreffen.",
+    "cta": "Profil auf Standvirtual ansehen",
+    "newWindow": "öffnet in einem neuen Fenster"
+  },
+  "about": {
+    "eyebrow": "Über uns",
+    "title": "Ein Autohaus für alle, die mehr als nur ein Auto suchen",
+    "text1": "Bei OTEN MOTORS sind wir überzeugt, dass ein Autokauf einfach, transparent und sicher sein sollte. Wir setzen auf eine sorgfältige Auswahl junger Gebrauchter und Gebrauchtwagen – mit Fokus auf Qualität, Liebe zum Detail und eine persönliche, nahe Betreuung.",
+    "text2": "Wir wollen nicht nur Autos verkaufen, sondern dauerhafte Vertrauensbeziehungen aufbauen – damit jeder Kunde die richtige Lösung für seine Bedürfnisse findet.",
+    "stepsTitle": "So funktioniert’s",
+    "steps": {
+      "choose": {
+        "title": "Fahrzeug auswählen",
+        "text": "Sehen Sie sich die Fahrzeuge hier auf der Website oder in unserem Standvirtual-Profil an."
+      },
+      "talk": {
+        "title": "Mit uns sprechen",
+        "text": "Stellen Sie Ihre Fragen und fordern Sie weitere Fotos oder Videos an. Wir antworten so schnell wie möglich."
+      },
+      "visit": {
+        "title": "Auto ansehen",
+        "text": "Wir vereinbaren mit Ihnen Tag und Ort für Besichtigung und Probefahrt."
+      },
+      "drive": {
+        "title": "Wir liefern Ihr Auto",
+        "text": "Wir kümmern uns um die Unterlagen und liefern Ihnen das Auto fahrbereit nach Hause."
+      }
+    },
+    "imageAlt": "Innenraum des BMW 4er, fotografiert von OTEN MOTORS"
+  },
+  "sell": {
+    "title": "Sie möchten Ihr Auto verkaufen?",
+    "text": "Wir kaufen auch Fahrzeuge an. Senden Sie uns Marke, Modell, Baujahr, Kilometerstand und einige Fotos per WhatsApp, und wir melden uns mit einem Angebot.",
+    "cta": "Angebot anfordern",
+    "whatsappMessage": "Hallo! Ich möchte mein Auto verkaufen. Marke und Modell: … Baujahr: … Kilometerstand: …",
+    "points": [
+      "Unverbindliches Angebot",
+      "Alles per WhatsApp",
+      "Schnelle Antwort"
+    ]
+  },
+  "contact": {
+    "eyebrow": "Kontakt",
+    "title": "Kontakt aufnehmen",
+    "subtitle": "Wählen Sie den Kanal, der Ihnen am besten passt. Wir antworten so schnell wie möglich.",
+    "formTitle": "Schreiben Sie uns",
+    "name": "Name",
+    "email": "E-Mail",
+    "phone": "Telefon",
+    "optional": "optional",
+    "message": "Nachricht",
+    "messagePlaceholder": "Z. B.: Ich interessiere mich für den BMW 4er. Können Sie mir weitere Fotos schicken?",
+    "send": "Nachricht senden",
+    "sending": "Wird gesendet…",
+    "success": "Vielen Dank! Wir haben Ihre Nachricht erhalten und melden uns in Kürze.",
+    "error": "Die Nachricht konnte nicht gesendet werden. Bitte versuchen Sie es erneut oder kontaktieren Sie uns per WhatsApp.",
+    "invalid": "Bitte prüfen Sie die markierten Felder und versuchen Sie es erneut.",
+    "privacy": "Ihre Daten werden ausschließlich zur Beantwortung dieser Anfrage verwendet. Mehr dazu in der <link>Datenschutzerklärung</link>.",
+    "whatsapp": "WhatsApp",
+    "whatsappAction": "Chat öffnen",
+    "phoneTitle": "Telefon",
+    "emailTitle": "E-Mail",
+    "whatsappMessage": "Hallo! Ich komme von der Website von OTEN MOTORS und hätte gerne weitere Informationen."
+  },
+  "footer": {
+    "description": "Autohaus mit Schwerpunkt auf An- und Verkauf von Jung- und Gebrauchtwagen.",
+    "explore": "Entdecken",
+    "legal": "Rechtliches",
+    "contacts": "Kontakt",
+    "social": "Soziale Medien",
+    "terms": "AGB",
+    "privacy": "Datenschutzerklärung",
+    "cookies": "Cookie-Richtlinie",
+    "complaintsBook": "Beschwerdebuch",
+    "nipc": "Steuernummer",
+    "adr": "Alternative Streitbeilegung",
+    "rights": "© {year} OTEN MOTORS. Alle Rechte vorbehalten.",
+    "registeredOffice": "Sitz",
+    "registry": "Eingetragen bei",
+    "shareCapital": "Stammkapital"
+  },
+  "vehicle": {
+    "back": "Alle Fahrzeuge ansehen",
+    "previousPhoto": "Vorheriges Foto",
+    "nextPhoto": "Nächstes Foto",
+    "openPhoto": "Foto vergrößern",
+    "closePhoto": "Schließen",
+    "photoCounter": "{current} / {total}",
+    "photoAlt": "{name} — Foto {number}",
+    "thumbnail": "Foto {number} anzeigen",
+    "keySpecs": "Eckdaten",
+    "firstRegistration": "Erstzulassung",
+    "mileage": "Kilometerstand",
+    "fuel": "Kraftstoff",
+    "transmission": "Getriebe",
+    "engine": "Motor",
+    "engineValue": "{cc} cm³",
+    "cylindersValue": "{count} Zylinder",
+    "power": "Leistung",
+    "powerValue": "{hp} PS ({kw} kW)",
+    "bodyType": "Karosserie",
+    "doors": "Türen",
+    "seats": "Sitzplätze",
+    "color": "Farbe",
+    "origin": "Herkunft",
+    "equipment": "Ausstattung",
+    "technicalData": "Technische Daten",
+    "torque": "Drehmoment",
+    "acceleration": "0–100 km/h",
+    "topSpeed": "Höchstgeschwindigkeit",
+    "consumption": "Durchschnittsverbrauch",
+    "co2": "CO₂-Emissionen",
+    "weight": "Gewicht",
+    "dimensions": "Abmessungen",
+    "length": "Länge",
+    "width": "Breite",
+    "height": "Höhe",
+    "wheelbase": "Radstand",
+    "trunk": "Kofferraum",
+    "conditions": "Konditionen",
+    "warranty": "Garantie",
+    "warrantyValue": "{months} Monate",
+    "serviceHistory": "Wartung",
+    "contactTitle": "Interesse an diesem Fahrzeug?",
+    "contactText": "Kontaktieren Sie uns für weitere Informationen oder einen Besichtigungstermin.",
+    "whatsappCta": "Per WhatsApp schreiben",
+    "call": "Anrufen",
+    "whatsappMessage": "Hallo! Ich interessiere mich für den {name} ({url}). Ist er noch verfügbar?",
+    "standvirtualCta": "Anzeige auf Standvirtual ansehen",
+    "disclaimer": "Alle Angaben ohne Gewähr. Bitte bestätigen Sie alle Daten vor dem Kauf mit uns.",
+    "performance": "In Zahlen",
+    "gallery": "Galerie",
+    "overview": "Über dieses Fahrzeug",
+    "dataSheet": "Datenblatt",
+    "otherVehicles": "Weitere Fahrzeuge im Bestand",
+    "viewGallery": "Fotos ansehen",
+    "hpUnit": "PS"
+  },
+  "notFound": {
+    "title": "Seite nicht gefunden",
+    "text": "Die gesuchte Seite existiert nicht oder das Fahrzeug ist nicht mehr verfügbar.",
+    "cta": "Verfügbare Fahrzeuge ansehen"
+  },
+  "labels": {
+    "fuel": {
+      "diesel": "Diesel",
+      "petrol": "Benzin",
+      "hybrid": "Hybrid",
+      "pluginHybrid": "Plug-in-Hybrid",
+      "electric": "Elektro",
+      "lpg": "Autogas (LPG)"
+    },
+    "transmission": {
+      "automatic": "Automatik",
+      "manual": "Schaltgetriebe"
+    },
+    "bodyType": {
+      "hatchback": "Schrägheck",
+      "coupe": "Coupé",
+      "sedan": "Limousine",
+      "estate": "Kombi",
+      "suv": "SUV",
+      "convertible": "Cabrio",
+      "van": "Van"
+    },
+    "origin": {
+      "national": "Portugal",
+      "imported": "Importiert"
+    },
+    "color": {
+      "black": "Schwarz",
+      "blue": "Blau",
+      "white": "Weiß",
+      "grey": "Grau",
+      "silver": "Silber",
+      "red": "Rot",
+      "green": "Grün",
+      "brown": "Braun",
+      "beige": "Beige"
+    },
+    "equipment": {
+      "adaptiveCruiseControl": "Adaptiver Tempomat",
+      "airbags": "Airbags",
+      "alarm": "Alarmanlage",
+      "alloyWheels": "Leichtmetallfelgen",
+      "androidAutoAppleCarplay": "Android Auto und Apple CarPlay",
+      "autoDimmingMirror": "Automatisch abblendender Innenspiegel",
+      "autoParkingAssist": "Automatisches Einparken",
+      "automaticClimate": "Klimaautomatik",
+      "bluetooth": "Bluetooth",
+      "clothUpholstery": "Stoffpolsterung",
+      "cruiseControl": "Tempomat",
+      "dabRadio": "DAB-Radio",
+      "daytimeRunningLights": "Tagfahrlicht",
+      "digitalCockpit": "Digitales Cockpit",
+      "drivingModes": "Fahrmodi (Eco Pro, Comfort, Sport)",
+      "dualZoneClimate": "Zwei-Zonen-Klimaautomatik",
+      "eCall": "Notrufsystem (eCall)",
+      "electricHeatedMirrors": "Elektrische, beheizbare Außenspiegel",
+      "electricWindowsFront": "Elektrische Fensterheber vorne",
+      "fogLights": "Nebelscheinwerfer",
+      "idrive": "iDrive-System mit Display",
+      "isofix": "Isofix",
+      "keylessStart": "Schlüsselloser Start",
+      "laneKeepingAssist": "Spurhalteassistent",
+      "leatherMultifunctionSteeringWheel": "Multifunktions-Lederlenkrad",
+      "ledHeadlights": "LED-Scheinwerfer",
+      "lightSensor": "Lichtsensor",
+      "metallicPaint": "Metallic-Lackierung",
+      "mSportSteeringWheel": "M Sport-Multifunktionslenkrad",
+      "navigation": "Navigationssystem",
+      "paddleShifters": "Schaltwippen am Lenkrad",
+      "parkingAssist": "Parkassistent",
+      "parkingSensorsFrontRear": "Parksensoren vorne und hinten",
+      "parkingSensorsRear": "Parksensoren hinten",
+      "rainSensor": "Regensensor",
+      "startStop": "Start-Stopp-System",
+      "tyrePressureMonitoring": "Reifendruckkontrolle"
+    }
+  },
+  "finance": {
+    "title": "Wie viel im Monat?",
+    "intro": "Wählen Sie Anzahlung und Laufzeit und geben Sie den Zinssatz ein, den Ihnen ein Kreditinstitut angeboten hat, um die Monatsrate zu schätzen.",
+    "downPayment": "Anzahlung",
+    "term": "Laufzeit",
+    "months": "{count, plural, one {# Monat} other {# Monate}}",
+    "rate": "Sollzins pro Jahr",
+    "ratePlaceholder": "Zinssatz Ihres Angebots",
+    "rateHelp": "Geben Sie den Sollzins Ihres Angebots ein (zwischen {min} % und {max} %).",
+    "monthly": "Geschätzte Monatsrate",
+    "perMonth": "/Monat",
+    "missingRate": "Geben Sie den Zinssatz ein, um die Rate zu sehen.",
+    "financed": "Finanzierungsbetrag",
+    "total": "Gesamtbetrag (inkl. Anzahlung)",
+    "disclaimer": "Rein unverbindliches Rechenwerkzeug, ausschließlich zur eigenen Verwendung durch den Nutzer. Die Werte ergeben sich nur aus Ihren Eingaben und sind weder ein Kreditangebot noch eine Empfehlung oder Kreditwerbung. OTEN MOTORS vergibt keine Kredite, ist kein Kreditvermittler, steht in keiner Verbindung zu Finanzierungsinstituten und prüft, vermittelt oder leitet keine Finanzierungsanträge weiter. Die Berechnung verwendet monatlichen Zinseszins auf den Finanzierungsbetrag und enthält keinen effektiven Jahreszins, keine Gebühren, Stempelsteuer, Versicherungen oder sonstigen Kosten. Der zulässige Zinssatz ist auf {min} % bis {max} % begrenzt; die Obergrenze entspricht dem gesetzlichen Höchstsatz (effektiver Jahreszins) für Gebrauchtwagenkredite, den die Banco de Portugal für das {period} festgelegt hat. Für verbindliche Konditionen wenden Sie sich an ein von der Banco de Portugal zugelassenes Kreditinstitut.",
+    "shortcut": "Rate berechnen",
+    "rateOutOfRange": "Der Zinssatz muss zwischen {min} % und {max} % liegen."
+  },
+  "transparency": {
+    "title": "Transparenz",
+    "intro": "Was wir über dieses Auto wissen – und was Sie bei uns anfragen können, um es vor Ihrer Entscheidung zu prüfen.",
+    "photosLabel": "Fotos",
+    "photosValue": "{count} echte Fotos dieses Autos",
+    "originLabel": "Herkunft",
+    "registrationLabel": "Erstzulassung und Kilometerstand",
+    "serviceLabel": "Wartung",
+    "warrantyLabel": "Gewährleistung",
+    "warrantyNote": "Kommerzielle Garantie eines Partnerunternehmens gemäß dessen Garantiezertifikat. Die gesetzliche Gewährleistung nach Gesetzesdekret Nr. 84/2021 bleibt unberührt. Siehe AGB."
+  },
+  "finder": {
+    "eyebrow": "Finden Sie Ihr Auto",
+    "title": "Welches Auto passt zu Ihnen?",
+    "subtitle": "Beantworten Sie 5 kurze Fragen. Auf Basis von Studien und Anzeigen aus dem portugiesischen Gebrauchtwagenmarkt schlagen wir passende Modelle und Baujahre vor – und zeigen Ihnen unseren Bestand.",
+    "budget": {
+      "question": "Wie hoch ist Ihr Budget?",
+      "b10": "Bis 10.000 €",
+      "b15": "10.000 bis 15.000 €",
+      "b25": "15.000 bis 25.000 €",
+      "b25plus": "Über 25.000 €"
+    },
+    "use": {
+      "question": "Wo fahren Sie am meisten?",
+      "city": "Stadt",
+      "mixed": "Gemischt",
+      "road": "Landstraße und Autobahn"
+    },
+    "km": {
+      "question": "Wie viele km pro Jahr?",
+      "low": "Unter 10.000",
+      "mid": "10.000 bis 20.000",
+      "high": "Über 20.000"
+    },
+    "gearbox": {
+      "question": "Welches Getriebe?",
+      "automatic": "Automatik",
+      "manual": "Schaltgetriebe",
+      "any": "Egal"
+    },
+    "waiting": "Beantworten Sie die 5 Fragen, um unsere Analyse zu sehen ({answered}/5).",
+    "searchForYou": "Gefällt Ihnen ein Vorschlag? Schicken Sie uns Ihre Antworten – wir suchen unverbindlich die besten Angebote für Sie.",
+    "cta": "Für mich suchen",
+    "whatsappMessage": "Hallo! Ich suche ein Auto. Budget: {budget}. Typ: {body}. Nutzung: {use}. Km pro Jahr: {km}. Getriebe: {gearbox}. Der Assistent auf Ihrer Website hat vorgeschlagen: {models}. Können Sie mir helfen?",
+    "reset": "Neu starten",
+    "body": {
+      "question": "Welche Art von Auto?",
+      "small": "Kleinwagen",
+      "compact": "Kompaktwagen",
+      "suv": "SUV",
+      "family": "Familie / Kombi",
+      "any": "Egal"
+    },
+    "analysisTitle": "Unsere Analyse",
+    "reason": {
+      "dieselRoad": "Bei vielen Kilometern auf Landstraße und Autobahn ist der Diesel pro Kilometer weiterhin am günstigsten – nicht umsonst ist er auf dem portugiesischen Gebrauchtmarkt der gefragteste Kraftstoff (47 % der Nachfrage). Wer keinen Diesel möchte, wählt einen Hybrid.",
+      "dieselMixed": "Ab 20.000 km im Jahr rechnet sich ein Diesel schnell, auch bei gemischter Nutzung. Fahren Sie teilweise in der Stadt, ist ein Hybrid eine gute Alternative.",
+      "hybridCity": "In der Stadt verbraucht ein Hybrid im Stop-and-go wenig, weil er beim Bremsen Energie zurückgewinnt – und muss nie geladen werden. Können Sie zu Hause laden, senkt ein Elektroauto die Kosten pro Kilometer noch weiter.",
+      "hybridMixed": "Bei gemischter Nutzung und mittlerer Fahrleistung ist ein Hybrid der beste Kompromiss: sparsam in der Stadt, ohne Nachteile auf der Landstraße. Ein Benziner ist in der Anschaffung am günstigsten.",
+      "petrolLow": "Unter 10.000 km im Jahr gleicht ein Diesel seinen höheren Preis und die Wartungskosten nie aus. Ein Benziner ist günstiger in Anschaffung und Unterhalt.",
+      "petrolLowCity": "Bei wenigen Kilometern und vor allem Stadtverkehr ist ein Benziner in der Anschaffung am günstigsten. Wenn das Budget es zulässt, verbraucht ein Hybrid im Verkehr deutlich weniger."
+    },
+    "chargeHome": "Ein Elektroauto lohnt sich nur, wenn Sie zu Hause oder bei der Arbeit laden können.",
+    "modelsTitle": "Modelle, nach denen wir für Sie suchen würden",
+    "automaticAvailable": "Automatik erhältlich",
+    "cheaper": "Unter Ihrem Budget",
+    "source": "Quelle",
+    "stockTitle": "Aus unserem Bestand",
+    "disclaimer": "Vorschläge auf Basis von Studien, Rankings und Anzeigen aus dem portugiesischen Gebrauchtwagenmarkt (2025–2026). Baujahre sind Richtwerte: Der Preis hängt immer von Kilometerstand, Version und Zustand ab.",
+    "relaxed": "Für dieses Budget und diese Vorgaben haben wir diesen Fahrzeugtyp nicht gefunden. Das sind die nächstbesten Alternativen."
+  },
+  "social": {
+    "eyebrow": "Soziale Medien",
+    "title": "Folgen Sie uns in den sozialen Medien",
+    "subtitle": "Neue Fahrzeuge, Videos und Neuigkeiten aus dem Autohaus – aus erster Hand.",
+    "follow": "Folgen",
+    "open": "OTEN MOTORS auf {name} öffnen (neues Fenster)"
+  }
+}
