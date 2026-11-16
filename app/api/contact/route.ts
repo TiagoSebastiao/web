@@ -15,7 +15,7 @@ export const runtime = "nodejs"
 
 const schema = z.object({
   name: z.string().trim().min(2).max(120),
-  email: z.string().trim().email().max(200),
+  email: z.email().trim().max(200),
   phone: z.string().trim().max(30).optional().default(""),
   message: z.string().trim().min(5).max(3000),
   locale: z.string().max(5).optional(),
@@ -26,7 +26,55 @@ const schema = z.object({
 const escapeHtml = (value: string) =>
   value.replace(/[&<>"']/g, (char) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[char]!)
 
+/*
+ * Proteção contra abuso do formulário (spam, encher a caixa do geral@ ou gastar a
+ * quota do Resend):
+ * 1. Origem: só aceita pedidos feitos a partir do próprio site (www, pré-visualizações
+ *    da Vercel deste projeto e localhost em desenvolvimento).
+ * 2. Limite por IP: no máximo RATE_LIMIT envios válidos em cada RATE_WINDOW_MS. A contagem fica
+ *    na memória da instância (simples e sem custos); com várias instâncias em paralelo é
+ *    aproximada, mas trava os abusos repetidos, que é o que interessa.
+ */
+const RATE_LIMIT = 5
+const RATE_WINDOW_MS = 60 * 60 * 1000
+const hits = new Map<string, number[]>()
+
+function isAllowedOrigin(request: Request) {
+  const origin = request.headers.get("origin")
+  if (!origin) return false
+  try {
+    const { hostname, protocol } = new URL(origin)
+    if (hostname === "localhost" || hostname === "127.0.0.1") return true
+    if (protocol !== "https:") return false
+    return (
+      hostname === "www.otenmotors.com" ||
+      hostname === "otenmotors.com" ||
+      (hostname.startsWith("oten-") && hostname.endsWith("-tiagosebastiaos-projects.vercel.app"))
+    )
+  } catch {
+    return false
+  }
+}
+
+function isRateLimited(request: Request) {
+  const ip = request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() || request.headers.get("x-real-ip") || "unknown"
+  const now = Date.now()
+  const recent = (hits.get(ip) ?? []).filter((time) => now - time < RATE_WINDOW_MS)
+  if (recent.length >= RATE_LIMIT) {
+    hits.set(ip, recent)
+    return true
+  }
+  recent.push(now)
+  hits.set(ip, recent)
+  // Limpeza ocasional para a memória não crescer.
+  if (hits.size > 5000) for (const [key, times] of hits) if (times.every((time) => now - time >= RATE_WINDOW_MS)) hits.delete(key)
+  return false
+}
+
 export async function POST(request: Request) {
+  if (!isAllowedOrigin(request)) {
+    return NextResponse.json({ error: "forbidden" }, { status: 403 })
+  }
   let body: unknown
   try {
     body = await request.json()
@@ -42,6 +90,11 @@ export async function POST(request: Request) {
   const parsed = schema.safeParse(body)
   if (!parsed.success) {
     return NextResponse.json({ error: "invalid" }, { status: 400 })
+  }
+
+  // Só conta os pedidos válidos (os que enviariam mesmo um e-mail).
+  if (isRateLimited(request)) {
+    return NextResponse.json({ error: "rate_limited" }, { status: 429, headers: { "Retry-After": "3600" } })
   }
 
   const { RESEND_API_KEY, CONTACT_TO_EMAIL, CONTACT_FROM_EMAIL } = process.env

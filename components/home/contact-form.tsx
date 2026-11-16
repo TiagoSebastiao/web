@@ -8,7 +8,7 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
 
-type Status = "idle" | "sending" | "success" | "error" | "invalid"
+type Status = "idle" | "sending" | "success" | "error" | "invalid" | "tooMany"
 
 export function ContactForm() {
   const t = useTranslations("contact")
@@ -32,7 +32,7 @@ export function ContactForm() {
         form.reset()
         setStatus("success")
       } else {
-        setStatus(response.status === 400 ? "invalid" : "error")
+        setStatus(response.status === 400 ? "invalid" : response.status === 429 ? "tooMany" : "error")
       }
     } catch {
       setStatus("error")
@@ -97,9 +97,9 @@ export function ContactForm() {
         <input id="contact-website" name="website" type="text" tabIndex={-1} autoComplete="off" />
       </div>
 
-      {(status === "error" || status === "invalid") && (
+      {(status === "error" || status === "invalid" || status === "tooMany") && (
         <p role="alert" className="rounded-xl border border-primary/40 bg-primary/10 px-4 py-3 text-sm text-foreground">
-          {status === "invalid" ? t("invalid") : t("error")}
+          {status === "invalid" ? t("invalid") : status === "tooMany" ? t("tooMany") : t("error")}
         </p>
       )}
 

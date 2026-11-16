@@ -126,7 +126,8 @@
     "whatsappAction": "Abrir conversa",
     "phoneTitle": "Telefone",
     "emailTitle": "E-mail",
-    "whatsappMessage": "Olá! Vim pelo site da OTEN MOTORS e gostava de mais informações."
+    "whatsappMessage": "Olá! Vim pelo site da OTEN MOTORS e gostava de mais informações.",
+    "tooMany": "Já recebemos várias mensagens suas. Para falar connosco já, use o WhatsApp ou o telefone."
   },
   "footer": {
     "description": "Stand automóvel especializado na compra e venda de veículos seminovos e usados.",

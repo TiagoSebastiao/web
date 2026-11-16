@@ -126,7 +126,8 @@
     "whatsappAction": "Abrir conversación",
     "phoneTitle": "Teléfono",
     "emailTitle": "Correo electrónico",
-    "whatsappMessage": "¡Hola! Vengo de la web de OTEN MOTORS y me gustaría recibir más información."
+    "whatsappMessage": "¡Hola! Vengo de la web de OTEN MOTORS y me gustaría recibir más información.",
+    "tooMany": "Ya hemos recibido varios mensajes suyos. Para hablar con nosotros ahora, use WhatsApp o el teléfono."
   },
   "footer": {
     "description": "Concesionario especializado en la compra y venta de vehículos seminuevos y de ocasión.",

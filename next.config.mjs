@@ -2,7 +2,30 @@ import createNextIntlPlugin from "next-intl/plugin"
 
 const withNextIntl = createNextIntlPlugin("./i18n/request.ts")
 
+/*
+ * Content-Security-Policy: o browser só carrega scripts, estilos, imagens e ligações do
+ * próprio site. 'unsafe-inline' é necessário porque as páginas são estáticas (SSG) e o
+ * Next.js, o JSON-LD e o script de animações usam scripts inline; ainda assim bloqueia
+ * qualquer script de outro domínio, plugins, <base> alterado e o site dentro de iframes.
+ * vercel.live: barra de comentários da Vercel nas pré-visualizações.
+ */
+const csp = [
+  "default-src 'self'",
+  "script-src 'self' 'unsafe-inline' https://vercel.live",
+  "style-src 'self' 'unsafe-inline'",
+  "img-src 'self' data: blob: https://vercel.live https://vercel.com",
+  "font-src 'self' data: https://vercel.live",
+  "connect-src 'self' https://vercel.live wss://ws-us3.pusher.com",
+  "frame-src https://vercel.live",
+  "frame-ancestors 'self'",
+  "base-uri 'self'",
+  "form-action 'self'",
+  "object-src 'none'",
+  "upgrade-insecure-requests",
+].join("; ")
+
 const securityHeaders = [
+  { key: "Content-Security-Policy", value: csp },
   { key: "X-Content-Type-Options", value: "nosniff" },
   { key: "X-Frame-Options", value: "SAMEORIGIN" },
   { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },

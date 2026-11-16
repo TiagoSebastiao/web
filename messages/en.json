@@ -126,7 +126,8 @@
     "whatsappAction": "Start a chat",
     "phoneTitle": "Phone",
     "emailTitle": "Email",
-    "whatsappMessage": "Hello! I found you on the OTEN MOTORS website and would like more information."
+    "whatsappMessage": "Hello! I found you on the OTEN MOTORS website and would like more information.",
+    "tooMany": "We've already received several messages from you. To reach us now, please use WhatsApp or call us."
   },
   "footer": {
     "description": "Car dealer specialising in buying and selling nearly new and used vehicles.",

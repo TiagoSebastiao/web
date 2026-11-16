@@ -126,7 +126,8 @@
     "whatsappAction": "Chat öffnen",
     "phoneTitle": "Telefon",
     "emailTitle": "E-Mail",
-    "whatsappMessage": "Hallo! Ich komme von der Website von OTEN MOTORS und hätte gerne weitere Informationen."
+    "whatsappMessage": "Hallo! Ich komme von der Website von OTEN MOTORS und hätte gerne weitere Informationen.",
+    "tooMany": "Wir haben bereits mehrere Nachrichten von Ihnen erhalten. Um uns jetzt zu erreichen, nutzen Sie bitte WhatsApp oder rufen Sie an."
   },
   "footer": {
     "description": "Autohaus mit Schwerpunkt auf An- und Verkauf von Jung- und Gebrauchtwagen.",
