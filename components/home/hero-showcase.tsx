@@ -21,7 +21,9 @@ const FADE_MS = 1600
  * o fundo preto). Todas as fotos são carregadas logo, para não aparecerem a meio do fade.
  *
  * A barra de progresso comanda a troca (fim da animação → foto seguinte), por isso pausar
- * (rato ou foco do teclado em cima da montra) congela tudo ao mesmo tempo. Sem movimento para quem pediu menos movimento.
+ * congela tudo ao mesmo tempo. O rato não pausa; só o foco do teclado (acessibilidade).
+ * Clicar na fotografia abre a página da viatura que está a ser mostrada.
+ * Sem movimento para quem pediu menos movimento.
  *
  * Dois layouts (variante `wide:` em globals.css):
  * - empilhado (telemóvel, tablet, monitor vertical): a foto ocupa a largura toda, em cima,
@@ -34,7 +36,7 @@ export function HeroShowcase({ slides }: { slides: HeroSlide[] }) {
   const [photo, setPhoto] = useState(0)
   const [previous, setPrevious] = useState<string | null>(null)
   const [paused, setPaused] = useState(true)
-  const [hovered, setHovered] = useState(false)
+  const [keyboardFocus, setKeyboardFocus] = useState(false)
   const clearPrevious = useRef<number | undefined>(undefined)
 
   useEffect(() => {
@@ -43,7 +45,7 @@ export function HeroShowcase({ slides }: { slides: HeroSlide[] }) {
   }, [])
 
   const total = slides.reduce((n, s) => n + s.images.length, 0)
-  const running = total > 1 && !paused && !hovered
+  const running = total > 1 && !paused && !keyboardFocus
   const slide = slides[car]
   const currentKey = `${car}-${photo}`
 
@@ -69,10 +71,8 @@ export function HeroShowcase({ slides }: { slides: HeroSlide[] }) {
   return (
     <div
       className="relative wide:absolute wide:inset-0"
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
-      onFocus={() => setHovered(true)}
-      onBlur={() => setHovered(false)}
+      onFocus={(event) => setKeyboardFocus(event.target.matches(":focus-visible"))}
+      onBlur={() => setKeyboardFocus(false)}
     >
       {/* Fotografias. A primeira é a imagem LCP. */}
       <div aria-hidden="true" className="relative isolate aspect-[4/3] max-h-[72svh] w-full overflow-hidden [clip-path:inset(0)] wide:absolute wide:right-0 wide:top-0 wide:max-h-full wide:w-[60%]">
@@ -120,12 +120,14 @@ export function HeroShowcase({ slides }: { slides: HeroSlide[] }) {
         {/* Remate sólido nas arestas de baixo e da esquerda (evita uma linha de 1 px da foto em movimento). */}
         <div className="absolute inset-x-0 bottom-0 z-50 h-1 bg-background" />
         <div className="absolute inset-y-0 left-0 z-50 hidden w-1 bg-background wide:block" />
+        {/* A foto toda é clicável. Fora do teclado e dos leitores de ecrã: a legenda já tem a mesma ligação. */}
+        <Link href={`/veiculo/${slide.id}`} tabIndex={-1} className="absolute inset-0 z-[60]" />
       </div>
 
       {/* Legenda + progresso. Empilhado: sobre o fundo da foto. Largo: canto inferior direito do hero. */}
-      <div className="absolute inset-x-0 bottom-0 z-10">
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 z-10">
         <div className="container mx-auto flex justify-end px-4 pb-3 sm:pb-5 wide:pb-14">
-          <div className="w-full wide:w-[min(480px,44vw)]">
+          <div className="pointer-events-auto w-full wide:w-[min(480px,44vw)]">
             {total > 1 && (
               <div className="flex items-center gap-3">
                 {slides.map((s, c) => (
