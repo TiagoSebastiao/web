@@ -2,10 +2,31 @@
 
 As ações marcadas com **[TU]** são tuas: contas, pagamentos, chaves, DNS e autorizações. O resto está pronto no código.
 
-## 0. Estado atual (28/11/2026)
-- O código está pronto e testado localmente no runtime dos Workers (`npm run preview`): páginas, 5 idiomas, redirecionamentos, 404, sitemap, robots, cabeçalhos, formulário (validação, origem, campo-armadilha) e Lighthouse.
-- Código na `main` do GitHub. **Por fazer:** ligar o GitHub à Cloudflare, os secrets, o domínio e o DNS.
-- **DNS atual** (lido em 28/11): nameservers da Google (`ns-cloud-b1…b4.googledomains.com`).
+## 0. Estado atual (28/11/2026): em produção na Cloudflare
+**Feito:**
+- **Worker:** `oten-motors` está ligado ao GitHub (Workers Builds). Cada push para a `main` faz deploy automático e as outras branches geram pré-visualizações.
+- **Build:** o `@swc/core` está fixado na 1.16.2 (`overrides` no `package.json`), porque as versões 1.16.12 e seguintes falham na imagem de build da Cloudflare (`ERR_SWC_NATIVE_CACHE`).
+- **Secrets:** `RESEND_API_KEY` (chave nova, só de envio, restrita a otenmotors.com), `CONTACT_TO_EMAIL` e `CONTACT_FROM_EMAIL`, criados como tipo Secret. O formulário foi testado e o e-mail chegou a geral@.
+- **DNSSEC e nameservers:** o DNSSEC foi desligado no Squarespace e os nameservers passaram para a Cloudflare (`lauryn` / `nikon.ns.cloudflare.com`). A zona está ativa no plano Free.
+- **DNS:**
+  - o registo `www` antigo (Vercel) foi apagado;
+  - `www.otenmotors.com` é custom domain do Worker;
+  - a raiz aponta para um IP provisório com proxy (`192.0.2.1`);
+  - a Redirect Rule "Raiz para www" envia `https://otenmotors.com/*` para `https://www.otenmotors.com/${1}` (301, com query string).
+- **SSL/TLS:** modo automático (a correr como "Completo") e "Sempre usar HTTPS" ligado.
+- **Rate limiting:** caminho `/api/contact`, 3 pedidos por 10 s por IP, bloqueio de 10 s. O plano Free não permite períodos maiores; o site mantém também o seu limite por IP.
+- **Testado no domínio real:** páginas em 200, 404, redirecionamentos 301 (raiz → www e http → https), HSTS/CSP e verificação de origem do formulário.
+
+**Por fazer [TU]:**
+1. Search Console: voltar a submeter o `sitemap.xml`.
+2. Vercel: desligar o repositório (Project → Settings → Git → Disconnect).
+3. DNSSEC: reativá-lo na Cloudflare (DNS → Configurações) e colocar o registo DS no Squarespace.
+4. SPF do Google Workspace: não existe TXT SPF na raiz. Recomendado: `v=spf1 include:_spf.google.com ~all`.
+5. PageSpeed Insights e Rich Results Test em produção.
+
+Os passos abaixo ficam como referência e para o caso de ser preciso refazer a configuração.
+
+**DNS antes da mudança** (lido a 28/11, nameservers da Google `ns-cloud-b1…b4.googledomains.com`):
   - MX do Google Workspace: `aspmx.l.google.com`, mais `alt1`–`alt4`.
   - TXT `google-site-verification=…` (Search Console).
   - DKIM do Resend: `resend._domainkey`.

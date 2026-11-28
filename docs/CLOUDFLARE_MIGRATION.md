@@ -1,6 +1,6 @@
 # Migração Vercel → Cloudflare Workers
 
-Estado em 28/11/2026. A migração está preparada e testada **localmente** no runtime dos Workers (`wrangler dev`, através de `npm run preview`). Commit e push feitos para a `main` no GitHub (28/11/2026). Ainda **não** foi feito deploy na Cloudflare nem alteração de DNS: são passos teus (ver DEPLOYMENT.md).
+Estado em 28/11/2026. A migração está preparada e testada **localmente** no runtime dos Workers (`wrangler dev`, através de `npm run preview`). Commit e push feitos para a `main` no GitHub (28/11/2026). **Em produção na Cloudflare desde 28/11/2026** em https://www.otenmotors.com: DNS na Cloudflare, deploy automático a partir do GitHub (ver DEPLOYMENT.md, ponto 0).
 
 ## 1. Auditoria inicial (antes de alterar)
 
@@ -56,7 +56,7 @@ O repositório `web` passou a ter **só a branch `main`** com a versão mais rec
 | Otimizador de imagens | Não há otimização a pedido (seria Cloudflare Images, pago por transformação). Substituído por variantes pré-geradas (sem custos). Perde-se o AVIF: o peso total das imagens é ~5% maior no telemóvel e ~20% no desktop do que com a Vercel, mas a imagem principal carrega mais cedo (ver PERFORMANCE_AUDIT) |
 | Vercel Analytics | Só existe na Vercel; removido. Fica o GA4 (já existente). Alternativa sem cookies: Cloudflare Web Analytics (grátis) |
 | Limite de envios do formulário | A contagem em memória é por instância do Worker (aproximada). Proteção principal recomendada: regra de "Rate limiting" da Cloudflare (1 regra incluída no plano grátis) |
-| Chave do Resend | A chave em `.env.local` é **recusada pelo Resend** ("API key is invalid", testado em 28/11). É preciso criar uma nova (ver DEPLOYMENT.md) |
+| Chave do Resend | A chave antiga em `.env.local` era recusada pelo Resend. **Resolvido:** foi criada uma chave nova, só de envio, guardada como Secret do Worker (28/11) |
 | Tamanho do Worker | 1,43 MiB comprimido (limite do plano grátis: 3 MiB) |
 | `upgrade-insecure-requests` | Em `http://localhost` o browser tenta passar alguns pré-carregamentos para `https://localhost` e falham (erro só local). Em produção (HTTPS) não acontece. Já era assim antes |
 
