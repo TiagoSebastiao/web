@@ -42,5 +42,8 @@
     "tw-animate-css": "1.3.3",
     "typescript": "^5",
     "wrangler": "^4.169.0"
+  },
+  "overrides": {
+    "@swc/core": "1.16.2"
   }
 }
