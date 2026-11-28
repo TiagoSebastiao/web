@@ -40,7 +40,7 @@ export function ContactSection() {
         <SectionHeading eyebrow={t("eyebrow")} title={t("title")} subtitle={t("subtitle")} />
 
         <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr]">
-          <ul className="grid gap-4 self-start sm:grid-cols-3 lg:grid-cols-1">
+          <ul className="grid gap-4 self-start sm:grid-cols-3 lg:grid-cols-1 lg:self-center">
             {channels.map(({ icon: Icon, title, value, href, external, accent }, index) => (
               <li key={title} data-reveal="left" style={{ "--reveal-delay": `${index * 100}ms` } as CSSProperties}>
                 <a

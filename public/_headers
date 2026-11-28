@@ -1,0 +1,27 @@
+# Cabeçalhos dos ficheiros estáticos servidos pela Cloudflare (Workers Static Assets).
+# Não se aplicam às páginas nem à API (essas usam os cabeçalhos do next.config.mjs).
+# Cache permanente só para ficheiros cujo nome muda quando o conteúdo muda.
+
+# Segurança básica em todos os ficheiros estáticos.
+/*
+  X-Content-Type-Options: nosniff
+  Strict-Transport-Security: max-age=63072000
+
+# JavaScript, CSS e fontes do Next.js (nome com hash).
+/_next/static/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Variantes das fotografias (nome com hash, geradas por `npm run images`).
+/img/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Fotografias originais e imagens da marca: o nome não muda se a foto for substituída,
+# por isso cache de 1 dia e atualização em segundo plano durante 7 dias.
+/vehicles/*
+  Cache-Control: public, max-age=86400, stale-while-revalidate=604800
+/brand/*
+  Cache-Control: public, max-age=86400, stale-while-revalidate=604800
+/logo.png
+  Cache-Control: public, max-age=86400, stale-while-revalidate=604800
+/og-default.jpg
+  Cache-Control: public, max-age=86400, stale-while-revalidate=604800

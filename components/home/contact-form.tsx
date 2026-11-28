@@ -7,6 +7,7 @@ import { Link } from "@/i18n/navigation"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
+import { trackEvent } from "@/lib/analytics"
 
 type Status = "idle" | "sending" | "success" | "error" | "invalid" | "tooMany"
 
@@ -31,6 +32,7 @@ export function ContactForm() {
       if (response.ok) {
         form.reset()
         setStatus("success")
+        trackEvent("generate_lead", { form: "contact", page: location.pathname })
       } else {
         setStatus(response.status === 400 ? "invalid" : response.status === 429 ? "tooMany" : "error")
       }

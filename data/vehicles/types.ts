@@ -22,6 +22,7 @@ export type EquipmentKey =
   | "airbags"
   | "alarm"
   | "alloyWheels"
+  | "alloyWheels18"
   | "androidAutoAppleCarplay"
   | "autoDimmingMirror"
   | "autoParkingAssist"
@@ -49,10 +50,12 @@ export type EquipmentKey =
   | "mSportSteeringWheel"
   | "navigation"
   | "paddleShifters"
+  | "pianoBlackTrim"
   | "parkingAssist"
   | "parkingSensorsFrontRear"
   | "parkingSensorsRear"
   | "rainSensor"
+  | "remoteTrunkOpening"
   | "startStop"
   | "tyrePressureMonitoring"
 
@@ -61,7 +64,7 @@ export interface Vehicle {
   id: string
   make: string
   model: string
-  /** Versão / motorização, ex.: "116d Auto". */
+  /** Versão / motorização, ex.: "116d". */
   version: string
   year: number
   /** Data da 1.ª matrícula, formato "AAAA-MM-DD". */
@@ -115,4 +118,8 @@ export interface Vehicle {
   warrantyMonths?: number
   /** Nota curta sobre manutenção / histórico. */
   serviceHistory?: Localized
+  /** IUC (imposto único de circulação) do ano já pago. */
+  iucPaid?: boolean
+  /** Data da última alteração desta ficha ("AAAA-MM-DD"), usada no sitemap para o Google. */
+  updatedAt?: string
 }

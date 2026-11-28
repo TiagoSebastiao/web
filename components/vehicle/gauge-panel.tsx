@@ -83,7 +83,7 @@ export async function GaugePanel({ vehicle, locale }: { vehicle: Vehicle; locale
                 {gauge.unit && <p className="text-xs font-bold text-white/50">{gauge.unit}</p>}
               </div>
             </div>
-            <p className="-mt-3 text-[11px] font-bold uppercase tracking-[0.2em] text-primary md:text-xs">{gauge.label}</p>
+            <p className="-mt-3 text-[11px] font-bold uppercase tracking-[0.2em] text-primary-text md:text-xs">{gauge.label}</p>
             {gauge.sub && <p className="mt-1 truncate text-xs text-muted-foreground">{gauge.sub}</p>}
           </li>
         ))}

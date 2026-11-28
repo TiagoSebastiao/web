@@ -37,9 +37,27 @@ export function HeroShowcase({ slides }: { slides: HeroSlide[] }) {
   const [previous, setPrevious] = useState<string | null>(null)
   const [paused, setPaused] = useState(true)
   const [keyboardFocus, setKeyboardFocus] = useState(false)
+  // As fotos seguintes só entram na página depois de a página carregar (+1 s), para não
+  // disputarem a rede e o processador com a primeira foto (a imagem LCP). Chegam muito antes
+  // da primeira troca (6,5 s).
+  const [loadRest, setLoadRest] = useState(false)
   const clearPrevious = useRef<number | undefined>(undefined)
 
   useEffect(() => {
+    let timer: number | undefined
+    const start = () => {
+      timer = window.setTimeout(() => setLoadRest(true), 1000)
+    }
+    if (document.readyState === "complete") start()
+    else window.addEventListener("load", start, { once: true })
+    return () => {
+      window.removeEventListener("load", start)
+      window.clearTimeout(timer)
+    }
+  }, [])
+
+  useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- preferência do sistema só existe no browser (a página é gerada estática, começa em pausa)
     if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) setPaused(false)
     return () => window.clearTimeout(clearPrevious.current)
   }, [])
@@ -81,16 +99,18 @@ export function HeroShowcase({ slides }: { slides: HeroSlide[] }) {
             const key = `${c}-${p}`
             const isCurrent = key === currentKey
             const isPrevious = key === previous
+            const isFirst = key === "0-0"
+            if (!isFirst && !isCurrent && !isPrevious && !loadRest) return null
             return (
               <Image
                 key={key}
                 src={src}
                 alt=""
                 fill
-                priority={key === "0-0"}
-                loading="eager"
+                // Só a primeira foto é a imagem LCP: pré-carregada e com prioridade alta.
+                priority={isFirst}
+                fetchPriority={isFirst ? "high" : "low"}
                 sizes="(min-width: 1024px) and (min-aspect-ratio: 5/4) 60vw, 100vw"
-                quality={90}
                 className={cn(
                   "object-cover",
                   // A atual entra por cima com fade; a anterior fica opaca por baixo; as outras escondidas.
@@ -137,7 +157,7 @@ export function HeroShowcase({ slides }: { slides: HeroSlide[] }) {
                     onClick={() => go(c, 0)}
                     aria-label={t("showSlide", { name: s.name })}
                     aria-current={c === car}
-                    className="flex h-6 flex-1 items-center gap-1"
+                    className="flex h-8 flex-1 items-center gap-1"
                   >
                     {/* Um traço por fotografia do carro: cheio (já vista), a encher (atual) ou vazio. */}
                     {s.images.map((_, p) => (

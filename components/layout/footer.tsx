@@ -3,6 +3,7 @@ import { Facebook, Instagram, Youtube } from "lucide-react"
 import { useLocale, useTranslations } from "next-intl"
 import { Link } from "@/i18n/navigation"
 import { siteConfig, whatsappLink } from "@/config/site"
+import { CookieSettingsLink } from "@/components/layout/cookie-banner"
 import { TikTokIcon } from "@/components/ui/icons"
 import { guide, isGuideLocale } from "@/data/guides/buying-a-car-in-portugal"
 
@@ -13,7 +14,7 @@ const socialLinks = [
   { label: "YouTube", href: siteConfig.social.youtube, icon: Youtube },
 ]
 
-const linkClass = "inline-block transition-all duration-300 hover:translate-x-1 hover:text-white"
+const linkClass = "inline-block py-1 transition-all duration-300 hover:translate-x-1 hover:text-white"
 
 export function Footer() {
   const t = useTranslations("footer")
@@ -29,7 +30,7 @@ export function Footer() {
       <div className="container relative mx-auto max-w-6xl px-4">
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1fr]">
           <div>
-            <Image src="/logo.png" alt={siteConfig.name} width={400} height={100} className="h-11 w-auto" />
+            <Image src="/logo.png" alt={siteConfig.name} width={192} height={48} className="h-11 w-auto" />
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-muted-foreground">{t("description")}</p>
             <ul className="mt-5 flex gap-2" aria-label={t("social")}>
               {socialLinks.map(({ label, href, icon: Icon }) => (
@@ -50,7 +51,7 @@ export function Footer() {
 
           <div>
             <h2 className="mb-4 text-sm font-bold uppercase tracking-wider text-foreground">{t("explore")}</h2>
-            <ul className="space-y-2.5 text-sm text-muted-foreground">
+            <ul className="space-y-1 text-sm text-muted-foreground">
               <li><Link href="/#veiculos" className={linkClass}>{tn("vehicles")}</Link></li>
               <li><Link href="/#vender" className={linkClass}>{tn("tradeIn")}</Link></li>
               <li><Link href="/#sobre-nos" className={linkClass}>{tn("about")}</Link></li>
@@ -71,10 +72,11 @@ export function Footer() {
 
           <div>
             <h2 className="mb-4 text-sm font-bold uppercase tracking-wider text-foreground">{t("legal")}</h2>
-            <ul className="space-y-2.5 text-sm text-muted-foreground">
+            <ul className="space-y-1 text-sm text-muted-foreground">
               <li><Link href="/termos" className={linkClass}>{t("terms")}</Link></li>
               <li><Link href="/privacidade" className={linkClass}>{t("privacy")}</Link></li>
               <li><Link href="/cookies" className={linkClass}>{t("cookies")}</Link></li>
+              <li><CookieSettingsLink className={`${linkClass} text-left`} /></li>
               <li>
                 <a href={siteConfig.complaintsBookUrl} target="_blank" rel="noopener noreferrer" className={linkClass}>
                   {t("complaintsBook")}
@@ -97,7 +99,7 @@ export function Footer() {
 
           <div>
             <h2 className="mb-4 text-sm font-bold uppercase tracking-wider text-foreground">{t("contacts")}</h2>
-            <ul className="space-y-2.5 text-sm text-muted-foreground">
+            <ul className="space-y-1 text-sm text-muted-foreground">
               <li>
                 <a href={`tel:${siteConfig.contact.phone}`} className={linkClass}>{siteConfig.contact.phoneDisplay}</a>
               </li>

@@ -37,7 +37,7 @@ export function LegalPage({ content }: { content: LegalContent }) {
       <main className="min-h-screen bg-background">
         <section className="container mx-auto px-4 pb-14 pt-28 md:pb-20 md:pt-32">
           <div className="mx-auto max-w-4xl">
-            <h1 className="text-4xl font-black uppercase tracking-tight md:text-5xl">{content.title}</h1>
+            <h1 className="hyphens-auto break-words text-3xl font-black uppercase tracking-tight sm:text-4xl md:text-5xl">{content.title}</h1>
             <p className="mt-3 text-sm text-muted-foreground">{content.updated}</p>
 
             <div className="mt-10 space-y-8">

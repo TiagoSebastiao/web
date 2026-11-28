@@ -1,8 +1,8 @@
 {
   "meta": {
-    "title": "OTEN MOTORS | Jung- und Gebrauchtwagen in Portugal",
-    "description": "Autohaus für Jung- und Gebrauchtwagen. Entdecken Sie unsere verfügbaren Fahrzeuge mit echten Fotos und schreiben Sie uns per WhatsApp.",
-    "vehicleDescription": "{name}, Baujahr {year}, {mileage}, {fuel}, {transmission}. {price}. Alle Fotos und Details bei OTEN MOTORS.",
+    "title": "OTEN MOTORS | Jung- und Gebrauchtwagen in Faro, Algarve (Portugal)",
+    "description": "Autohaus für Jung- und Gebrauchtwagen in Faro an der Algarve. Echte Fotos, direkter Kontakt per WhatsApp und Lieferung in ganz Festland-Portugal.",
+    "vehicleDescription": "{name}, Baujahr {year}, {mileage}, {fuel}, {transmission}. {price}. Alle Fotos und Details bei OTEN MOTORS in Faro (Algarve), mit Lieferung in ganz Festland-Portugal.",
     "vehicleNotFound": "Fahrzeug nicht gefunden"
   },
   "nav": {
@@ -18,7 +18,7 @@
     "floatingWhatsapp": "Per WhatsApp schreiben"
   },
   "hero": {
-    "eyebrow": "Junge Gebrauchte & Gebrauchtwagen",
+    "eyebrow": "Gebrauchtwagen · Faro, Algarve",
     "title": "Junge Gebrauchte und Gebrauchtwagen, <hl>einzeln ausgewählt.</hl>",
     "intro": "Entdecken Sie sorgfältig ausgewählte Fahrzeuge, echte Fotos und transparente Informationen. Alle Ihre Fragen beantworten wir schnell und persönlich per WhatsApp.",
     "ctaVehicles": "Fahrzeuge ansehen",
@@ -89,10 +89,12 @@
       },
       "drive": {
         "title": "Wir liefern Ihr Auto",
-        "text": "Wir kümmern uns um die Unterlagen und liefern Ihnen das Auto fahrbereit nach Hause."
+        "text": "Wir kümmern uns um die Unterlagen und liefern Ihnen das Auto fahrbereit nach Hause – überall in Festland-Portugal."
       }
     },
-    "imageAlt": "Innenraum des BMW 4er, fotografiert von OTEN MOTORS"
+    "imageAlt": "Schwarzer BMW 4er von OTEN MOTORS mit dem Händlerlogo auf dem Kennzeichen",
+    "badgeTitle": "Eine Geschichte, die gerade beginnt",
+    "badgeText": "Jedes Fahrzeug ist der Anfang einer neuen Reise. Die nächste könnte Ihre sein."
   },
   "sell": {
     "title": "Sie möchten Ihr Auto verkaufen?",
@@ -130,7 +132,7 @@
     "tooMany": "Wir haben bereits mehrere Nachrichten von Ihnen erhalten. Um uns jetzt zu erreichen, nutzen Sie bitte WhatsApp oder rufen Sie an."
   },
   "footer": {
-    "description": "Autohaus mit Schwerpunkt auf An- und Verkauf von Jung- und Gebrauchtwagen.",
+    "description": "Autohaus für Jung- und Gebrauchtwagen in Faro an der Algarve. Wir liefern in ganz Festland-Portugal.",
     "explore": "Entdecken",
     "legal": "Rechtliches",
     "contacts": "Kontakt",
@@ -197,7 +199,9 @@
     "dataSheet": "Datenblatt",
     "otherVehicles": "Weitere Fahrzeuge im Bestand",
     "viewGallery": "Fotos ansehen",
-    "hpUnit": "PS"
+    "hpUnit": "PS",
+    "iuc": "Kfz-Steuer (IUC)",
+    "iucPaid": "Bezahlt"
   },
   "notFound": {
     "title": "Seite nicht gefunden",
@@ -246,17 +250,18 @@
       "airbags": "Airbags",
       "alarm": "Alarmanlage",
       "alloyWheels": "Leichtmetallfelgen",
+      "alloyWheels18": "18-Zoll-Leichtmetallfelgen",
       "androidAutoAppleCarplay": "Android Auto und Apple CarPlay",
       "autoDimmingMirror": "Automatisch abblendender Innenspiegel",
-      "autoParkingAssist": "Automatisches Einparken",
       "automaticClimate": "Klimaautomatik",
+      "autoParkingAssist": "Automatisches Einparken",
       "bluetooth": "Bluetooth",
       "clothUpholstery": "Stoffpolsterung",
       "cruiseControl": "Tempomat",
       "dabRadio": "DAB-Radio",
       "daytimeRunningLights": "Tagfahrlicht",
       "digitalCockpit": "Digitales Cockpit",
-      "drivingModes": "Fahrmodi (Eco Pro, Comfort, Sport)",
+      "drivingModes": "Fahrmodi (Eco, Comfort, Sport)",
       "dualZoneClimate": "Zwei-Zonen-Klimaautomatik",
       "eCall": "Notrufsystem (eCall)",
       "electricHeatedMirrors": "Elektrische, beheizbare Außenspiegel",
@@ -276,7 +281,9 @@
       "parkingAssist": "Parkassistent",
       "parkingSensorsFrontRear": "Parksensoren vorne und hinten",
       "parkingSensorsRear": "Parksensoren hinten",
+      "pianoBlackTrim": "Interieur in Hochglanz-Schwarz",
       "rainSensor": "Regensensor",
+      "remoteTrunkOpening": "Kofferraumöffnung per Fernbedienung",
       "startStop": "Start-Stopp-System",
       "tyrePressureMonitoring": "Reifendruckkontrolle"
     }
@@ -308,7 +315,8 @@
     "registrationLabel": "Erstzulassung und Kilometerstand",
     "serviceLabel": "Wartung",
     "warrantyLabel": "Gewährleistung",
-    "warrantyNote": "Kommerzielle Garantie eines Partnerunternehmens gemäß dessen Garantiezertifikat. Die gesetzliche Gewährleistung nach Gesetzesdekret Nr. 84/2021 bleibt unberührt. Siehe AGB."
+    "warrantyNote": "Kommerzielle Garantie eines Partnerunternehmens gemäß dessen Garantiezertifikat. Die gesetzliche Gewährleistung nach Gesetzesdekret Nr. 84/2021 bleibt unberührt. Siehe AGB.",
+    "iucLabel": "Kfz-Steuer (IUC)"
   },
   "finder": {
     "eyebrow": "Finden Sie Ihr Auto",
@@ -375,6 +383,16 @@
     "title": "Folgen Sie uns in den sozialen Medien",
     "subtitle": "Neue Fahrzeuge, Videos und Neuigkeiten aus dem Autohaus – aus erster Hand.",
     "follow": "Folgen",
-    "open": "OTEN MOTORS auf {name} öffnen (neues Fenster)"
+    "open": "OTEN MOTORS auf {name} öffnen (neues Fenster)",
+    "videoCta": "Video ansehen",
+    "videoPlay": "Video abspielen: {title}",
+    "videoLabel": "Neuestes Video unseres Kanals"
+  },
+  "cookieBanner": {
+    "title": "Statistik-Cookies",
+    "text": "Wir verwenden Google Analytics, um zu verstehen, wie die Website genutzt wird, und sie zu verbessern. Es wird nur aktiviert, wenn Sie zustimmen. Mehr dazu in der <link>Cookie-Richtlinie</link>.",
+    "accept": "Akzeptieren",
+    "reject": "Ablehnen",
+    "settings": "Cookie-Einstellungen"
   }
 }

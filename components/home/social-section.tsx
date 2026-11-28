@@ -4,6 +4,7 @@ import { useTranslations } from "next-intl"
 import { siteConfig } from "@/config/site"
 import { TikTokIcon } from "@/components/ui/icons"
 import { SectionHeading } from "@/components/ui/section-heading"
+import { YouTubeVideo } from "@/components/ui/youtube-video"
 
 type Network = { key: keyof typeof siteConfig.social; name: string; icon: ComponentType<SVGProps<SVGSVGElement>> }
 
@@ -28,6 +29,25 @@ export function SocialSection() {
     <section aria-labelledby="social-title" className="relative scroll-mt-20 py-20 md:py-24">
       <div className="container mx-auto max-w-6xl px-4">
         <SectionHeading eyebrow={t("eyebrow")} title={t("title")} subtitle={t("subtitle")} id="social-title" />
+
+        {/* Vídeo em destaque do canal de YouTube (configurado em config/site.ts → featuredVideo). */}
+        <div data-reveal="zoom" className="mx-auto mb-12 max-w-4xl md:mb-16">
+          <a
+            href={siteConfig.social.youtube}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mb-4 inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-white/55 transition-colors hover:text-white"
+          >
+            <Youtube className="h-4 w-4 text-primary" aria-hidden="true" />
+            {t("videoLabel")}
+          </a>
+          <YouTubeVideo
+            id={siteConfig.featuredVideo.id}
+            title={siteConfig.featuredVideo.title}
+            cta={t("videoCta")}
+            playLabel={t("videoPlay", { title: siteConfig.featuredVideo.title })}
+          />
+        </div>
 
         <ul className="grid grid-cols-2 gap-3 md:grid-cols-4 md:gap-4">
           {networks.map(({ key, name, icon: Icon }, i) => {

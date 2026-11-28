@@ -1,4 +1,4 @@
-import { CalendarCheck, Camera, Globe2, ShieldCheck, Wrench } from "lucide-react"
+import { CalendarCheck, Camera, Globe2, Receipt, ShieldCheck, Wrench } from "lucide-react"
 import { getTranslations } from "next-intl/server"
 import type { Locale, Vehicle } from "@/data/vehicles"
 import { formatKm, formatRegistration } from "@/lib/format"
@@ -17,6 +17,7 @@ export async function TransparencySection({ vehicle, locale, index }: Props) {
     { icon: Globe2, label: tt("originLabel"), value: tl(`origin.${vehicle.origin}`) },
     { icon: CalendarCheck, label: tt("registrationLabel"), value: `${formatRegistration(locale, vehicle.firstRegistration)} · ${formatKm(locale, vehicle.mileageKm)}` },
     vehicle.serviceHistory && { icon: Wrench, label: tt("serviceLabel"), value: vehicle.serviceHistory[locale] },
+    vehicle.iucPaid && { icon: Receipt, label: tt("iucLabel"), value: t("iucPaid") },
     vehicle.warrantyMonths && { icon: ShieldCheck, label: tt("warrantyLabel"), value: t("warrantyValue", { months: vehicle.warrantyMonths }) },
   ].filter(Boolean) as { icon: typeof Camera; label: string; value: string }[]
 

@@ -36,6 +36,7 @@ export async function DataSheet({ vehicle, locale, index }: { vehicle: Vehicle; 
   const conditions = [
     vehicle.warrantyMonths && [t("warranty"), t("warrantyValue", { months: vehicle.warrantyMonths })],
     vehicle.serviceHistory && [t("serviceHistory"), vehicle.serviceHistory[locale]],
+    vehicle.iucPaid && [t("iuc"), t("iucPaid")],
   ].filter(Boolean) as string[][]
 
   return (
@@ -59,7 +60,7 @@ function SpecList({ title, rows, delay = 0 }: { title: string; rows: string[][];
       style={{ "--reveal-delay": `${delay}ms` } as CSSProperties}
       className="card-glow rounded-3xl border border-white/10 bg-gradient-to-b from-white/[0.05] to-white/[0.01] p-6 md:p-7"
     >
-      <h3 className="mb-4 text-xs font-bold uppercase tracking-[0.25em] text-primary">{title}</h3>
+      <h3 className="mb-4 text-xs font-bold uppercase tracking-[0.25em] text-primary-text">{title}</h3>
       <dl className="divide-y divide-white/10 text-sm">
         {rows.map(([label, value]) => (
           <div key={`${label}-${value}`} className="flex justify-between gap-4 py-2.5">

@@ -206,15 +206,19 @@ html {
 
 /* ---------- Montra do hero ---------- */
 /* Barra de progresso de cada fotografia (a troca acontece no fim da animação). */
+/* Anima transform (só a placa gráfica) em vez de width, que obrigava a recalcular o layout
+   da página em cada frame. */
 @keyframes hero-progress {
   from {
-    width: 0;
+    transform: scaleX(0);
   }
   to {
-    width: 100%;
+    transform: scaleX(1);
   }
 }
 .hero-progress {
+  width: 100%;
+  transform-origin: left center;
   animation: hero-progress linear forwards;
 }
 /* Movimento lento na fotografia visível: zoom pequeno (3%) e deslize lateral (--pan).

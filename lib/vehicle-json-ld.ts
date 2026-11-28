@@ -45,9 +45,31 @@ export function vehicleJsonLd(vehicle: Vehicle, locale: Locale) {
             priceCurrency: "EUR",
             availability,
             itemCondition: "https://schema.org/UsedCondition",
+            // Entrega em todo o Portugal continental.
+            eligibleRegion: { "@type": "Country", name: siteConfig.location.country },
             seller: { "@id": `${siteConfig.url}/#organization` },
           },
         }
       : {}),
+  }
+}
+
+/**
+ * Trilho de navegação (schema.org/BreadcrumbList): Início → viatura.
+ * O Google pode mostrá-lo no resultado da pesquisa em vez do URL.
+ */
+export function vehicleBreadcrumbJsonLd(vehicle: Vehicle, locale: Locale) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: siteConfig.name, item: absoluteUrl(localizedPath(locale, "/")) },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: `${vehicleName(vehicle)} ${vehicle.year}`,
+        item: absoluteUrl(localizedPath(locale, `/veiculo/${vehicle.id}`)),
+      },
+    ],
   }
 }

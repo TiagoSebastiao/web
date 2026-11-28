@@ -23,7 +23,7 @@ const { minRate, maxRate, maxRatePeriod } = siteConfig.creditSimulator
  * O prazo por defeito (84 meses) segue o prazo médio do crédito automóvel em Portugal
  * em 2025 (7,4 anos, Banco de Portugal).
  */
-export function FinanceCalculator({ price, name, url }: Props) {
+export function FinanceCalculator({ price }: Props) {
   const t = useTranslations("finance")
   const locale = useLocale()
   const maxDown = Math.floor((price * 0.8) / 500) * 500
@@ -49,7 +49,7 @@ export function FinanceCalculator({ price, name, url }: Props) {
     <div data-reveal className="rounded-3xl border border-white/10 bg-gradient-to-b from-white/[0.05] to-white/[0.01] p-6 md:p-8">
       <p className="text-white/70">{t("intro")}</p>
 
-      <div className="mt-6 grid gap-6 md:grid-cols-2">
+      <div className="mt-6 grid grid-cols-1 gap-6 md:grid-cols-2 [&>*]:min-w-0">
         <div className="space-y-6">
           <div>
             <div className="flex items-baseline justify-between gap-4">
@@ -114,7 +114,7 @@ export function FinanceCalculator({ price, name, url }: Props) {
 
         <div className="flex flex-col justify-between rounded-2xl border border-primary/30 bg-primary/10 p-6" aria-live="polite">
           <div>
-            <p className="flex items-center gap-2 text-xs font-bold uppercase tracking-[0.2em] text-primary">
+            <p className="flex items-center gap-2 text-xs font-bold uppercase tracking-[0.2em] text-primary-text">
               <Calculator className="h-4 w-4" aria-hidden="true" />
               {t("monthly")}
             </p>

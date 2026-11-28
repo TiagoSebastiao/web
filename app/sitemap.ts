@@ -4,13 +4,17 @@ import { vehicles } from "@/data/vehicles"
 import { guide, guideLocales } from "@/data/guides/buying-a-car-in-portugal"
 import { absoluteUrl, localizedPath } from "@/lib/seo"
 
+/** Data da última alteração relevante do conteúdo. Atualizar quando se mexe nas páginas. */
+const SITE_UPDATED = new Date("2026-11-18")
+
 /** Uma entrada por página e por idioma, com as respetivas traduções (hreflang). */
-function entry(path: string, priority: number): MetadataRoute.Sitemap {
+function entry(path: string, priority: number, lastModified: Date = SITE_UPDATED): MetadataRoute.Sitemap {
   const languages = Object.fromEntries(
     routing.locales.map((locale) => [locale, absoluteUrl(localizedPath(locale, path))]),
   )
   return routing.locales.map((locale) => ({
     url: absoluteUrl(localizedPath(locale, path)),
+    lastModified,
     priority,
     alternates: { languages },
   }))
@@ -27,7 +31,7 @@ function guideEntries(): MetadataRoute.Sitemap {
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
     ...entry("/", 1),
-    ...vehicles.filter((v) => v.status !== "sold").flatMap((v) => entry(`/veiculo/${v.id}`, 0.8)),
+    ...vehicles.filter((v) => v.status !== "sold").flatMap((v) => entry(`/veiculo/${v.id}`, 0.8, v.updatedAt ? new Date(v.updatedAt) : SITE_UPDATED)),
     ...guideEntries(),
     ...entry("/termos", 0.1),
     ...entry("/privacidade", 0.1),

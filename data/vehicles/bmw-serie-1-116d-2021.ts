@@ -6,13 +6,14 @@ export const bmwSerie1116d2021: Vehicle = {
   id: "bmw-serie-1-116d-2021",
   make: "BMW",
   model: "Série 1",
-  version: "116d Auto",
+  version: "116d",
   year: 2021,
   firstRegistration: "2021-11-03",
-  mileageKm: 136000,
+  mileageKm: 142000,
   price: 20300,
   status: "available",
   featured: true,
+  updatedAt: "2026-11-18",
 
   fuel: "diesel",
   transmission: "automatic",
@@ -92,10 +93,11 @@ export const bmwSerie1116d2021: Vehicle = {
 
   warrantyMonths: 18,
   serviceHistory: {
-    pt: "Revisões e histórico completos",
-    en: "Full service history",
-    es: "Historial de mantenimiento completo",
-    fr: "Historique d’entretien complet",
-    de: "Lückenloses Scheckheft",
+    pt: "Revisões e histórico completo na marca",
+    en: "Full BMW dealer service history",
+    es: "Revisiones e historial completo en el concesionario oficial",
+    fr: "Révisions et historique complet chez BMW",
+    de: "Lückenloses Scheckheft beim BMW-Vertragshändler",
   },
+  iucPaid: true,
 }

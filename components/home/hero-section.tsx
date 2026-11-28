@@ -48,7 +48,7 @@ export function HeroSection() {
           </p>
 
           <h1
-            className="enter mt-6 text-[clamp(2.4rem,9vw,5.25rem)] font-extrabold leading-[1.02] tracking-[-0.035em] text-white wide:text-[clamp(3rem,5.6vw,5.25rem)]"
+            className="enter mt-6 hyphens-auto break-words text-[clamp(1.85rem,9vw,5.25rem)] font-extrabold leading-[1.02] tracking-[-0.035em] text-white wide:text-[clamp(3rem,5.6vw,5.25rem)]"
             style={delay(100)}
           >
             {t.rich("title", {

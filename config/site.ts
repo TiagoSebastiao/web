@@ -6,6 +6,8 @@
  */
 export const siteConfig = {
   name: "OTEN MOTORS",
+  /** Outras formas de escrever a marca (dados estruturados para o Google). */
+  alternateNames: ["Oten Motors", "OTEN", "Otenmotors", "otenmotors.com"],
   url: "https://www.otenmotors.com",
 
   contact: {
@@ -18,6 +20,20 @@ export const siteConfig = {
     email: "geral@otenmotors.com",
   },
 
+  /**
+   * Localização usada no SEO (dados estruturados): cidade e região a que a marca fica associada,
+   * e a zona onde as viaturas são entregues. Enquanto não houver morada do stand, só cidade/região
+   * (sem rua nem coordenadas). Quando houver morada, preencher também legal.showroomAddress.
+   */
+  location: {
+    city: "Faro",
+    region: "Algarve",
+    countryCode: "PT",
+    country: "Portugal",
+    /** Zona de entrega das viaturas. */
+    deliveryArea: "Portugal Continental",
+  },
+
   /** Stand da OTEN MOTORS no Standvirtual (todas as viaturas anunciadas). */
   standvirtualUrl: "https://otenmotors.standvirtual.com/inventory",
 
@@ -26,6 +42,27 @@ export const siteConfig = {
     facebook: "https://www.facebook.com/otenmotors/",
     tiktok: "https://www.tiktok.com/@otenmotors",
     youtube: "https://www.youtube.com/@otenmotors",
+  },
+
+  /**
+   * Vídeo do YouTube mostrado na secção "Redes sociais".
+   * Para trocar de vídeo, basta mudar o id (a parte depois de "watch?v=" no link) e o título.
+   */
+  /**
+   * Google — PREENCHER depois de criar as contas (ver README, secção "Google Analytics e Search Console").
+   * - analyticsId: ID de medição do Google Analytics 4 (formato "G-XXXXXXXXXX"). Vazio = GA desligado
+   *   e sem banner de cookies.
+   * - searchConsoleVerification: código da meta tag "google-site-verification" (só o valor do content).
+   *   Não é preciso se a propriedade for verificada por DNS (recomendado).
+   */
+  google: {
+    analyticsId: "G-TPCRMTRTEC",
+    searchConsoleVerification: "",
+  },
+
+  featuredVideo: {
+    id: "LfFO0ihj0qU",
+    title: "BMW Série 4 420d Coupé Automático Preto | OTEN MOTORS",
   },
 
   /** Link oficial do Livro de Reclamações Eletrónico. */

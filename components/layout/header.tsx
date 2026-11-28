@@ -24,8 +24,12 @@ export function Header() {
   const [open, setOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
 
-  // Fecha o menu móvel quando se muda de página.
-  useEffect(() => setOpen(false), [pathname])
+  // Fecha o menu móvel quando se muda de página (ajuste durante o render, sem efeito extra).
+  const [lastPathname, setLastPathname] = useState(pathname)
+  if (pathname !== lastPathname) {
+    setLastPathname(pathname)
+    setOpen(false)
+  }
 
   // Cabeçalho transparente no topo; fundo sólido depois de fazer scroll. Sem backdrop-blur: por cima
   // de fotos em movimento (página da viatura) o desfoque fazia a imagem piscar no Chrome.
@@ -57,8 +61,8 @@ export function Header() {
           <Image
             src="/logo.png"
             alt={siteConfig.name}
-            width={400}
-            height={100}
+            width={192}
+            height={48}
             priority
             className={cn("w-auto transition-all duration-500", solid ? "h-9 md:h-10" : "h-10 md:h-12")}
           />

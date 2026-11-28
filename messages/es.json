@@ -1,8 +1,8 @@
 {
   "meta": {
-    "title": "OTEN MOTORS | Coches seminuevos y de ocasión en Portugal",
-    "description": "Concesionario de coches seminuevos y de ocasión. Vea los vehículos disponibles con fotografías reales y contáctenos por WhatsApp.",
-    "vehicleDescription": "{name} de {year}, {mileage}, {fuel}, cambio {transmission}. {price}. Fotografías y características completas en OTEN MOTORS.",
+    "title": "OTEN MOTORS | Coches seminuevos y de ocasión en Faro, Algarve (Portugal)",
+    "description": "Concesionario de coches seminuevos y de ocasión en Faro, en el Algarve. Fotografías reales, contacto directo por WhatsApp y entrega en todo Portugal continental.",
+    "vehicleDescription": "{name} de {year}, {mileage}, {fuel}, cambio {transmission}. {price}. Fotografías y características completas en OTEN MOTORS, en Faro (Algarve), con entrega en todo Portugal continental.",
     "vehicleNotFound": "Vehículo no encontrado"
   },
   "nav": {
@@ -18,7 +18,7 @@
     "floatingWhatsapp": "Hablar por WhatsApp"
   },
   "hero": {
-    "eyebrow": "Seminuevos y usados",
+    "eyebrow": "Seminuevos y usados · Faro, Algarve",
     "title": "Seminuevos y usados, elegidos <hl>uno a uno.</hl>",
     "intro": "Descubra coches seleccionados con rigor, fotos reales e información transparente. Resuelva todas sus dudas de forma rápida y personalizada por WhatsApp.",
     "ctaVehicles": "Ver vehículos",
@@ -89,10 +89,12 @@
       },
       "drive": {
         "title": "Le entregamos su coche",
-        "text": "Nos ocupamos de la documentación y le entregamos el coche listo, en su casa."
+        "text": "Nos ocupamos de la documentación y le entregamos el coche listo, en su casa, en cualquier punto de Portugal continental."
       }
     },
-    "imageAlt": "Interior del BMW Serie 4 fotografiado por OTEN MOTORS"
+    "imageAlt": "BMW Serie 4 negro de OTEN MOTORS con el logotipo del concesionario en la matrícula",
+    "badgeTitle": "Una historia por empezar",
+    "badgeText": "Cada vehículo es el comienzo de un nuevo viaje. El próximo puede ser el suyo."
   },
   "sell": {
     "title": "¿Quiere vender su coche?",
@@ -130,7 +132,7 @@
     "tooMany": "Ya hemos recibido varios mensajes suyos. Para hablar con nosotros ahora, use WhatsApp o el teléfono."
   },
   "footer": {
-    "description": "Concesionario especializado en la compra y venta de vehículos seminuevos y de ocasión.",
+    "description": "Concesionario de coches seminuevos y de ocasión en Faro, en el Algarve. Entregamos en todo Portugal continental.",
     "explore": "Explorar",
     "legal": "Información legal",
     "contacts": "Contacto",
@@ -197,7 +199,9 @@
     "dataSheet": "Ficha técnica",
     "otherVehicles": "Otros vehículos en stock",
     "viewGallery": "Ver fotos",
-    "hpUnit": "CV"
+    "hpUnit": "CV",
+    "iuc": "Impuesto de circulación (IUC)",
+    "iucPaid": "Pagado"
   },
   "notFound": {
     "title": "Página no encontrada",
@@ -246,17 +250,18 @@
       "airbags": "Airbags",
       "alarm": "Alarma",
       "alloyWheels": "Llantas de aleación",
+      "alloyWheels18": "Llantas de aleación de 18\"",
       "androidAutoAppleCarplay": "Android Auto y Apple CarPlay",
       "autoDimmingMirror": "Retrovisor interior electrocrómico",
-      "autoParkingAssist": "Aparcamiento automático",
       "automaticClimate": "Climatizador automático",
+      "autoParkingAssist": "Aparcamiento automático",
       "bluetooth": "Bluetooth",
       "clothUpholstery": "Tapicería de tela",
       "cruiseControl": "Control de crucero",
       "dabRadio": "Radio DAB",
       "daytimeRunningLights": "Luces de conducción diurna",
       "digitalCockpit": "Cuadro de instrumentos digital",
-      "drivingModes": "Modos de conducción (Eco Pro, Comfort, Sport)",
+      "drivingModes": "Modos de conducción (Eco, Comfort, Sport)",
       "dualZoneClimate": "Climatizador automático bizona",
       "eCall": "Llamada de emergencia (eCall)",
       "electricHeatedMirrors": "Retrovisores eléctricos y calefactados",
@@ -276,7 +281,9 @@
       "parkingAssist": "Asistente de aparcamiento",
       "parkingSensorsFrontRear": "Sensores de aparcamiento delanteros y traseros",
       "parkingSensorsRear": "Sensores de aparcamiento traseros",
+      "pianoBlackTrim": "Interior en negro brillante",
       "rainSensor": "Sensor de lluvia",
+      "remoteTrunkOpening": "Apertura del maletero con el mando",
       "startStop": "Sistema Start/Stop",
       "tyrePressureMonitoring": "Control de presión de neumáticos"
     }
@@ -308,7 +315,8 @@
     "registrationLabel": "1.ª matriculación y kilómetros",
     "serviceLabel": "Mantenimiento",
     "warrantyLabel": "Garantía",
-    "warrantyNote": "Garantía comercial prestada por una empresa colaboradora, según su certificado. No afecta a la garantía legal de conformidad prevista en el Decreto-Ley n.º 84/2021. Ver Términos y Condiciones."
+    "warrantyNote": "Garantía comercial prestada por una empresa colaboradora, según su certificado. No afecta a la garantía legal de conformidad prevista en el Decreto-Ley n.º 84/2021. Ver Términos y Condiciones.",
+    "iucLabel": "Impuesto de circulación (IUC)"
   },
   "finder": {
     "eyebrow": "Encuentre su coche",
@@ -375,6 +383,16 @@
     "title": "Síganos en las redes sociales",
     "subtitle": "Nuevos coches, vídeos y novedades del concesionario, de primera mano.",
     "follow": "Seguir",
-    "open": "Abrir el {name} de OTEN MOTORS (nueva ventana)"
+    "open": "Abrir el {name} de OTEN MOTORS (nueva ventana)",
+    "videoCta": "Ver el vídeo",
+    "videoPlay": "Reproducir el vídeo: {title}",
+    "videoLabel": "Último vídeo de nuestro canal"
+  },
+  "cookieBanner": {
+    "title": "Cookies de estadística",
+    "text": "Usamos Google Analytics para entender cómo se usa el sitio web y mejorarlo. Solo se activa si lo acepta. Más información en la <link>Política de Cookies</link>.",
+    "accept": "Aceptar",
+    "reject": "Rechazar",
+    "settings": "Preferencias de cookies"
   }
 }

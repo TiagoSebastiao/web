@@ -8,7 +8,7 @@ import { siteConfig, whatsappLink } from "@/config/site"
 import { getVehicle, vehicleName, vehicles, type Locale } from "@/data/vehicles"
 import { formatKm, formatPrice } from "@/lib/format"
 import { absoluteUrl, buildAlternates, localizedPath, ogLocale } from "@/lib/seo"
-import { vehicleJsonLd } from "@/lib/vehicle-json-ld"
+import { vehicleBreadcrumbJsonLd, vehicleJsonLd } from "@/lib/vehicle-json-ld"
 import { Header } from "@/components/layout/header"
 import { Footer } from "@/components/layout/footer"
 import { VehicleHero } from "@/components/vehicle/vehicle-hero"
@@ -97,7 +97,9 @@ export default async function VehiclePage({ params }: Props) {
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(vehicleJsonLd(vehicle, lang)).replace(/</g, "\\u003c") }}
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify([vehicleJsonLd(vehicle, lang), vehicleBreadcrumbJsonLd(vehicle, lang)]).replace(/</g, "\\u003c"),
+        }}
       />
       <Header />
 

@@ -56,7 +56,7 @@ export const privacy: Record<Locale, LegalContent> = {
       {
         title: "5. Com quem partilhamos os dados",
         text: [
-          "Prestadores de serviços que tratam dados por nossa conta (subcontratantes), vinculados por contrato e apenas para as finalidades indicadas: Vercel Inc. (alojamento do website e estatísticas sem cookies) e Resend (envio dos e-mails do formulário de contacto), bem como o nosso fornecedor de e-mail.",
+          "Prestadores de serviços que tratam dados por nossa conta (subcontratantes), vinculados por contrato e apenas para as finalidades indicadas: Vercel Inc. (alojamento do website e estatísticas sem cookies) e Resend (envio dos e-mails do formulário de contacto), Google Ireland Limited (estatísticas do Google Analytics, apenas se aceitar os cookies de estatística), bem como o nosso fornecedor de e-mail.",
           "WhatsApp (Meta): se optar por falar connosco pelo WhatsApp, os dados são também tratados pela WhatsApp, enquanto responsável autónomo, nos termos da sua própria política de privacidade.",
           "Entidades públicas, quando a lei o exija, e, em caso de venda, as entidades necessárias ao registo da viatura.",
           "Não vendemos nem cedemos dados pessoais a terceiros para fins comerciais.",
@@ -65,7 +65,7 @@ export const privacy: Record<Locale, LegalContent> = {
       {
         title: "6. Transferências internacionais",
         text: [
-          "Alguns prestadores (por exemplo, Vercel e Resend) podem tratar dados fora do Espaço Económico Europeu, nomeadamente nos Estados Unidos. Nesses casos, as transferências baseiam-se em mecanismos previstos no RGPD, como o Quadro de Privacidade de Dados UE-EUA ou cláusulas contratuais-tipo aprovadas pela Comissão Europeia.",
+          "Alguns prestadores (por exemplo, Vercel, Resend e Google) podem tratar dados fora do Espaço Económico Europeu, nomeadamente nos Estados Unidos. Nesses casos, as transferências baseiam-se em mecanismos previstos no RGPD, como o Quadro de Privacidade de Dados UE-EUA ou cláusulas contratuais-tipo aprovadas pela Comissão Europeia.",
         ],
       },
       {
@@ -140,7 +140,7 @@ export const privacy: Record<Locale, LegalContent> = {
       {
         title: "5. Who we share data with",
         text: [
-          "Service providers processing data on our behalf (processors), bound by contract and only for the stated purposes: Vercel Inc. (website hosting and cookieless statistics) and Resend (sending contact-form emails), as well as our email provider.",
+          "Service providers processing data on our behalf (processors), bound by contract and only for the stated purposes: Vercel Inc. (website hosting and cookieless statistics) and Resend (sending contact-form emails), Google Ireland Limited (Google Analytics statistics, only if you accept statistics cookies), as well as our email provider.",
           "WhatsApp (Meta): if you choose to talk to us on WhatsApp, your data is also processed by WhatsApp, as an independent controller, under its own privacy policy.",
           "Public authorities where required by law and, in the event of a sale, the bodies needed to register the vehicle.",
           "We do not sell or pass on personal data to third parties for marketing purposes.",
@@ -149,7 +149,7 @@ export const privacy: Record<Locale, LegalContent> = {
       {
         title: "6. International transfers",
         text: [
-          "Some providers (for example, Vercel and Resend) may process data outside the European Economic Area, in particular in the United States. In such cases, transfers rely on GDPR mechanisms such as the EU-US Data Privacy Framework or standard contractual clauses approved by the European Commission.",
+          "Some providers (for example, Vercel, Resend and Google) may process data outside the European Economic Area, in particular in the United States. In such cases, transfers rely on GDPR mechanisms such as the EU-US Data Privacy Framework or standard contractual clauses approved by the European Commission.",
         ],
       },
       {
@@ -220,7 +220,7 @@ export const privacy: Record<Locale, LegalContent> = {
       {
         title: "5. Con quién compartimos los datos",
         text: [
-          "Proveedores que tratan datos por nuestra cuenta (encargados del tratamiento), vinculados por contrato y solo para las finalidades indicadas: Vercel Inc. (alojamiento del sitio web y estadísticas sin cookies) y Resend (envío de los correos del formulario de contacto), así como nuestro proveedor de correo electrónico.",
+          "Proveedores que tratan datos por nuestra cuenta (encargados del tratamiento), vinculados por contrato y solo para las finalidades indicadas: Vercel Inc. (alojamiento del sitio web y estadísticas sin cookies) y Resend (envío de los correos del formulario de contacto), Google Ireland Limited (estadísticas de Google Analytics, solo si acepta las cookies de estadística), así como nuestro proveedor de correo electrónico.",
           "WhatsApp (Meta): si decide hablar con nosotros por WhatsApp, sus datos también son tratados por WhatsApp, como responsable independiente, conforme a su propia política de privacidad.",
           "Autoridades públicas cuando la ley lo exija y, en caso de venta, las entidades necesarias para el registro del vehículo.",
           "No vendemos ni cedemos datos personales a terceros con fines comerciales.",
@@ -229,7 +229,7 @@ export const privacy: Record<Locale, LegalContent> = {
       {
         title: "6. Transferencias internacionales",
         text: [
-          "Algunos proveedores (por ejemplo, Vercel y Resend) pueden tratar datos fuera del Espacio Económico Europeo, en particular en Estados Unidos. En esos casos, las transferencias se basan en mecanismos previstos en el RGPD, como el Marco de Privacidad de Datos UE-EE. UU. o cláusulas contractuales tipo aprobadas por la Comisión Europea.",
+          "Algunos proveedores (por ejemplo, Vercel, Resend y Google) pueden tratar datos fuera del Espacio Económico Europeo, en particular en Estados Unidos. En esos casos, las transferencias se basan en mecanismos previstos en el RGPD, como el Marco de Privacidad de Datos UE-EE. UU. o cláusulas contractuales tipo aprobadas por la Comisión Europea.",
         ],
       },
       {
@@ -300,7 +300,7 @@ export const privacy: Record<Locale, LegalContent> = {
       {
         title: "5. Destinataires des données",
         text: [
-          "Prestataires traitant des données pour notre compte (sous-traitants), liés par contrat et uniquement pour les finalités indiquées : Vercel Inc. (hébergement du site et statistiques sans cookies) et Resend (envoi des e-mails du formulaire de contact), ainsi que notre fournisseur de messagerie.",
+          "Prestataires traitant des données pour notre compte (sous-traitants), liés par contrat et uniquement pour les finalités indiquées : Vercel Inc. (hébergement du site et statistiques sans cookies) et Resend (envoi des e-mails du formulaire de contact), Google Ireland Limited (statistiques Google Analytics, uniquement si vous acceptez les cookies de mesure d'audience), ainsi que notre fournisseur de messagerie.",
           "WhatsApp (Meta) : si vous choisissez de nous contacter via WhatsApp, vos données sont également traitées par WhatsApp, en tant que responsable de traitement indépendant, conformément à sa propre politique de confidentialité.",
           "Autorités publiques lorsque la loi l'exige et, en cas de vente, les organismes nécessaires à l'immatriculation du véhicule.",
           "Nous ne vendons ni ne cédons de données personnelles à des tiers à des fins commerciales.",
@@ -309,7 +309,7 @@ export const privacy: Record<Locale, LegalContent> = {
       {
         title: "6. Transferts internationaux",
         text: [
-          "Certains prestataires (par exemple, Vercel et Resend) peuvent traiter des données en dehors de l'Espace économique européen, notamment aux États-Unis. Dans ce cas, les transferts reposent sur des mécanismes prévus par le RGPD, comme le cadre de protection des données UE-États-Unis ou des clauses contractuelles types approuvées par la Commission européenne.",
+          "Certains prestataires (par exemple, Vercel, Resend et Google) peuvent traiter des données en dehors de l'Espace économique européen, notamment aux États-Unis. Dans ce cas, les transferts reposent sur des mécanismes prévus par le RGPD, comme le cadre de protection des données UE-États-Unis ou des clauses contractuelles types approuvées par la Commission européenne.",
         ],
       },
       {
@@ -380,7 +380,7 @@ export const privacy: Record<Locale, LegalContent> = {
       {
         title: "5. Empfänger der Daten",
         text: [
-          "Dienstleister, die Daten in unserem Auftrag verarbeiten (Auftragsverarbeiter), vertraglich gebunden und nur für die genannten Zwecke: Vercel Inc. (Hosting der Website und cookielose Statistiken) und Resend (Versand der E-Mails aus dem Kontaktformular) sowie unser E-Mail-Anbieter.",
+          "Dienstleister, die Daten in unserem Auftrag verarbeiten (Auftragsverarbeiter), vertraglich gebunden und nur für die genannten Zwecke: Vercel Inc. (Hosting der Website und cookielose Statistiken) und Resend (Versand der E-Mails aus dem Kontaktformular), Google Ireland Limited (Statistiken von Google Analytics, nur wenn Sie Statistik-Cookies zustimmen) sowie unser E-Mail-Anbieter.",
           "WhatsApp (Meta): Wenn Sie uns über WhatsApp kontaktieren, werden Ihre Daten auch von WhatsApp als eigenständig Verantwortlichem nach dessen eigener Datenschutzerklärung verarbeitet.",
           "Behörden, soweit gesetzlich vorgeschrieben, und im Falle eines Kaufs die für die Zulassung des Fahrzeugs erforderlichen Stellen.",
           "Wir verkaufen keine personenbezogenen Daten und geben sie nicht zu Werbezwecken an Dritte weiter.",
@@ -389,7 +389,7 @@ export const privacy: Record<Locale, LegalContent> = {
       {
         title: "6. Internationale Übermittlungen",
         text: [
-          "Einige Dienstleister (z. B. Vercel und Resend) können Daten außerhalb des Europäischen Wirtschaftsraums verarbeiten, insbesondere in den USA. In diesen Fällen stützen sich die Übermittlungen auf Mechanismen der DSGVO wie das EU-US Data Privacy Framework oder von der Europäischen Kommission genehmigte Standardvertragsklauseln.",
+          "Einige Dienstleister (z. B. Vercel, Resend und Google) können Daten außerhalb des Europäischen Wirtschaftsraums verarbeiten, insbesondere in den USA. In diesen Fällen stützen sich die Übermittlungen auf Mechanismen der DSGVO wie das EU-US Data Privacy Framework oder von der Europäischen Kommission genehmigte Standardvertragsklauseln.",
         ],
       },
       {

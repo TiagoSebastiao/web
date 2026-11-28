@@ -27,7 +27,7 @@ export function getFeaturedVehicles() {
   return vehicles.filter((vehicle) => vehicle.featured)
 }
 
-/** Nome completo, ex.: "BMW Série 4 Coupé 420d Auto". */
+/** Nome completo, ex.: "BMW Série 4 Coupé 420d". */
 export function vehicleName(vehicle: Vehicle) {
   return `${vehicle.make} ${vehicle.model} ${vehicle.version}`
 }

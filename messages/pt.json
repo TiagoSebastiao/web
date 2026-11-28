@@ -1,8 +1,8 @@
 {
   "meta": {
-    "title": "OTEN MOTORS | Stand automóvel de seminovos e usados",
-    "description": "Stand automóvel especializado na compra e venda de veículos seminovos e usados. Veja as viaturas disponíveis com fotografias reais e fale connosco pelo WhatsApp.",
-    "vehicleDescription": "{name} de {year}, {mileage}, {fuel}, caixa {transmission}. {price}. Fotografias e características completas na OTEN MOTORS.",
+    "title": "OTEN MOTORS | Stand de seminovos e usados em Faro, Algarve",
+    "description": "Stand automóvel de seminovos e usados em Faro, no Algarve. Fotografias reais, contacto direto pelo WhatsApp e entrega em todo o Portugal continental.",
+    "vehicleDescription": "{name} de {year}, {mileage}, {fuel}, caixa {transmission}. {price}. Fotografias e características completas na OTEN MOTORS, em Faro (Algarve), com entrega em todo o Portugal continental.",
     "vehicleNotFound": "Viatura não encontrada"
   },
   "nav": {
@@ -18,7 +18,7 @@
     "floatingWhatsapp": "Falar no WhatsApp"
   },
   "hero": {
-    "eyebrow": "Stand de seminovos e usados",
+    "eyebrow": "Seminovos e usados · Faro, Algarve",
     "title": "Seminovos e usados, escolhidos <hl>um a um.</hl>",
     "intro": "Descubra viaturas selecionadas com rigor, fotografias reais e informação transparente. Esclareça todas as suas dúvidas de forma rápida e personalizada através do WhatsApp.",
     "ctaVehicles": "Ver veículos",
@@ -89,10 +89,12 @@
       },
       "drive": {
         "title": "Entregamos o seu carro",
-        "text": "Tratamos da documentação e entregamos a viatura pronta na sua casa."
+        "text": "Tratamos da documentação e entregamos a viatura pronta na sua casa, em qualquer ponto de Portugal continental."
       }
     },
-    "imageAlt": "Interior do BMW Série 4 fotografado pela OTEN MOTORS"
+    "imageAlt": "BMW Série 4 preto da OTEN MOTORS, com o logótipo do stand na matrícula",
+    "badgeTitle": "Uma história por começar",
+    "badgeText": "Cada viatura é o início de uma nova viagem. A próxima pode ser a sua."
   },
   "sell": {
     "title": "Quer vender o seu carro?",
@@ -130,7 +132,7 @@
     "tooMany": "Já recebemos várias mensagens suas. Para falar connosco já, use o WhatsApp ou o telefone."
   },
   "footer": {
-    "description": "Stand automóvel especializado na compra e venda de veículos seminovos e usados.",
+    "description": "Stand automóvel de seminovos e usados em Faro, no Algarve. Entregamos em todo o Portugal continental.",
     "explore": "Explorar",
     "legal": "Informação legal",
     "contacts": "Contactos",
@@ -197,7 +199,9 @@
     "dataSheet": "Ficha técnica",
     "otherVehicles": "Outras viaturas em stock",
     "viewGallery": "Ver fotografias",
-    "hpUnit": "cv"
+    "hpUnit": "cv",
+    "iuc": "IUC",
+    "iucPaid": "Pago"
   },
   "notFound": {
     "title": "Página não encontrada",
@@ -246,17 +250,18 @@
       "airbags": "Airbags",
       "alarm": "Alarme",
       "alloyWheels": "Jantes de liga leve",
+      "alloyWheels18": "Jantes de liga leve 18\"",
       "androidAutoAppleCarplay": "Android Auto e Apple CarPlay",
       "autoDimmingMirror": "Espelho interior eletrocromático",
-      "autoParkingAssist": "Estacionamento automático",
       "automaticClimate": "Ar condicionado automático",
+      "autoParkingAssist": "Estacionamento automático",
       "bluetooth": "Bluetooth",
       "clothUpholstery": "Estofos em tecido",
       "cruiseControl": "Cruise control",
       "dabRadio": "Rádio DAB",
       "daytimeRunningLights": "Luzes de circulação diurna",
       "digitalCockpit": "Cockpit digital",
-      "drivingModes": "Modos de condução (Eco Pro, Comfort, Sport)",
+      "drivingModes": "Modos de condução (Eco, Comfort, Sport)",
       "dualZoneClimate": "Ar condicionado automático bizona",
       "eCall": "Chamada de emergência (eCall)",
       "electricHeatedMirrors": "Espelhos elétricos e aquecidos",
@@ -276,7 +281,9 @@
       "parkingAssist": "Assistente de estacionamento",
       "parkingSensorsFrontRear": "Sensores de estacionamento dianteiros e traseiros",
       "parkingSensorsRear": "Sensores de estacionamento traseiros",
+      "pianoBlackTrim": "Interior em preto brilhante",
       "rainSensor": "Sensor de chuva",
+      "remoteTrunkOpening": "Abertura da bagageira por comando",
       "startStop": "Sistema Start/Stop",
       "tyrePressureMonitoring": "Controlo da pressão dos pneus"
     }
@@ -308,7 +315,8 @@
     "registrationLabel": "1.ª matrícula e quilómetros",
     "serviceLabel": "Manutenção",
     "warrantyLabel": "Garantia",
-    "warrantyNote": "Garantia comercial prestada por empresa parceira, nos termos do respetivo certificado. Não prejudica a garantia legal de conformidade prevista no Decreto-Lei n.º 84/2021. Ver Termos e Condições."
+    "warrantyNote": "Garantia comercial prestada por empresa parceira, nos termos do respetivo certificado. Não prejudica a garantia legal de conformidade prevista no Decreto-Lei n.º 84/2021. Ver Termos e Condições.",
+    "iucLabel": "IUC (imposto de circulação)"
   },
   "finder": {
     "eyebrow": "Encontre o seu carro",
@@ -375,6 +383,16 @@
     "title": "Acompanhe-nos nas redes sociais",
     "subtitle": "Novas viaturas, vídeos e novidades do stand, em primeira mão.",
     "follow": "Seguir",
-    "open": "Abrir o {name} da OTEN MOTORS (nova janela)"
+    "open": "Abrir o {name} da OTEN MOTORS (nova janela)",
+    "videoCta": "Ver o vídeo",
+    "videoPlay": "Reproduzir o vídeo: {title}",
+    "videoLabel": "Vídeo mais recente do nosso canal"
+  },
+  "cookieBanner": {
+    "title": "Cookies de estatística",
+    "text": "Usamos o Google Analytics para perceber como o website é usado e melhorá-lo. Só é ativado se aceitar. Saiba mais na <link>Política de Cookies</link>.",
+    "accept": "Aceitar",
+    "reject": "Recusar",
+    "settings": "Preferências de cookies"
   }
 }

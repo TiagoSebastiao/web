@@ -1,0 +1,8 @@
+# Copiar para .dev.vars (usado por `npm run preview`, que corre o site no runtime da Cloudflare).
+# NUNCA pôr valores reais neste ficheiro.
+NEXTJS_ENV=development
+
+RESEND_API_KEY=
+# Para testar sem enviar e-mails reais, usar o endereço de testes do Resend:
+CONTACT_TO_EMAIL=delivered@resend.dev
+CONTACT_FROM_EMAIL=OTEN MOTORS <site@otenmotors.com>

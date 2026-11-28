@@ -1,4 +1,5 @@
 import createNextIntlPlugin from "next-intl/plugin"
+import { initOpenNextCloudflareForDev } from "@opennextjs/cloudflare"
 
 const withNextIntl = createNextIntlPlugin("./i18n/request.ts")
 
@@ -7,16 +8,22 @@ const withNextIntl = createNextIntlPlugin("./i18n/request.ts")
  * próprio site. 'unsafe-inline' é necessário porque as páginas são estáticas (SSG) e o
  * Next.js, o JSON-LD e o script de animações usam scripts inline; ainda assim bloqueia
  * qualquer script de outro domínio, plugins, <base> alterado e o site dentro de iframes.
- * vercel.live: barra de comentários da Vercel nas pré-visualizações.
+ * YouTube: miniatura (i.ytimg.com) e leitor sem cookies (youtube-nocookie.com) do vídeo
+ * da secção "Redes sociais"; o leitor só é carregado quando o visitante clica em reproduzir.
+ * Google Analytics 4 (googletagmanager / google-analytics): só carrega com consentimento.
+ *
+ * Estes cabeçalhos aplicam-se às páginas e à API (respostas do Worker). Os ficheiros estáticos
+ * (imagens, _next/static) são servidos pela Cloudflare sem passar pelo Worker: os cabeçalhos
+ * deles estão em public/_headers.
  */
 const csp = [
   "default-src 'self'",
-  "script-src 'self' 'unsafe-inline' https://vercel.live",
+  "script-src 'self' 'unsafe-inline' https://www.googletagmanager.com",
   "style-src 'self' 'unsafe-inline'",
-  "img-src 'self' data: blob: https://vercel.live https://vercel.com",
-  "font-src 'self' data: https://vercel.live",
-  "connect-src 'self' https://vercel.live wss://ws-us3.pusher.com",
-  "frame-src https://vercel.live",
+  "img-src 'self' data: blob: https://i.ytimg.com https://*.google-analytics.com https://*.googletagmanager.com",
+  "font-src 'self' data:",
+  "connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com",
+  "frame-src https://www.youtube-nocookie.com",
   "frame-ancestors 'self'",
   "base-uri 'self'",
   "form-action 'self'",
@@ -26,6 +33,9 @@ const csp = [
 
 const securityHeaders = [
   { key: "Content-Security-Policy", value: csp },
+  // A Vercel acrescentava este cabeçalho sozinha; na Cloudflare tem de ser o site a enviá-lo.
+  // Sem includeSubDomains/preload: não afeta outros subdomínios de otenmotors.com.
+  { key: "Strict-Transport-Security", value: "max-age=63072000" },
   { key: "X-Content-Type-Options", value: "nosniff" },
   { key: "X-Frame-Options", value: "SAMEORIGIN" },
   { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
@@ -34,11 +44,19 @@ const securityHeaders = [
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // As imagens são otimizadas automaticamente (tamanho certo + WebP/AVIF) pela Vercel.
+  poweredByHeader: false,
+
+  /*
+   * Imagens: as variantes (360/720/1080/1440 px) são geradas por `npm run images`
+   * (scripts/generate-image-variants.mjs) e servidas como ficheiros estáticos pela Cloudflare,
+   * sem serviço de redimensionamento pago. O loader escolhe a variante; o next/image continua a
+   * tratar do srcset/sizes, lazy loading e preload da imagem principal.
+   */
   images: {
-    formats: ["image/avif", "image/webp"],
-    // 90 só para a montra do primeiro ecrã (fotos grandes); o resto usa 75.
-    qualities: [75, 90],
+    loader: "custom",
+    loaderFile: "./lib/image-loader.ts",
+    deviceSizes: [360, 720, 828, 1080, 1440],
+    imageSizes: [],
   },
 
   async headers() {
@@ -63,3 +81,6 @@ const nextConfig = {
 }
 
 export default withNextIntl(nextConfig)
+
+// Dá acesso às bindings da Cloudflare durante o `next dev` (ver docs/CLOUDFLARE_MIGRATION.md).
+initOpenNextCloudflareForDev()

@@ -69,6 +69,9 @@
 
   --primary: oklch(0.58 0.24 25);
   --primary-foreground: oklch(0.98 0 0);
+  /* Vermelho da marca ligeiramente mais claro, só para texto pequeno sobre fundo escuro:
+     contraste 5,2:1 (mínimo WCAG AA 4,5:1). O vermelho principal fica em 4,3:1. */
+  --primary-text: #f5283f;
 
   --secondary: oklch(0.2 0 0);
   --secondary-foreground: oklch(0.98 0 0);
@@ -115,6 +118,7 @@
   --color-popover-foreground: var(--popover-foreground);
 
   --color-primary: var(--primary);
+  --color-primary-text: var(--primary-text, var(--primary));
   --color-primary-foreground: var(--primary-foreground);
 
   --color-secondary: var(--secondary);

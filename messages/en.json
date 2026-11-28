@@ -1,8 +1,8 @@
 {
   "meta": {
-    "title": "OTEN MOTORS | Nearly new and used car dealer in Portugal",
-    "description": "Car dealer specialising in buying and selling nearly new and used vehicles. Browse our available cars with real photos and get in touch on WhatsApp.",
-    "vehicleDescription": "{year} {name}, {mileage}, {fuel}, {transmission} transmission. {price}. Full photo gallery and specifications at OTEN MOTORS.",
+    "title": "OTEN MOTORS | Nearly new and used cars in Faro, Algarve, Portugal",
+    "description": "Nearly new and used car dealer in Faro, in the Algarve. Real photos, direct contact on WhatsApp and delivery anywhere in mainland Portugal.",
+    "vehicleDescription": "{year} {name}, {mileage}, {fuel}, {transmission} transmission. {price}. Full photo gallery and specifications at OTEN MOTORS in Faro (Algarve), with delivery anywhere in mainland Portugal.",
     "vehicleNotFound": "Vehicle not found"
   },
   "nav": {
@@ -18,7 +18,7 @@
     "floatingWhatsapp": "Chat on WhatsApp"
   },
   "hero": {
-    "eyebrow": "Nearly new & used cars",
+    "eyebrow": "Nearly new & used cars · Faro, Algarve",
     "title": "Nearly new and used cars, <hl>chosen one by one.</hl>",
     "intro": "Discover carefully selected cars, real photos and transparent information. Get all your questions answered quickly and personally on WhatsApp.",
     "ctaVehicles": "View vehicles",
@@ -89,10 +89,12 @@
       },
       "drive": {
         "title": "We deliver your car",
-        "text": "We handle the paperwork and deliver the car ready to drive, to your door."
+        "text": "We handle the paperwork and deliver the car ready to drive, to your door, anywhere in mainland Portugal."
       }
     },
-    "imageAlt": "Interior of the BMW 4 Series photographed by OTEN MOTORS"
+    "imageAlt": "Black BMW 4 Series from OTEN MOTORS with the dealer logo on the number plate",
+    "badgeTitle": "A story yet to begin",
+    "badgeText": "Every car is the start of a new journey. The next one could be yours."
   },
   "sell": {
     "title": "Want to sell your car?",
@@ -130,7 +132,7 @@
     "tooMany": "We've already received several messages from you. To reach us now, please use WhatsApp or call us."
   },
   "footer": {
-    "description": "Car dealer specialising in buying and selling nearly new and used vehicles.",
+    "description": "Nearly new and used car dealer in Faro, in the Algarve. We deliver anywhere in mainland Portugal.",
     "explore": "Explore",
     "legal": "Legal information",
     "contacts": "Contact",
@@ -197,7 +199,9 @@
     "dataSheet": "Spec sheet",
     "otherVehicles": "More cars in stock",
     "viewGallery": "View photos",
-    "hpUnit": "hp"
+    "hpUnit": "hp",
+    "iuc": "Road tax (IUC)",
+    "iucPaid": "Paid"
   },
   "notFound": {
     "title": "Page not found",
@@ -246,17 +250,18 @@
       "airbags": "Airbags",
       "alarm": "Alarm",
       "alloyWheels": "Alloy wheels",
+      "alloyWheels18": "18\" alloy wheels",
       "androidAutoAppleCarplay": "Android Auto and Apple CarPlay",
       "autoDimmingMirror": "Auto-dimming rear-view mirror",
-      "autoParkingAssist": "Automatic parking",
       "automaticClimate": "Automatic climate control",
+      "autoParkingAssist": "Automatic parking",
       "bluetooth": "Bluetooth",
       "clothUpholstery": "Cloth upholstery",
       "cruiseControl": "Cruise control",
       "dabRadio": "DAB radio",
       "daytimeRunningLights": "Daytime running lights",
       "digitalCockpit": "Digital cockpit",
-      "drivingModes": "Driving modes (Eco Pro, Comfort, Sport)",
+      "drivingModes": "Driving modes (Eco, Comfort, Sport)",
       "dualZoneClimate": "Dual-zone automatic climate control",
       "eCall": "Emergency call (eCall)",
       "electricHeatedMirrors": "Electric heated mirrors",
@@ -276,7 +281,9 @@
       "parkingAssist": "Parking assistant",
       "parkingSensorsFrontRear": "Front and rear parking sensors",
       "parkingSensorsRear": "Rear parking sensors",
+      "pianoBlackTrim": "High-gloss black interior trim",
       "rainSensor": "Rain sensor",
+      "remoteTrunkOpening": "Remote boot opening",
       "startStop": "Start/Stop system",
       "tyrePressureMonitoring": "Tyre pressure monitoring"
     }
@@ -308,7 +315,8 @@
     "registrationLabel": "First registration and mileage",
     "serviceLabel": "Servicing",
     "warrantyLabel": "Warranty",
-    "warrantyNote": "Commercial warranty provided by a partner company, under the terms of its certificate. This does not affect the legal guarantee of conformity under Decree-Law No. 84/2021. See Terms and Conditions."
+    "warrantyNote": "Commercial warranty provided by a partner company, under the terms of its certificate. This does not affect the legal guarantee of conformity under Decree-Law No. 84/2021. See Terms and Conditions.",
+    "iucLabel": "Road tax (IUC)"
   },
   "finder": {
     "eyebrow": "Find your car",
@@ -375,6 +383,16 @@
     "title": "Follow us on social media",
     "subtitle": "New arrivals, videos and news from the dealership, first-hand.",
     "follow": "Follow",
-    "open": "Open OTEN MOTORS on {name} (new window)"
+    "open": "Open OTEN MOTORS on {name} (new window)",
+    "videoCta": "Watch the video",
+    "videoPlay": "Play the video: {title}",
+    "videoLabel": "Latest video from our channel"
+  },
+  "cookieBanner": {
+    "title": "Statistics cookies",
+    "text": "We use Google Analytics to understand how the website is used and improve it. It is only enabled if you accept. Learn more in our <link>Cookie Policy</link>.",
+    "accept": "Accept",
+    "reject": "Decline",
+    "settings": "Cookie preferences"
   }
 }

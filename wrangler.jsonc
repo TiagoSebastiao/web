@@ -1,0 +1,34 @@
+/**
+ * Configuração do Worker da Cloudflare (OpenNext). Ver docs/CLOUDFLARE_MIGRATION.md e docs/DEPLOYMENT.md.
+ * Os segredos (RESEND_API_KEY, CONTACT_TO_EMAIL, CONTACT_FROM_EMAIL) NÃO ficam aqui:
+ * são definidos no painel da Cloudflare ou com `npx wrangler secret put <NOME>`.
+ */
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "oten-motors",
+  "main": ".open-next/worker.js",
+  "compatibility_date": "2026-11-01",
+  "compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
+
+  // Ficheiros estáticos (public/, _next/static, imagens) servidos pela Cloudflare sem correr o Worker.
+  "assets": {
+    "directory": ".open-next/assets",
+    "binding": "ASSETS",
+  },
+
+  // Necessário ao OpenNext (o Worker chama-se a si próprio em alguns casos de cache).
+  "services": [{ "binding": "WORKER_SELF_REFERENCE", "service": "oten-motors" }],
+
+  // Sem "images" binding: o redimensionamento é feito antes, por `npm run images` (sem custos).
+
+  // Registos do Worker (Workers → oten-motors → Observability). Incluído no plano grátis.
+  "observability": {
+    "enabled": true,
+    "head_sampling_rate": 1,
+  },
+
+  // Endereço *.workers.dev ligado (testes); o domínio www.otenmotors.com liga-se no painel
+  // (Settings → Domains & Routes) quando o DNS estiver na Cloudflare.
+  "workers_dev": true,
+  "preview_urls": true,
+}

@@ -19,7 +19,7 @@ export function StandvirtualBanner() {
 
           <div className="relative grid items-center gap-8 p-8 sm:p-12 md:grid-cols-[1fr_auto]">
             <div className="max-w-sm">
-              <p className="mb-3 text-xs font-bold uppercase tracking-[0.2em] text-primary">
+              <p className="mb-3 text-xs font-bold uppercase tracking-[0.2em] text-primary-text">
                 {t("eyebrow")}
               </p>
               <h2

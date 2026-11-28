@@ -1,8 +1,8 @@
 {
   "meta": {
-    "title": "OTEN MOTORS | Véhicules récents et d’occasion au Portugal",
-    "description": "Garage spécialisé dans les voitures récentes et d’occasion. Découvrez nos véhicules en photos réelles et contactez-nous sur WhatsApp.",
-    "vehicleDescription": "{name} de {year}, {mileage}, {fuel}, boîte {transmission}. {price}. Photos et caractéristiques complètes chez OTEN MOTORS.",
+    "title": "OTEN MOTORS | Véhicules récents et d’occasion à Faro, Algarve (Portugal)",
+    "description": "Garage de voitures récentes et d’occasion à Faro, en Algarve. Photos réelles, contact direct sur WhatsApp et livraison partout au Portugal continental.",
+    "vehicleDescription": "{name} de {year}, {mileage}, {fuel}, boîte {transmission}. {price}. Photos et caractéristiques complètes chez OTEN MOTORS à Faro (Algarve), avec livraison partout au Portugal continental.",
     "vehicleNotFound": "Véhicule introuvable"
   },
   "nav": {
@@ -18,7 +18,7 @@
     "floatingWhatsapp": "Écrire sur WhatsApp"
   },
   "hero": {
-    "eyebrow": "Occasions récentes",
+    "eyebrow": "Occasions récentes · Faro, Algarve",
     "title": "Occasions récentes et d'occasion, choisies <hl>une à une.</hl>",
     "intro": "Découvrez des voitures sélectionnées avec rigueur, des photos réelles et des informations transparentes. Obtenez des réponses rapides et personnalisées à toutes vos questions sur WhatsApp.",
     "ctaVehicles": "Voir les véhicules",
@@ -89,10 +89,12 @@
       },
       "drive": {
         "title": "Nous vous livrons votre voiture",
-        "text": "Nous nous occupons des formalités et vous livrons la voiture prête à rouler, chez vous."
+        "text": "Nous nous occupons des formalités et vous livrons la voiture prête à rouler, chez vous, partout au Portugal continental."
       }
     },
-    "imageAlt": "Intérieur de la BMW Série 4 photographié par OTEN MOTORS"
+    "imageAlt": "BMW Série 4 noire d’OTEN MOTORS avec le logo du garage sur la plaque",
+    "badgeTitle": "Une histoire à écrire",
+    "badgeText": "Chaque voiture est le début d’un nouveau voyage. Le prochain pourrait être le vôtre."
   },
   "sell": {
     "title": "Vous voulez vendre votre voiture ?",
@@ -130,7 +132,7 @@
     "tooMany": "Nous avons déjà reçu plusieurs messages de votre part. Pour nous joindre maintenant, utilisez WhatsApp ou le téléphone."
   },
   "footer": {
-    "description": "Concessionnaire spécialisé dans l’achat et la vente de véhicules récents et d’occasion.",
+    "description": "Concessionnaire de véhicules récents et d’occasion à Faro, en Algarve. Livraison partout au Portugal continental.",
     "explore": "Explorer",
     "legal": "Informations légales",
     "contacts": "Contact",
@@ -197,7 +199,9 @@
     "dataSheet": "Fiche technique",
     "otherVehicles": "Autres véhicules en stock",
     "viewGallery": "Voir les photos",
-    "hpUnit": "ch"
+    "hpUnit": "ch",
+    "iuc": "Taxe de circulation (IUC)",
+    "iucPaid": "Payée"
   },
   "notFound": {
     "title": "Page introuvable",
@@ -246,17 +250,18 @@
       "airbags": "Airbags",
       "alarm": "Alarme",
       "alloyWheels": "Jantes en alliage",
+      "alloyWheels18": "Jantes en alliage 18\"",
       "androidAutoAppleCarplay": "Android Auto et Apple CarPlay",
       "autoDimmingMirror": "Rétroviseur intérieur électrochrome",
-      "autoParkingAssist": "Stationnement automatique",
       "automaticClimate": "Climatisation automatique",
+      "autoParkingAssist": "Stationnement automatique",
       "bluetooth": "Bluetooth",
       "clothUpholstery": "Sellerie en tissu",
       "cruiseControl": "Régulateur de vitesse",
       "dabRadio": "Radio DAB",
       "daytimeRunningLights": "Feux de jour",
       "digitalCockpit": "Combiné d’instruments numérique",
-      "drivingModes": "Modes de conduite (Eco Pro, Comfort, Sport)",
+      "drivingModes": "Modes de conduite (Eco, Comfort, Sport)",
       "dualZoneClimate": "Climatisation automatique bizone",
       "eCall": "Appel d’urgence (eCall)",
       "electricHeatedMirrors": "Rétroviseurs électriques et chauffants",
@@ -276,7 +281,9 @@
       "parkingAssist": "Assistant de stationnement",
       "parkingSensorsFrontRear": "Radars de stationnement avant et arrière",
       "parkingSensorsRear": "Radars de stationnement arrière",
+      "pianoBlackTrim": "Intérieur noir brillant",
       "rainSensor": "Capteur de pluie",
+      "remoteTrunkOpening": "Ouverture du coffre par télécommande",
       "startStop": "Système Start/Stop",
       "tyrePressureMonitoring": "Contrôle de la pression des pneus"
     }
@@ -308,7 +315,8 @@
     "registrationLabel": "1re immatriculation et kilométrage",
     "serviceLabel": "Entretien",
     "warrantyLabel": "Garantie",
-    "warrantyNote": "Garantie commerciale fournie par une entreprise partenaire, selon les conditions de son certificat. Elle ne porte pas atteinte à la garantie légale de conformité prévue par le décret-loi n° 84/2021. Voir les Conditions générales."
+    "warrantyNote": "Garantie commerciale fournie par une entreprise partenaire, selon les conditions de son certificat. Elle ne porte pas atteinte à la garantie légale de conformité prévue par le décret-loi n° 84/2021. Voir les Conditions générales.",
+    "iucLabel": "Taxe de circulation (IUC)"
   },
   "finder": {
     "eyebrow": "Trouvez votre voiture",
@@ -375,6 +383,16 @@
     "title": "Suivez-nous sur les réseaux sociaux",
     "subtitle": "Nouveaux arrivages, vidéos et actualités du garage, en avant-première.",
     "follow": "Suivre",
-    "open": "Ouvrir OTEN MOTORS sur {name} (nouvelle fenêtre)"
+    "open": "Ouvrir OTEN MOTORS sur {name} (nouvelle fenêtre)",
+    "videoCta": "Voir la vidéo",
+    "videoPlay": "Lire la vidéo : {title}",
+    "videoLabel": "Dernière vidéo de notre chaîne"
+  },
+  "cookieBanner": {
+    "title": "Cookies de mesure d’audience",
+    "text": "Nous utilisons Google Analytics pour comprendre l’utilisation du site et l’améliorer. Il n’est activé que si vous acceptez. En savoir plus dans notre <link>Politique de cookies</link>.",
+    "accept": "Accepter",
+    "reject": "Refuser",
+    "settings": "Préférences cookies"
   }
 }

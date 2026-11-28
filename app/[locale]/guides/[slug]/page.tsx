@@ -154,7 +154,7 @@ export default async function GuidePage({ params }: Props) {
               </ol>
             </nav>
 
-            <p className="enter inline-flex items-center gap-2 rounded-full border border-primary/40 bg-primary/10 px-3 py-1.5 text-xs font-bold uppercase tracking-[0.2em] text-primary">
+            <p className="enter inline-flex items-center gap-2 rounded-full border border-primary/40 bg-primary/10 px-3 py-1.5 text-xs font-bold uppercase tracking-[0.2em] text-primary-text">
               <BookOpen className="h-3.5 w-3.5" aria-hidden="true" />
               {content.eyebrow}
             </p>
@@ -200,7 +200,7 @@ export default async function GuidePage({ params }: Props) {
             {/* ---------- Índice ---------- */}
             <aside className="hidden lg:block">
               <nav aria-label={labels.toc} className="sticky top-28">
-                <p className="mb-4 text-xs font-bold uppercase tracking-[0.25em] text-primary">{labels.toc}</p>
+                <p className="mb-4 text-xs font-bold uppercase tracking-[0.25em] text-primary-text">{labels.toc}</p>
                 <ol className="space-y-1 border-l border-white/10 text-sm">
                   {content.sections.map((section) => (
                     <li key={section.id}>
@@ -303,7 +303,7 @@ export default async function GuidePage({ params }: Props) {
 
                 {/* ---------- Fontes e aviso ---------- */}
                 <section aria-labelledby="sources-title">
-                  <h2 id="sources-title" className="text-xs font-bold uppercase tracking-[0.25em] text-primary">
+                  <h2 id="sources-title" className="text-xs font-bold uppercase tracking-[0.25em] text-primary-text">
                     {labels.sources}
                   </h2>
                   <ul className="mt-4 space-y-2 text-sm">

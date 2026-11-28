@@ -3,20 +3,29 @@ import type { Metadata, Viewport } from "next"
 import { Montserrat } from "next/font/google"
 import { notFound } from "next/navigation"
 import { NextIntlClientProvider, hasLocale } from "next-intl"
-import { getTranslations, setRequestLocale } from "next-intl/server"
-import { Analytics } from "@vercel/analytics/react"
+import { getMessages, getTranslations, setRequestLocale } from "next-intl/server"
 import { routing } from "@/i18n/routing"
 import { siteConfig } from "@/config/site"
 import { ogLocale } from "@/lib/seo"
+import { GoogleAnalytics } from "@/components/layout/google-analytics"
+import { CookieBanner } from "@/components/layout/cookie-banner"
 import "@/app/globals.css"
 import "@/app/effects.css"
 
+// Montserrat variável: um só ficheiro (latin) cobre todos os pesos usados (400–900), em vez de
+// um ficheiro por peso. Alojada no próprio site pelo next/font (sem pedidos ao Google).
 const montserrat = Montserrat({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800", "900"],
   variable: "--font-montserrat",
   display: "swap",
 })
+
+/**
+ * Textos enviados para o browser: só os dos componentes interativos ("use client").
+ * O resto é desenhado no servidor e não precisa de ir no HTML de cada página.
+ * Ao criar um componente cliente com useTranslations("x"), juntar "x" aqui.
+ */
+const CLIENT_NAMESPACES = ["nav", "hero", "vehicles", "vehicle", "labels", "finance", "finder", "contact", "cookieBanner"] as const
 
 /**
  * Animação "aparecer ao fazer scroll" (ver app/effects.css). Script mínimo,
@@ -55,6 +64,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     },
     twitter: { card: "summary_large_image", title: t("title"), description: t("description"), images: ["/og-default.jpg"] },
     icons: { icon: [{ url: "/icon.png", type: "image/png" }], apple: "/apple-icon.png" },
+    // Verificação do Google Search Console por meta tag (opcional; ver config/site.ts).
+    ...(siteConfig.google.searchConsoleVerification
+      ? { verification: { google: siteConfig.google.searchConsoleVerification } }
+      : {}),
   }
 }
 
@@ -64,6 +77,8 @@ export default async function LocaleLayout({ children, params }: Props) {
   setRequestLocale(locale)
 
   const t = await getTranslations({ locale, namespace: "meta" })
+  const messages = await getMessages()
+  const clientMessages = Object.fromEntries(CLIENT_NAMESPACES.map((ns) => [ns, messages[ns]]))
 
   // Dados estruturados do negócio (schema.org) para o Google.
   const jsonLd = {
@@ -74,6 +89,7 @@ export default async function LocaleLayout({ children, params }: Props) {
         "@id": `${siteConfig.url}/#website`,
         url: `${siteConfig.url}/`,
         name: siteConfig.name,
+        alternateName: siteConfig.alternateNames,
         inLanguage: routing.locales,
         publisher: { "@id": `${siteConfig.url}/#organization` },
       },
@@ -81,16 +97,30 @@ export default async function LocaleLayout({ children, params }: Props) {
         "@type": "AutoDealer",
         "@id": `${siteConfig.url}/#organization`,
         name: siteConfig.name,
+        alternateName: siteConfig.alternateNames,
         description: t("description"),
         url: `${siteConfig.url}/`,
         logo: `${siteConfig.url}/icon.png`,
         image: `${siteConfig.url}/og-default.jpg`,
         telephone: siteConfig.contact.phone,
         email: siteConfig.contact.email,
-        areaServed: { "@type": "Country", name: "Portugal" },
+        // Localização: Faro, Algarve (sem morada de rua enquanto o stand não tiver morada própria).
+        address: {
+          "@type": "PostalAddress",
+          addressLocality: siteConfig.location.city,
+          addressRegion: siteConfig.location.region,
+          addressCountry: siteConfig.location.countryCode,
+        },
+        // Entrega das viaturas em todo o Portugal continental.
+        areaServed: [
+          { "@type": "City", name: siteConfig.location.city },
+          { "@type": "AdministrativeArea", name: siteConfig.location.region },
+          { "@type": "AdministrativeArea", name: siteConfig.location.deliveryArea },
+          { "@type": "Country", name: siteConfig.location.country },
+        ],
         ...(siteConfig.legal.companyName ? { legalName: siteConfig.legal.companyName } : {}),
         ...(siteConfig.legal.nipc ? { taxID: siteConfig.legal.nipc } : {}),
-        sameAs: Object.values(siteConfig.social),
+        sameAs: [...Object.values(siteConfig.social), siteConfig.standvirtualUrl.replace(/\/inventory$/, "")],
       },
     ],
   }
@@ -106,8 +136,11 @@ export default async function LocaleLayout({ children, params }: Props) {
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c") }}
         />
-        <NextIntlClientProvider>{children}</NextIntlClientProvider>
-        <Analytics />
+        <NextIntlClientProvider messages={clientMessages}>
+          {children}
+          <CookieBanner />
+          <GoogleAnalytics />
+        </NextIntlClientProvider>
       </body>
     </html>
   )

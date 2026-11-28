@@ -8,7 +8,14 @@ import { Link } from "@/i18n/navigation"
 import { whatsappLink } from "@/config/site"
 import { WhatsAppIcon } from "@/components/ui/icons"
 import { formatKm, formatPrice } from "@/lib/format"
-import { recommend, type FinderAnswers } from "@/lib/finder-engine"
+import type { FinderAnswers } from "@/lib/finder-engine"
+
+/**
+ * O motor de sugestões e a base de modelos (~26 KB) só são descarregados quando o visitante
+ * começa a responder: não pesam no carregamento inicial da homepage.
+ */
+type Engine = typeof import("@/lib/finder-engine")
+const loadEngine = () => import("@/lib/finder-engine")
 import type { FuelType, Locale, Transmission } from "@/data/vehicles"
 
 export type FinderCar = {
@@ -45,14 +52,19 @@ export function CarFinder({ cars }: { cars: FinderCar[] }) {
   const tl = useTranslations("labels")
   const locale = useLocale() as Locale
   const [answers, setAnswers] = useState<Answers>({})
+  const [engine, setEngine] = useState<Engine | null>(null)
+  const answer = (q: Question, value: string) => {
+    if (!engine) loadEngine().then(setEngine)
+    setAnswers((prev) => ({ ...prev, [q]: value }))
+  }
 
   const order = Object.keys(questions) as Question[]
   const complete = order.every((q) => answers[q])
 
   const result = useMemo(() => {
-    if (!complete) return null
+    if (!complete || !engine) return null
     const a = answers as FinderAnswers
-    const { reason, fuels, recommendations, relaxed } = recommend(a)
+    const { reason, fuels, recommendations, relaxed } = engine.recommend(a)
     // Do nosso stock: dentro do orçamento e da caixa pedida, combustível mais adequado primeiro.
     const stock = cars
       .filter((car) => car.price === null || car.price <= budgetMax[a.budget])
@@ -61,7 +73,7 @@ export function CarFinder({ cars }: { cars: FinderCar[] }) {
       .filter((car) => fuels.includes(car.fuel))
       .sort((x, y) => rank(fuels, x.fuel) - rank(fuels, y.fuel) || (x.price ?? Infinity) - (y.price ?? Infinity))
     return { reason, recommendations, relaxed, stock, electric: recommendations.some((r) => r.fuel === "electric") }
-  }, [answers, cars, complete])
+  }, [answers, cars, complete, engine])
 
   const label = (q: Question, value: string) => t(`${q}.${value}`)
   const message =
@@ -97,7 +109,7 @@ export function CarFinder({ cars }: { cars: FinderCar[] }) {
                     name={`finder-${q}`}
                     value={value}
                     checked={answers[q] === value}
-                    onChange={() => setAnswers((prev) => ({ ...prev, [q]: value }))}
+                    onChange={() => answer(q, value)}
                     className="sr-only"
                   />
                   {t(`${q}.${value}`)}
@@ -122,7 +134,7 @@ export function CarFinder({ cars }: { cars: FinderCar[] }) {
         ) : (
           <div>
             {/* Análise */}
-            <p className="flex items-center gap-2 text-xs font-bold uppercase tracking-[0.2em] text-primary">
+            <p className="flex items-center gap-2 text-xs font-bold uppercase tracking-[0.2em] text-primary-text">
               <Sparkles className="h-4 w-4" aria-hidden="true" />
               {t("analysisTitle")}
             </p>
