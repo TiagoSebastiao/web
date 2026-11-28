@@ -16,9 +16,12 @@ const withNextIntl = createNextIntlPlugin("./i18n/request.ts")
  * (imagens, _next/static) são servidos pela Cloudflare sem passar pelo Worker: os cabeçalhos
  * deles estão em public/_headers.
  */
+// Só em `npm run dev`: o React usa eval() para reconstruir as pilhas de erros. Nunca em produção.
+const devEval = process.env.NODE_ENV === "development" ? " 'unsafe-eval'" : ""
+
 const csp = [
   "default-src 'self'",
-  "script-src 'self' 'unsafe-inline' https://www.googletagmanager.com",
+  `script-src 'self' 'unsafe-inline'${devEval} https://www.googletagmanager.com`,
   "style-src 'self' 'unsafe-inline'",
   "img-src 'self' data: blob: https://i.ytimg.com https://*.google-analytics.com https://*.googletagmanager.com",
   "font-src 'self' data:",
